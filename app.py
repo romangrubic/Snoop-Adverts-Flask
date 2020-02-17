@@ -1,13 +1,15 @@
 import os
-from flask import Flask
+from flask import Flask, render_template, redirect, request, url_for
+from flask_pymongo import PyMongo
+from os import path
+if path.exists("env.py"):
+  import env 
 
 app = Flask(__name__)
+app.config["MONGO_DBNAME"] = 'adverts'
+app.config["MONGO_URI"] = os.environ.get('MONGO_DATA_URI')
 
-
-@app.route("/")
-def hello():
-    return 'Hello World'
-
+mongo = PyMongo(app)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
