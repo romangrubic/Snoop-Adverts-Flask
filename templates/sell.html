@@ -1,32 +1,17 @@
 {% extends 'base.html'%} {% block content %}
 <h1>Page with Selling ads</h1>
+<div class="container">
 <div class="row">
-	<ul>
-		{% for advert in adverts %}
-		<li>
-			<div>
-				<div>
-					<strong>{{advert.advert_name}}</strong>
-				</div>
-			</div>
-			<div>
-				<p>
-					{{advert.advert_description}}
-				</p>
-			</div>
-            <div>
-				<p>
-					{{advert.price}}
-				</p>
-			</div>
-            <div>
-				<p>
-					{{advert.contact_info}}
-				</p>
-			</div>
-		</li>
-		{% endfor %}
-
-	</ul>
+	{% for advert in adverts %}
+	<div class="card" style="width: 18rem;">
+		<img src="#" class="card-img-top" width="150px" height="150px" alt="{{advert.advert_name}}">
+		<div class="card-body">
+			<h5 class="card-title">{{advert.advert_name}} - €{{advert.price}}</h5>
+			<p class="card-text">{{advert.location}}</p>
+			<a href="#" class="btn btn-primary">See more...</a>
+		</div>
+	</div>
+	{% endfor %}
+</div>
 </div>
 {% endblock %}
