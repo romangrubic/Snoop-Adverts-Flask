@@ -23,13 +23,13 @@ def home():
 # --------- Buying page -----------------------------------------
 @app.route('/buy')
 def buy():
-    return render_template('buy.html', tittle="Buy")
+    return render_template('buy.html', tittle="Buy", adverts=mongo.db.advert.find({"buy":"on"}))
 
 
 # --------- Selling page ----------------------------------------
 @app.route('/sell')
 def sell():
-    return render_template('sell.html', tittle="Sell")
+    return render_template('sell.html', tittle="Sell", adverts=mongo.db.advert.find({"sell":"on"}))
 
 
 # ----------- Add advert ----------------------------------------
