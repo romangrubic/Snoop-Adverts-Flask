@@ -14,22 +14,22 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-# --------- Landing page // Home page ---------------------------
-@app.route('/landing-page')
-def landing_page():
-    return render_template('landing-page.html')
+# --------- Home page -------------------------------------------
+@app.route('/home')
+def home():
+    return render_template('home.html', tittle="Home")
 
 
 # --------- Buying page -----------------------------------------
 @app.route('/buy')
 def buy():
-    return render_template('buy.html')
+    return render_template('buy.html', tittle="Buy")
 
 
 # --------- Selling page ----------------------------------------
 @app.route('/sell')
 def sell():
-    return render_template('sell.html')
+    return render_template('sell.html', tittle="Sell")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
