@@ -32,6 +32,13 @@ def sell():
     return render_template('sell.html', tittle="Sell", adverts=mongo.db.advert.find({"sell":"on"}))
 
 
+# --------- Single advert page ----------------------------------
+@app.route('/view_advert/<advert_id>')
+def view_advert(advert_id):
+    advert = mongo.db.advert.find_one({'_id': ObjectId(advert_id)})
+    return render_template('view_advert.html', tittle="Advert info", advert=advert)
+
+
 # ----------- Add advert ----------------------------------------
 @app.route('/add_advert')
 def add_advert():
