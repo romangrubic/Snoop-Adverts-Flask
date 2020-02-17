@@ -31,6 +31,21 @@ def buy():
 def sell():
     return render_template('sell.html', tittle="Sell")
 
+
+# ----------- Add advert ----------------------------------------
+@app.route('/add_advert')
+def add_advert():
+    return render_template('add_advert.html', tittle="Add advert", categories=mongo.db.categories.find())
+
+
+# ---------- Insert advert --------------------------------------
+@app.route('/insert_advert', methods=['POST'])
+def insert_advert():
+    advert = mongo.db.advert
+    advert.insert_one(request.form.to_dict())
+    return redirect(url_for('home'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),

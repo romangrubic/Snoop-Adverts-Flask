@@ -1,0 +1,56 @@
+{% extends 'base.html'%} {% block content %}
+<h3>Add advert</h3>
+<div class="row">
+	<form action="{{ url_for('insert_advert') }}" method="POST" class="col-12">
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
+			<label class="btn btn-secondary">
+                <input type="radio" name="buy" id="buy-option"> Buy
+            </label>
+			<label class="btn btn-secondary">
+                <input type="radio" name="sell" id="sell-option">Sell
+            </label>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="form-group">
+					<label for="category">Categories</label>
+					<select class="form-control" id="category" name="category_name">
+				    <div class="dropdown">
+						{% for cat in categories %}
+                        <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                        {% endfor %}
+				    </div>
+                    </select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col-12">
+				<label>Advert Name</label>
+				<input id="advert_name" name="advert_name" type="text" required>
+			</div>
+			</div>
+			<div class="row">
+				<div class="input-field col-12">
+					<label>Advert Description</label>
+					<textarea id="advert_description" name="advert_description" required></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col-12">
+					<label>Price</label>
+					<input id="price" name="price" type="text" required>
+				</div>
+				</div>
+				<div class="row">
+					<div class="input-field col-12">
+						<label>Contact information</label>
+						<input id="contact_info" name="contact_info" required>
+				</div>
+					</div>
+					<div>
+						<button type="submit">Submit</button>
+					</div>
+	</form>
+</div>
+{% endblock %}
