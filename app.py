@@ -93,7 +93,7 @@ def update_advert(advert_id):
         mongo.save_file(advert_image.filename, advert_image)
     else:
         image_filename = advert['imageURL']
-    
+
     mongo.db.advert.update({'_id': ObjectId(advert_id)},
     {
         'buyorsell': request.form.get('buyorsell'),
@@ -105,6 +105,14 @@ def update_advert(advert_id):
         'location': request.form.get('location'),
         'imageURL': image_filename
     })
+    return redirect(url_for('home'))
+
+
+# ------------------ Deleting advert ---------------------------
+@app.route('/delete_advert/<advert_id>')
+def delete_advert(advert_id):
+    advert = mongo.db.advert
+    advert.remove({'_id': ObjectId(advert_id)})
     return redirect(url_for('home'))
 
 
