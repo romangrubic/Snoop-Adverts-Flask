@@ -4,7 +4,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
-  import env 
+    import env
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'adverts'
@@ -87,8 +87,13 @@ def edit_advert(advert_id):
 def update_advert(advert_id):
     advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
 
+    if 'buyorsell' in request.form != "":
+        buyorsell = request.form.get('buyorsell')
+    else:
+        buyorsell = advert['buyorsell']
+
     if 'advert_image' in request.files and request.files['advert_image'].filename != "":
-        advert_image = request.files['advert_image']          
+        advert_image = request.files['advert_image']
         image_filename = advert_image.filename
         mongo.save_file(advert_image.filename, advert_image)
     else:
@@ -96,7 +101,7 @@ def update_advert(advert_id):
 
     mongo.db.advert.update({'_id': ObjectId(advert_id)},
     {
-        'buyorsell': request.form.get('buyorsell'),
+        'buyorsell': buyorsell,
         'category_name': request.form.get('category_name'),
         'advert_name': request.form.get('advert_name'),
         'advert_description': request.form.get('advert_description'),

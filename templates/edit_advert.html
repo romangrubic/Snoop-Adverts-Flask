@@ -20,12 +20,12 @@
 			</div>
 			<div class="row">
 				<div class="input-field col-8" >
-					<div class="btn-group btn-group-toggle" data-toggle="buttons" required>
+					<div class="btn-group btn-group-toggle" data-toggle="buttons" name="buyorsell" value="{{advert.buyorsell}}">
 						<label class="btn btn-secondary">
-                            <input type="radio" name="buyorsell" value="buy" id="buy-option" required> Buy
+                            <input type="radio" name="buyorsell" value="buy" id="buy-option"> Buy
                         </label>
                         <label class="btn btn-secondary">
-                            <input type="radio" name="buyorsell" value="sell" id="sell-option" required>Sell
+                            <input type="radio" name="buyorsell" value="sell" id="sell-option">Sell
                         </label>                        
 					</div>
 				</div>
@@ -69,6 +69,7 @@
 			<div class="row">
 				<button class="btn btn-primary" type="submit" name="action">Edit Advert</button>
 			</div>
+            <a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn btn-info">Cancel</a>
 		</form>
 	</div>
 </div>
