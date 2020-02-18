@@ -49,7 +49,21 @@ def add_advert():
 @app.route('/insert_advert', methods=['POST'])
 def insert_advert():
     advert = mongo.db.advert
-    advert.insert_one(request.form.to_dict())
+    if "advert_image" in request.files:
+        advert_image = request.files['advert_image']
+        mongo.save_file(advert_image.filename, advert_image)
+
+    new_advert = {
+        'buy/sell': request.form.get('buy/sell'),
+        'category_name': request.form.get('category_name'),
+        'advert_name': request.form.get('advert_name'),
+        'advert_description': request.form.get('advert_description'),
+        'price': request.form.get('price'),
+        'contact_info': request.form.get('contact_info'),
+        'location': request.form.get('location'),
+        'imageURL': advert_image.filename
+        }
+    advert.insert_one(new_advert)
     return redirect(url_for('home'))
 
 

@@ -1,13 +1,13 @@
 {% extends 'base.html'%} {% block content %}
 <h3>Add advert</h3>
 <div class="row">
-	<form action="{{ url_for('insert_advert') }}" method="POST" class="col-12">
-		<div class="btn-group btn-group-toggle" data-toggle="buttons" required>
+	<form action="{{ url_for('insert_advert') }}" method="POST" enctype="multipart/form-data" class="col-12">
+		<div class="btn-group btn-group-toggle" data-toggle="buttons">
 			<label class="btn btn-secondary">
-                <input type="radio" name="buy" id="buy-option"> Buy
+                <input type="radio" name="buy/sell" value="buy" id="buy-option"> Buy
             </label>
 			<label class="btn btn-secondary">
-                <input type="radio" name="sell" id="sell-option">Sell
+                <input type="radio" name="buy/sell" value="sell" id="sell-option">Sell
             </label>
 		</div>
 		<div class="row">
@@ -27,30 +27,43 @@
 		<div class="row">
 			<div class="input-field col-12">
 				<label>Advert Name</label>
-				<input id="advert_name" name="advert_name" type="text" required>
+				<input id="advert_name" name="advert_name" type="text" >
 			</div>
 			</div>
 			<div class="row">
 				<div class="input-field col-12">
 					<label>Advert Description</label>
-					<textarea id="advert_description" name="advert_description" required></textarea>
+					<textarea id="advert_description" name="advert_description" ></textarea>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col-12">
 					<label>Price</label>
-					<input id="price" name="price" type="text" required>
+					<input id="price" name="price" type="text" >
 				</div>
 				</div>
 				<div class="row">
 					<div class="input-field col-12">
 						<label>Contact information</label>
-						<input id="contact_info" name="contact_info" required>
+						<input id="contact_info" name="contact_info">
 				</div>
 					</div>
-					<div>
-						<button type="submit">Submit</button>
+                <div class="row">
+					<div class="input-field col-12">
+						<label>Location</label>
+						<input id="location" name="location">
+				</div>
 					</div>
+                
+					<div class="row">
+						<div class="col-6">
+							<label for="advert_image">Click to upload image</label>
+							<input type="file" id="advert_image" name="advert_image" accept="image/*" >
+                        </div>
+					</div>
+						<div>
+							<button type="submit">Submit</button>
+						</div>
 	</form>
 </div>
 {% endblock %}
