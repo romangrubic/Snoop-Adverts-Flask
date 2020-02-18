@@ -23,13 +23,13 @@ def home():
 # --------- Buying page -----------------------------------------
 @app.route('/buy')
 def buy():
-    return render_template('buy.html', tittle="Buy", adverts=mongo.db.advert.find({"buy/sell": "buy"}))
+    return render_template('buy.html', tittle="Buy", adverts=mongo.db.advert.find({"buyorsell": "buy"}))
 
 
 # --------- Selling page ----------------------------------------
 @app.route('/sell')
 def sell():
-    return render_template('sell.html', tittle="Sell", adverts=mongo.db.advert.find({"buy/sell": "sell"}))
+    return render_template('sell.html', tittle="Sell", adverts=mongo.db.advert.find({"buyorsell": "sell"}))
 
 
 # --------- Single advert page ----------------------------------
@@ -55,7 +55,7 @@ def insert_advert():
         mongo.save_file(advert_image.filename, advert_image)
 
     new_advert = {
-        'buy/sell': request.form.get('buy/sell'),
+        'buyorsell': request.form.get('buyorsell'),
         'category_name': request.form.get('category_name'),
         'advert_name': request.form.get('advert_name'),
         'advert_description': request.form.get('advert_description'),
@@ -72,6 +72,34 @@ def insert_advert():
 @app.route('/file/<filename>')
 def file(filename):
     return mongo.send_file(filename)
+
+
+# ------------- Edit advert ------------------------------------
+@app.route('/edit_advert/<advert_id>')
+def edit_advert(advert_id):
+    the_advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template('edit_advert.html', tittle="Edit Advert",  advert=the_advert, categories=all_categories)
+
+
+# ------------ Update advert -----------------------------------
+@app.route('/update_advert/<advert_id>', methods=['POST'])
+def update_advert(advert_id):
+    advert = mongo.db.advert
+    advert_image = request.files['advert_image']
+    
+    advert.update({'_id': ObjectId(advert_id)},
+                 {
+        'buyorsell': request.form.get('buyorsell'),
+        'category_name': request.form.get('category_name'),
+        'advert_name': request.form.get('advert_name'),
+        'advert_description': request.form.get('advert_description'),
+        'price': request.form.get('price'),
+        'contact_info': request.form.get('contact_info'),
+        'location': request.form.get('location'),
+        'imageURL': advert_image.filename
+    })
+    return redirect(url_for('home'))
 
 
 # ------------- Host/Port/Debug --------------------------------

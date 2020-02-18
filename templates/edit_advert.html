@@ -1,0 +1,64 @@
+{% extends 'base.html'%} {% block content %}
+
+<h3>Edit Advert</h3>
+<div class="container">
+	<div class="row">
+		<form action="{{ url_for('update_advert', advert_id=advert._id) }}" method="POST" enctype="multipart/form-data" class="col-12">
+			<div class="row">
+				<div class="col-8">
+					<select id="category" name="category_name">
+                  <option value="" disabled selected>Choose Category</option>
+                  {% for cat in categories %}
+                      {% if cat.category_name == advert.category_name%}
+                      <option value="{{cat.category_name}}" selected >{{cat.category_name}}</option>
+                      {% else %}
+                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+					<label>Advert Category</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col-8">
+					<div class="btn-group btn-group-toggle" data-toggle="buttons" >
+						<label class="btn btn-secondary">
+                            <input type="radio" name="buyorsell" value="buy" id="buy-option"> Buy
+                        </label>
+						<label class="btn btn-secondary">
+                            <input type="radio" name="buyorsell" value="sell" id="sell-option">Sell
+                        </label>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col-8">
+					<input id="advert_name" name="advert_name" type="text" value="{{advert.advert_name}}">
+					<label for="advert_name">Advert Name</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field">
+					<textarea name="advert_description" id="advert_description" value="{{advert.advert_description}}">{{advert.advert_description}}</textarea>
+					<label for="advert_description">Advert Description</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col-12">
+					<input id="price" name="price" type="text" value="{{advert.price}}">
+					<label for="price">Price</label>
+				</div>
+			</div>
+            <div class="row">
+						<div class="col-6">
+							<label for="advert_image">Click to upload image</label>
+							<input type="file" id="advert_image" name="advert_image" value="{{advert.imageURL}}" accept="image/*">
+                        </div>
+					</div>
+			<div class="row">
+				<button class="btn btn-primary" type="submit" name="action">Edit Advert</button>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}
