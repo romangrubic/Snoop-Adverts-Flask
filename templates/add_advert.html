@@ -4,18 +4,19 @@
 	<form action="{{ url_for('insert_advert') }}" method="POST" enctype="multipart/form-data" class="col-12">
 		<div class="btn-group btn-group-toggle" data-toggle="buttons">
 			<label class="btn btn-secondary">
-                <input type="radio" name="buyorsell" value="buy" id="buy-option"> Buy
+                <input type="radio" name="buyorsell" value="buy" id="buy-option" required> Buy
             </label>
 			<label class="btn btn-secondary">
-                <input type="radio" name="buyorsell" value="sell" id="sell-option">Sell
+                <input type="radio" name="buyorsell" value="sell" id="sell-option" required>Sell
             </label>
 		</div>
 		<div class="row">
 			<div class="col-12">
 				<div class="form-group">
 					<label for="category">Categories</label>
-					<select class="form-control" id="category" name="category_name">
+					<select class="form-control" id="category" name="category_name" required>
 				    <div class="dropdown">
+                        <option value="" disabled selected>Choose Category</option>
 						{% for cat in categories %}
                         <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                         {% endfor %}

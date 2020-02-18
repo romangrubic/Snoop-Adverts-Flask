@@ -75,7 +75,7 @@ def file(filename):
 
 
 # ------------- Edit advert ------------------------------------
-@app.route('/edit_advert/<advert_id>')
+@app.route('/edit_advert/<advert_id>', methods=['GET'])
 def edit_advert(advert_id):
     the_advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
     all_categories = mongo.db.categories.find()
@@ -85,11 +85,17 @@ def edit_advert(advert_id):
 # ------------ Update advert -----------------------------------
 @app.route('/update_advert/<advert_id>', methods=['POST'])
 def update_advert(advert_id):
-    advert = mongo.db.advert
-    advert_image = request.files['advert_image']
+    advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
+
+    if 'advert_image' in request.files and request.files['advert_image'].filename != "":
+        advert_image = request.files['advert_image']          
+        image_filename = advert_image.filename
+        mongo.save_file(advert_image.filename, advert_image)
+    else:
+        image_filename = advert['imageURL']
     
-    advert.update({'_id': ObjectId(advert_id)},
-                 {
+    mongo.db.advert.update({'_id': ObjectId(advert_id)},
+    {
         'buyorsell': request.form.get('buyorsell'),
         'category_name': request.form.get('category_name'),
         'advert_name': request.form.get('advert_name'),
@@ -97,7 +103,7 @@ def update_advert(advert_id):
         'price': request.form.get('price'),
         'contact_info': request.form.get('contact_info'),
         'location': request.form.get('location'),
-        'imageURL': advert_image.filename
+        'imageURL': image_filename
     })
     return redirect(url_for('home'))
 
