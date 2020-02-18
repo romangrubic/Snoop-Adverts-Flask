@@ -23,13 +23,13 @@ def home():
 # --------- Buying page -----------------------------------------
 @app.route('/buy')
 def buy():
-    return render_template('buy.html', tittle="Buy", adverts=mongo.db.advert.find({"buy":"on"}))
+    return render_template('buy.html', tittle="Buy", adverts=mongo.db.advert.find({"buy/sell": "buy"}))
 
 
 # --------- Selling page ----------------------------------------
 @app.route('/sell')
 def sell():
-    return render_template('sell.html', tittle="Sell", adverts=mongo.db.advert.find({"sell":"on"}))
+    return render_template('sell.html', tittle="Sell", adverts=mongo.db.advert.find({"buy/sell": "sell"}))
 
 
 # --------- Single advert page ----------------------------------
@@ -49,6 +49,7 @@ def add_advert():
 @app.route('/insert_advert', methods=['POST'])
 def insert_advert():
     advert = mongo.db.advert
+
     if "advert_image" in request.files:
         advert_image = request.files['advert_image']
         mongo.save_file(advert_image.filename, advert_image)
@@ -67,6 +68,13 @@ def insert_advert():
     return redirect(url_for('home'))
 
 
+# ------------ Uploading ---------------------------------------
+@app.route('/file/<filename>')
+def file(filename):
+    return mongo.send_file(filename)
+
+
+# ------------- Host/Port/Debug --------------------------------
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),

@@ -4,7 +4,7 @@
 <div class="row">
 	{% for advert in adverts %}
 	<div class="card" style="width: 18rem;">
-		<img src="#" class="card-img-top" width="150px" height="150px" alt="{{advert.advert_name}}">
+		<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top" width="150px" height="150px" alt="{{advert.advert_name}}">
 		<div class="card-body">
 			<h5 class="card-title">{{advert.advert_name}} - €{{advert.price}}</h5>
 			<p class="card-text">{{advert.location}}</p>
