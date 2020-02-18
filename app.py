@@ -110,7 +110,7 @@ def update_advert(advert_id):
         'location': request.form.get('location'),
         'imageURL': image_filename
     })
-    return redirect(url_for('home'))
+    return redirect(url_for('view_advert', advert_id=advert_id))
 
 
 # ------------------ Deleting advert ---------------------------
