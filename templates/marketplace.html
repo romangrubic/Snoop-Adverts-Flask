@@ -3,13 +3,15 @@
 <div class="container">
 <div class="row">
 	{% for advert in adverts %}
-	<div class="card" style="width: 18rem;">
+	<div class="col-8 col-sm-6 col-md-4 col-lg-3">
+        <div class="card">
 		<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{advert.advert_name}}">
 		<div class="card-body">
 			<h5 class="card-title">{{advert.advert_name}} - €{{advert.price}}</h5>
 			<p class="card-text">{{advert.location}}</p>
 			<a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn btn-primary">See more...</a>
 		</div>
+        </div>
 	</div>
 	{% endfor %}
 </div>

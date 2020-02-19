@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 body{
     background-color: lightblue;
 }
@@ -12,4 +15,15 @@ body{
 }
 .nav-link:hover{
     color: white;
+}
+
+/* ----------------- Cards --------------------*/
+.col-8,.col-sm-6,.col-md-4,.col-lg-3{
+    padding:5px;
+}
+
+@media only screen and (max-width: 575px) {
+   .col-8,.col-sm-6,.col-md-4,.col-lg-3{
+    margin:auto;
+  }
 }
