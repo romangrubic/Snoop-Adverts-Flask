@@ -38,6 +38,12 @@ def home_garden_diy():
     return render_template('marketplace.html', tittle="Home, garden and DIY", adverts=mongo.db.advert.find({'category_name': 'Home, garden, DIY'}))
 
 
+# --------- Filter: Home ------------------------------------
+@app.route('/pc_stuff_and_games')
+def pc_stuff_and_games():
+    return render_template('marketplace.html', tittle="PC stuff and games", adverts=mongo.db.advert.find({'category_name': 'PC stuff and games'}))
+
+
 # --------- Single advert page ----------------------------------
 @app.route('/view_advert/<advert_id>')
 def view_advert(advert_id):
