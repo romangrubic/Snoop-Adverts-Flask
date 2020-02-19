@@ -20,16 +20,10 @@ def home():
     return render_template('home.html', tittle="Home")
 
 
-# --------- Buying page -----------------------------------------
-@app.route('/buy')
-def buy():
-    return render_template('buy.html', tittle="Buy", adverts=mongo.db.advert.find({"buyorsell": "buy"}))
-
-
-# --------- Selling page ----------------------------------------
-@app.route('/sell')
-def sell():
-    return render_template('sell.html', tittle="Sell", adverts=mongo.db.advert.find({"buyorsell": "sell"}))
+# --------- Marketplace page ----------------------------------------
+@app.route('/marketplace')
+def marketplace():
+    return render_template('marketplace.html', tittle="Marketplace", adverts=mongo.db.advert.find())
 
 
 # --------- Single advert page ----------------------------------
@@ -55,7 +49,6 @@ def insert_advert():
         mongo.save_file(advert_image.filename, advert_image)
 
     new_advert = {
-        'buyorsell': request.form.get('buyorsell'),
         'category_name': request.form.get('category_name'),
         'advert_name': request.form.get('advert_name'),
         'advert_description': request.form.get('advert_description'),
@@ -63,9 +56,9 @@ def insert_advert():
         'contact_info': request.form.get('contact_info'),
         'location': request.form.get('location'),
         'imageURL': advert_image.filename
-        }
+    }
     advert.insert_one(new_advert)
-    return redirect(url_for('home'))
+    return redirect(url_for('marketplace'))
 
 
 # ------------ Uploading ---------------------------------------
@@ -87,11 +80,6 @@ def edit_advert(advert_id):
 def update_advert(advert_id):
     advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
 
-    if 'buyorsell' in request.form != "":
-        buyorsell = request.form.get('buyorsell')
-    else:
-        buyorsell = advert['buyorsell']
-
     if 'advert_image' in request.files and request.files['advert_image'].filename != "":
         advert_image = request.files['advert_image']
         image_filename = advert_image.filename
@@ -101,7 +89,6 @@ def update_advert(advert_id):
 
     mongo.db.advert.update({'_id': ObjectId(advert_id)},
     {
-        'buyorsell': buyorsell,
         'category_name': request.form.get('category_name'),
         'advert_name': request.form.get('advert_name'),
         'advert_description': request.form.get('advert_description'),
@@ -118,7 +105,7 @@ def update_advert(advert_id):
 def delete_advert(advert_id):
     advert = mongo.db.advert
     advert.remove({'_id': ObjectId(advert_id)})
-    return redirect(url_for('home'))
+    return redirect(url_for('marketplace'))
 
 
 # ------------- Host/Port/Debug --------------------------------
