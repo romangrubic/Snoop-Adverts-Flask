@@ -26,6 +26,12 @@ def marketplace():
     return render_template('marketplace.html', tittle="Marketplace", adverts=mongo.db.advert.find())
 
 
+# --------- Filter: Motors ------------------------------------
+@app.route('/motors_and_vehicles')
+def motors_and_vehicles():
+    return render_template('marketplace.html', tittle="Motors and vehicles", adverts=mongo.db.advert.find({'category_name': 'Motors and vehicles'}))
+
+
 # --------- Single advert page ----------------------------------
 @app.route('/view_advert/<advert_id>')
 def view_advert(advert_id):
