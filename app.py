@@ -44,6 +44,14 @@ def pc_stuff_and_games():
     return render_template('marketplace.html', tittle="PC stuff and games", adverts=mongo.db.advert.find({'category_name': 'PC stuff and games'}))
 
 
+# ----------- Filter: Search ------------------------------------
+@app.route('/search')
+def search():
+    query = request.args.get('search')
+    results = mongo.db.advert.find({'advert_name': {"$regex": query}})
+    return render_template("marketplace.html", tittle="Search", results=results)
+
+
 # --------- Single advert page ----------------------------------
 @app.route('/view_advert/<advert_id>')
 def view_advert(advert_id):

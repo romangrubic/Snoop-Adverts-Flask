@@ -1,4 +1,9 @@
 {% extends 'base.html'%} {% block content %}
+<div>
+	<form action="{{url_for('search')}}" method="get">
+		<input id="search" name="search" type="text">
+    </form>
+</div>
 <div class="container">
 	<h1>Welcome to my Adverts project</h1>
 	<div id="carousel" class="row carousel slide" data-ride="carousel" data-pause="False" data-interval="5000">
@@ -6,18 +11,18 @@
 			<div class="carousel-item">
 				<img src="{{url_for('static', filename='images/carousel/image-1.jpeg')}}" alt="First slide">
             </div>
-			<div class="carousel-item active">
-				<img src="{{url_for('static', filename='images/carousel/image-2.jpeg')}}" alt="Second slide">
+				<div class="carousel-item active">
+					<img src="{{url_for('static', filename='images/carousel/image-2.jpeg')}}" alt="Second slide">
             </div>
-			<div class="carousel-item">
-				<img src="{{url_for('static', filename='images/carousel/image-3.jpeg')}}" alt="Third slide">
-            </div>		
-            <div class="d-flex justify-content-center">
-			    <button><a href="{{url_for('motors_and_vehicles')}}">Motors</a></button>
-			    <button><a href="{{url_for('home_garden_diy')}}">Home</a></button>
-                <button><a href="{{url_for('pc_stuff_and_games')}}">PC stuff</a></button>
-		    </div>
-        </div>
-	</div>
-</div>
-{% endblock %}
+					<div class="carousel-item">
+						<img src="{{url_for('static', filename='images/carousel/image-3.jpeg')}}" alt="Third slide">
+            </div>
+						<div class="d-flex justify-content-center">
+							<button><a href="{{url_for('motors_and_vehicles')}}">Motors</a></button>
+							<button><a href="{{url_for('home_garden_diy')}}">Home</a></button>
+							<button><a href="{{url_for('pc_stuff_and_games')}}">PC stuff</a></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endblock %}
