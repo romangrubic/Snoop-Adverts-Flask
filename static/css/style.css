@@ -34,8 +34,22 @@ body{
 .col-8,.col-sm-6,.col-md-4,.col-lg-3{
     padding:5px;
 }
-
-/* ------------ Delete and Edit buttons ------*/
+.card{
+    border: 1px solid rgba(0, 0, 0, 0.33);
+}
+.card-img-top{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.33);
+}
+.card-body{
+    padding: 0 5px 5px;
+}
+.card-title{
+    margin: 5px;
+}
+.card-text{
+    margin: 8px 5px;
+}
+/* ------------ Delete, Edit, See more buttons ------*/
 .delete-btn{
     width: 150px;
     margin: 5px;
@@ -45,6 +59,14 @@ body{
     width: 150px;
     margin: 5px;
     background-color: rgba(0, 0, 255, 0.562);
+}
+.see-more{
+    background-color: rgba(0, 128, 0, 0.5);
+    margin: 5px;
+    height: 35px;
+    width: 90px;
+    font-weight: 600;
+    font-size: 14px;
 }
 
 @media only screen and (max-width: 575px) {
