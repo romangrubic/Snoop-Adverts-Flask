@@ -1,65 +1,74 @@
 {% extends 'base.html'%} {% block content %}
-<h3>Add advert</h3>
-<div class="row">
-	<form action="{{ url_for('insert_advert') }}" method="POST" enctype="multipart/form-data" class="col-12">
+<h3>Add advert page</h3>
+<div class="container">
+	<form action="{{ url_for('insert_advert') }}" method="POST" enctype="multipart/form-data">
 		<div class="row">
-			<div class="col-12">
-				<div class="form-group">
-					<label for="category">Categories</label>
-					<select class="form-control" id="category" name="category_name" required>
-				    <div class="dropdown">
-                        <option value="" disabled selected>Choose Category</option>
+			<div class="col-3">
+				<label for="category_name">Select category</label>
+			</div>
+			<div class="col-9">
+				<select class="input-field" id="category" name="category_name" required>
+                        <option value="" disabled selected>Choose one</option>
 						{% for cat in categories %}
                         <option value="{{cat.category_name}}" required>{{cat.category_name}}</option>
                         {% endfor %}
-				    </div>
                     </select>
-				</div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="input-field col-12">
+			<div class="col-3">
 				<label>Advert Name</label>
-				<input id="advert_name" name="advert_name" type="text" required>
 			</div>
+			<div class="col-9">
+				<input id="advert_name" name="advert_name" type="text" required>
+            </div>
 			</div>
 			<div class="row">
-				<div class="input-field col-12">
+				<div class="col-3">
 					<label>Advert Description</label>
+				</div>
+				<div class="col-9">
 					<textarea id="advert_description" name="advert_description" required></textarea>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col-12">
+				<div class="col-3">
 					<label>Price</label>
-					<input id="price" name="price" type="text" required>
 				</div>
+				<div class="col-9">
+					<input id="price" name="price" type="text" required>
+                </div>
 				</div>
 				<div class="row">
-					<div class="input-field col-12">
+					<div class="col-3">
 						<label>Contact information</label>
+					</div>
+					<div class="col-9">
 						<input id="contact_info" name="contact_info" required>
-				</div>
+                    </div>
 					</div>
-                <div class="row">
-					<div class="input-field col-12">
-						<label>Location</label>
-						<input id="location" name="location" required>
-				</div>
-					</div>
-                
 					<div class="row">
-						<div class="col-6">
-							<label for="advert_image">Click to upload image</label>
-							<input type="file" id="advert_image" name="advert_image" accept="image/*" required>
+						<div class="col-3">
+							<label>Location</label>
+						</div>
+						<div class="col-9">
+							<input id="location" name="location" required>
                         </div>
-					</div>
-						<div>
-							<button type="submit">Submit</button>
 						</div>
-                        <div>
-							<a href="{{url_for('home')}}" class="btn btn-info">Cancel</a>
-						</div>
+						<div class="row">
+							<div class="col-3">
+								<label for="advert_image">Click to upload image</label>
+							</div>
+							<div class="col-9">
+								<input type="file" id="advert_image" name="advert_image" accept="image/*" required>
+                            </div>
+							</div>
+							<div class="row">
+								<div class="offset-3 col-9">
+										<button type="submit" class="">Submit</button>
+										<button><a href="{{url_for('home')}}">Cancel</a></button>
+								</div>
+							</div>
 	</form>
 </div>
 {% endblock %}
