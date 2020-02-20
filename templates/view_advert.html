@@ -1,4 +1,9 @@
 {% extends 'base.html'%} {% block content %}
+<div>
+	<form action="{{url_for('search')}}">
+		<input id="search" name="search" type="text" class="validate" required>
+    </form>
+</div>
 <h1>Page with Advert info</h1>
 <div class="container">
 	<div class="row">
