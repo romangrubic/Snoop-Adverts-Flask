@@ -1,13 +1,13 @@
 {% extends 'base.html'%} {% block content %}
 <h3>Add advert page</h3>
-<div class="container">
+<div class="add-advert-form">
 	<form action="{{ url_for('insert_advert') }}" method="POST" enctype="multipart/form-data">
 		<div class="row">
-			<div class="col-3">
+			<div class="col-3 text-right">
 				<label for="category_name">Select category</label>
 			</div>
-			<div class="col-9">
-				<select class="input-field" id="category" name="category_name" required>
+			<div class="col-9 inputs">
+				<select class="input-field add-inputs" id="category" name="category_name" required>
                         <option value="" disabled selected>Choose one</option>
 						{% for cat in categories %}
                         <option value="{{cat.category_name}}" required>{{cat.category_name}}</option>
@@ -16,43 +16,43 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-3">
-				<label>Advert Name</label>
+			<div class="col-3 text-right">
+				<label>Name</label>
 			</div>
-			<div class="col-9">
-				<input id="advert_name" name="advert_name" type="text" required>
+			<div class="col-9 inputs">
+				<input class="add-inputs" id="advert_name" name="advert_name" type="text" required>
             </div>
 			</div>
 			<div class="row">
-				<div class="col-3">
-					<label>Advert Description</label>
+				<div class="col-3 text-right">
+					<label>Description</label>
 				</div>
-				<div class="col-9">
-					<textarea id="advert_description" name="advert_description" required></textarea>
+				<div class="col-9 inputs">
+					<textarea class="add-inputs" id="advert_description" name="advert_description" required></textarea>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-3">
+				<div class="col-3 text-right">
 					<label>Price</label>
 				</div>
-				<div class="col-9">
-					<input id="price" name="price" type="text" required>
+				<div class="col-9 inputs">
+					<input class="add-inputs" id="price" name="price" type="text" required>
                 </div>
 				</div>
 				<div class="row">
-					<div class="col-3">
-						<label>Contact information</label>
+					<div class="col-3 text-right">
+						<label>Contact info</label>
 					</div>
-					<div class="col-9">
-						<input id="contact_info" name="contact_info" required>
+					<div class="col-9 inputs">
+						<input class="add-inputs" id="contact_info" name="contact_info" required>
                     </div>
 					</div>
 					<div class="row">
-						<div class="col-3">
+						<div class="col-3 text-right">
 							<label>Location</label>
 						</div>
-						<div class="col-9">
-							<select class="input-field" id="location" name="location" required>
+						<div class="col-9 inputs">
+							<select class="input-field add-inputs" id="location" name="location" required>
                                 <option value="" disabled selected>Choose one</option>
 						            {% for county in counties %}
                                     <option value="{{county.name}}" required>{{county.name}}</option>
@@ -61,17 +61,17 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-3">
-							<label for="advert_image">Click to upload image</label>
+						<div class="col-3 text-right">
+							<label for="advert_image">Upload image</label>
 						</div>
-						<div class="col-9">
-							<input type="file" id="advert_image" name="advert_image" accept="image/*" required>
-                            </div>
-						</div>
+						<div class="col-9 inputs">
+							<input class="add-inputs" type="file" id="advert_image" name="advert_image" accept="image/*" required>
+                        </div>
+					</div>
 						<div class="row">
-							<div class="offset-3 col-9">
-								<button type="submit" class="">Submit</button>
-								<button><a href="{{url_for('home')}}">Cancel</a></button>
+							<div class="offset-4 col-8">
+								<button type="submit" class="btn btn-submit">Submit</button>
+								<a href="{{url_for('home')}}" class="btn btn-cancel">Cancel</a>
 							</div>
 						</div>
 	</form>
