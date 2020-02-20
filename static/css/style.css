@@ -12,9 +12,9 @@ body{
 
 /* ---------------- Navbar --------------------*/
 #nav{
-    height: 80px;
-    padding: 15px;
-    background-color: rgb(255, 200, 0);
+    height: 10vh;
+    padding-top: 3vh;
+  background-color: rgb(255, 200, 0);
 }
 .nav-link{
     padding: 10px;
@@ -33,7 +33,7 @@ body{
 }
 /* -------------- Home page buttons -----------*/
 .home-btn{
-    margin-top: 200px;
+    margin-top: 25vh;
     margin-bottom: 10px;
 }
 .btn-outline-warning{
@@ -84,7 +84,7 @@ body{
 .carousel-item{
     width: 100%;
     max-width: 1500px;
-    height: 500px;
+    height: 75vh;
     z-index: -1;
 }
 /* ----------------- Cards --------------------*/
@@ -137,13 +137,19 @@ body{
     font-weight: 600;
     text-decoration: none;
 }
-
+/* -------------Marketplace -------------------*/
+.marketplace-form{
+    margin: 50px auto;
+}
 /* ------------ Add advert ---------------------*/
+.add-advert-page{
+    height: 75vh;
+    padding: 10vh;
+}
 .add-advert-form{
-    margin:50px auto;
+    margin: auto;
     max-width: 600px;
     text-align: left;
-    padding: 20px;
     background-color: rgba(255, 255, 255, 0.4);
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 20px;
@@ -168,6 +174,9 @@ body{
 }
 
 /* --------------- View advert page -------------*/
+.view-advert-page{
+    height: 75vh
+}
 .view-advert-form{
     margin: 50px auto;
     background-color: rgba(255, 255, 255, 0.85);
@@ -207,8 +216,7 @@ body{
 
 /* -------------- Footer ------------------------*/
 #footer{
-    margin-top: 15px;
-    padding: 20px;
+    height: 15vh;
     background-color: rgb(255, 200, 0);
 }
 
