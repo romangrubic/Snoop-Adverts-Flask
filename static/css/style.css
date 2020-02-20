@@ -18,7 +18,48 @@ body{
 }
 /* -------------- Home page buttons -----------*/
 .home-btn{
-    align-items: center;
+    margin-top: 150px;
+}
+.btn-outline-info{
+    width: 100px;
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0;
+}
+.btn-motors{
+    border-radius: 20px 0 0 20px;
+    color: white;
+}
+.btn-home{
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    color: white;
+}
+.btn-pc{
+    border-radius: 0 20px 20px 0;
+    color: white;
+}
+/* -------------- Search bar ------------------*/
+.search-bar{
+    margin: 20px;
+}
+.search-outline{
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}
+#search{
+    text-align: center;
+    width: 450px;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: white;
+    outline: none;
+    font-weight: 600;
+    font-size: 16px;
 }
 /* --------------- Carousel -------------------*/
 .carousel{
@@ -27,7 +68,7 @@ body{
 .carousel-item{
     width: 100%;
     max-width: 1500px;
-    height: 500px;
+    height: 400px;
     z-index: -1;
 }
 /* ----------------- Cards --------------------*/

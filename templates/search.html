@@ -1,7 +1,7 @@
 {% extends 'base.html'%} {% block content %}
 <div>
 	<form action="{{url_for('search')}}">
-		<input id="search" name="search" type="text" class="validate" required>
+		<input id="search" name="search" type="text" class="validate" placeholder="Search by name" required>
     </form>
 </div>
 <h1>Page with Search</h1>
@@ -28,7 +28,7 @@
 				<div class="card">
 					<img src="{{url_for('file', filename=result['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{result.advert_name}}">
 					<div class="card-body">
-						<h5 class="card-title">{{result.advert_name}} - € {{result.price}}</h5>
+						<h5 class="card-title">{{result.advert_name.capitalize()}} - € {{result.price}}</h5>
 						<div class="row">
 							<div class="col-6">
 								<p class="card-text">{{result.location}}</p>
