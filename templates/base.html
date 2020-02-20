@@ -12,15 +12,12 @@
 </head>
 
 <body>
-	<nav>
+	<nav id="nav">
 		<ul class="nav justify-content-center">
 			<li>
-				<a class="navbar-brand" href="{{url_for('home')}}">
-					<img src="{{url_for('static', filename='images/logo/logo.png')}}" width="40" height="40" class="d-inline-block align-top" alt="Adverts">
+				<a class="nav-link" href="{{url_for('home')}}">
+					<img src="{{url_for('static', filename='images/logo/logo.png')}}" width="30" height="30" class="d-inline-block align-top" alt="Adverts"> Adverts
                 </a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="{{url_for('home')}}">Home</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="{{url_for('marketplace')}}">Marketplace</a>
