@@ -45,11 +45,13 @@ def pc_stuff_and_games():
 
 
 # ----------- Filter: Search ------------------------------------
-@app.route('/search')
+@app.route('/search', methods=['GET', 'POST'])
 def search():
     query = request.args.get('search')
     results = mongo.db.advert.find({'advert_name': {"$regex": query}})
-    return render_template("marketplace.html", tittle="Search", results=results)
+    results_number = results.count()
+    return render_template("search.html", tittle="Search", results=results, results_number=results_number)
+
 
 
 # --------- Single advert page ----------------------------------
