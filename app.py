@@ -47,7 +47,7 @@ def pc_stuff_and_games():
 # ----------- Filter: Search ------------------------------------
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    query = request.args.get('search')
+    query = request.args.get('search').upper()
     results = mongo.db.advert.find({'advert_name': {"$regex": query}})
     results_number = results.count()
     return render_template("search.html", tittle="Search", results=results, results_number=results_number)
@@ -78,11 +78,11 @@ def insert_advert():
 
     new_advert = {
         'category_name': request.form.get('category_name'),
-        'advert_name': request.form.get('advert_name'),
-        'advert_description': request.form.get('advert_description'),
+        'advert_name': request.form.get('advert_name').upper(),
+        'advert_description': request.form.get('advert_description').capitalize(),
         'price': request.form.get('price'),
         'contact_info': request.form.get('contact_info'),
-        'location': request.form.get('location'),
+        'location': request.form.get('location').capitalize(),
         'imageURL': advert_image.filename
     }
     advert.insert_one(new_advert)
@@ -118,11 +118,11 @@ def update_advert(advert_id):
     mongo.db.advert.update({'_id': ObjectId(advert_id)},
     {
         'category_name': request.form.get('category_name'),
-        'advert_name': request.form.get('advert_name'),
-        'advert_description': request.form.get('advert_description'),
+        'advert_name': request.form.get('advert_name').upper(),
+        'advert_description': request.form.get('advert_description').capitalize(),
         'price': request.form.get('price'),
         'contact_info': request.form.get('contact_info'),
-        'location': request.form.get('location'),
+        'location': request.form.get('location').capitalize(),
         'imageURL': image_filename
     })
     return redirect(url_for('view_advert', advert_id=advert_id))
