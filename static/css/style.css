@@ -25,7 +25,7 @@ body{
     font-weight: 700;
     font-size: 21px;
     color: black;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 /* -------------- Home page buttons -----------*/
 .home-btn{
@@ -84,9 +84,10 @@ body{
 }
 /* ----------------- Cards --------------------*/
 .col-8,.col-sm-6,.col-md-4,.col-lg-3{
-    padding:5px;
+    padding:0px;
 }
 .card{
+    background-color: rgba(173, 216, 230, 0.5);
     border: 1px solid rgba(0, 0, 0, 0.33);
 }
 .card-img-top{
@@ -96,11 +97,22 @@ body{
     padding: 0 5px 5px;
 }
 .card-title{
-    margin: 5px;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: left;
+    margin: 0 5px;
 }
 .card-text{
+    font-size: 17px;
+    font-weight: 600;
+    text-align: left;
     margin: 8px 5px;
 }
+.text-right{
+    font-size: 20px;
+    margin: 0;
+}
+
 /* ------------ Delete, Edit, See more buttons ------*/
 .delete-btn{
     width: 150px;
