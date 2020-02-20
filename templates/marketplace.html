@@ -1,17 +1,18 @@
 {% extends 'base.html'%} {% block content %}
-<div>
-	<form action="{{url_for('search')}}">
-		<input id="search" name="search" type="text" class="validate" placeholder="Search by name" required>
-    </form>
+<div class="search-bar d-flex justify-content-center">
+	<div class="row search-outline">
+		<form action="{{url_for('search')}}">
+			<input id="search" name="search" type="text" class="validate" placeholder="Search by name" required>
+                            </form>
+	</div>
 </div>
-<h1>Page with Ads</h1>
 <div class="container">
 	<div class="row">
 		{% for advert in adverts %}
 		<div class="col-8 col-sm-6 col-md-4 col-lg-3">
-        <a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn">
-			<div class="card">            
-				<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{advert.advert_name}}">				
+			<a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn">
+				<div class="card">
+					<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{advert.advert_name}}">
 					<div class="card-body">
 						<p class="card-title">{{advert.advert_name.capitalize()}}</p>
 						<div class="row">
@@ -22,9 +23,9 @@
 								<p class="card-text text-right">€ {{advert.price}}</p>
 							</div>
 						</div>
-					</div>				
-			</div>
-            </a>
+					</div>
+				</div>
+			</a>
 		</div>
 		{% endfor %}
 	</div>

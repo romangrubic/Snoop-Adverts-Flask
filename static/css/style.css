@@ -2,7 +2,11 @@
     box-sizing: border-box;
 }
 body{
-    background-color: white;
+    background: url(../images/background/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 /* ---------- Google fonts -------------------*/
 
@@ -30,6 +34,7 @@ body{
 /* -------------- Home page buttons -----------*/
 .home-btn{
     margin-top: 200px;
+    margin-bottom: 10px;
 }
 .btn-outline-info{
     width: 100px;
@@ -55,7 +60,6 @@ body{
 }
 /* -------------- Search bar ------------------*/
 .search-bar{
-    margin: 20px;
 }
 .search-outline{
     padding: 15px;
@@ -87,7 +91,7 @@ body{
     padding:0px;
 }
 .card{
-    background-color: rgba(173, 216, 230, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(0, 0, 0, 0.33);
 }
 .card-img-top{

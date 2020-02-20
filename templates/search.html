@@ -1,10 +1,12 @@
 {% extends 'base.html'%} {% block content %}
-<div>
-	<form action="{{url_for('search')}}">
-		<input id="search" name="search" type="text" class="validate" placeholder="Search by name" required>
-    </form>
+<div class="search-bar d-flex justify-content-center">
+	<div class="row search-outline">
+		<form action="{{url_for('search')}}">
+			<input id="search" name="search" type="text" class="validate" placeholder="Search by name" required>
+                            </form>
+	</div>
 </div>
-<h1>Page with Search</h1>
+<h1>Results for search</h1>
 <div class="container">
 	<div class="row">
 		{% if results_number == 0 %}
@@ -25,21 +27,22 @@
 			{% else %}
 			{% for result in results %}
 			<div class="col-8 col-sm-6 col-md-4 col-lg-3">
-				<div class="card">
-					<img src="{{url_for('file', filename=result['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{result.advert_name}}">
-					<div class="card-body">
-						<h5 class="card-title">{{result.advert_name.capitalize()}} - € {{result.price}}</h5>
-						<div class="row">
-							<div class="col-6">
-								<p class="card-text">{{result.location}}</p>
-							</div>
-							<div class="col-6">
-								<a href="{{url_for('view_advert', advert_id=result._id)}}" class="btn see-more">View
-									ad</a>
+				<a href="{{url_for('view_advert', advert_id=result._id)}}" class="btn">
+					<div class="card">
+						<img src="{{url_for('file', filename=result['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{result.advert_name}}">
+						<div class="card-body">
+							<h5 class="card-title">{{result.advert_name.capitalize()}} - € {{result.price}}</h5>
+							<div class="row">
+								<div class="col-6">
+									<p class="card-text">{{result.location}}</p>
+								</div>
+								<div class="col-6">
+
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 			{% endfor %}
 			{% endif %}
