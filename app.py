@@ -17,7 +17,14 @@ mongo = PyMongo(app)
 # --------- Home page -------------------------------------------
 @app.route('/home')
 def home():
-    return render_template('home.html', tittle="Home")
+    total_view()
+    return render_template('home.html', tittle="Home", views=mongo.db.total_view.find())
+
+
+def total_view():
+    total_view = mongo.db.total_view
+    total_view.update({'_id': ObjectId('5e4edcbd1c9d440000e3b783')}, {'$inc': {'views': 1}})
+    return True
 
 
 # --------- Marketplace page ----------------------------------------
@@ -38,7 +45,7 @@ def home_garden_diy():
     return render_template('marketplace.html', tittle="Home, garden and DIY", adverts=mongo.db.advert.find({'category_name': 'Home, garden, DIY'}))
 
 
-# --------- Filter: Home ------------------------------------
+# --------- Filter: PC stuff-----------------------------------
 @app.route('/pc_stuff_and_games')
 def pc_stuff_and_games():
     return render_template('marketplace.html', tittle="PC stuff and games", adverts=mongo.db.advert.find({'category_name': 'PC stuff and games'}))
@@ -58,7 +65,14 @@ def search():
 @app.route('/view_advert/<advert_id>')
 def view_advert(advert_id):
     advert = mongo.db.advert.find_one({'_id': ObjectId(advert_id)})
+    view_count(advert_id)
     return render_template('view_advert.html', tittle="Advert info", advert=advert)
+
+
+def view_count(advert_id):
+    advert = mongo.db.advert
+    advert.update({'_id': ObjectId(advert_id)}, {'$inc': {'views': 1}})
+    return True
 
 
 # ----------- Add advert ----------------------------------------
@@ -83,7 +97,8 @@ def insert_advert():
         'price': request.form.get('price'),
         'contact_info': request.form.get('contact_info'),
         'location': request.form.get('location'),
-        'imageURL': advert_image.filename
+        'imageURL': advert_image.filename,
+        'views': 0
     }
     advert.insert_one(new_advert)
     return redirect(url_for('marketplace'))
@@ -123,7 +138,8 @@ def update_advert(advert_id):
         'price': request.form.get('price'),
         'contact_info': request.form.get('contact_info'),
         'location': request.form.get('location'),
-        'imageURL': image_filename
+        'imageURL': image_filename,
+        'views': int(request.form.get('views'))
     })
     return redirect(url_for('view_advert', advert_id=advert_id))
 

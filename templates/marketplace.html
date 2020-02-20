@@ -14,7 +14,14 @@
 				<div class="card">
 					<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{advert.advert_name}}">
 					<div class="card-body">
+                    <div class="row">
+                    <div class="col-10">
 						<p class="card-title">{{advert.advert_name.capitalize()}}</p>
+                        </div>
+                        <div class="col-2">
+                        <p>{{advert.views}}</p>
+                        </div>
+                        </div>
 						<div class="row">
 							<div class="col-7">
 								<p class="card-text">{{advert.location}}</p>
