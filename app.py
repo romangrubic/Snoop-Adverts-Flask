@@ -64,7 +64,7 @@ def view_advert(advert_id):
 # ----------- Add advert ----------------------------------------
 @app.route('/add_advert')
 def add_advert():
-    return render_template('add_advert.html', tittle="Add advert", categories=mongo.db.categories.find())
+    return render_template('add_advert.html', tittle="Add advert", categories=mongo.db.categories.find(), counties=mongo.db.county.find())
 
 
 # ---------- Insert advert --------------------------------------
@@ -82,7 +82,7 @@ def insert_advert():
         'advert_description': request.form.get('advert_description').capitalize(),
         'price': request.form.get('price'),
         'contact_info': request.form.get('contact_info'),
-        'location': request.form.get('location').capitalize(),
+        'location': request.form.get('location'),
         'imageURL': advert_image.filename
     }
     advert.insert_one(new_advert)
@@ -100,7 +100,7 @@ def file(filename):
 def edit_advert(advert_id):
     the_advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
     all_categories = mongo.db.categories.find()
-    return render_template('edit_advert.html', tittle="Edit Advert",  advert=the_advert, categories=all_categories)
+    return render_template('edit_advert.html', tittle="Edit Advert",  advert=the_advert, categories=all_categories, counties=mongo.db.county.find())
 
 
 # ------------ Update advert -----------------------------------
@@ -122,7 +122,7 @@ def update_advert(advert_id):
         'advert_description': request.form.get('advert_description').capitalize(),
         'price': request.form.get('price'),
         'contact_info': request.form.get('contact_info'),
-        'location': request.form.get('location').capitalize(),
+        'location': request.form.get('location'),
         'imageURL': image_filename
     })
     return redirect(url_for('view_advert', advert_id=advert_id))

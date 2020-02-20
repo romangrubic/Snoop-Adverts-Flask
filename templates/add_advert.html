@@ -52,23 +52,28 @@
 							<label>Location</label>
 						</div>
 						<div class="col-9">
-							<input id="location" name="location" required>
-                        </div>
+							<select class="input-field" id="location" name="location" required>
+                                <option value="" disabled selected>Choose one</option>
+						            {% for county in counties %}
+                                    <option value="{{county.name}}" required>{{county.name}}</option>
+                                    {% endfor %}
+                            </select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="advert_image">Click to upload image</label>
+						</div>
+						<div class="col-9">
+							<input type="file" id="advert_image" name="advert_image" accept="image/*" required>
+                            </div>
 						</div>
 						<div class="row">
-							<div class="col-3">
-								<label for="advert_image">Click to upload image</label>
+							<div class="offset-3 col-9">
+								<button type="submit" class="">Submit</button>
+								<button><a href="{{url_for('home')}}">Cancel</a></button>
 							</div>
-							<div class="col-9">
-								<input type="file" id="advert_image" name="advert_image" accept="image/*" required>
-                            </div>
-							</div>
-							<div class="row">
-								<div class="offset-3 col-9">
-										<button type="submit" class="">Submit</button>
-										<button><a href="{{url_for('home')}}">Cancel</a></button>
-								</div>
-							</div>
+						</div>
 	</form>
 </div>
 {% endblock %}

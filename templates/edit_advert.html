@@ -56,7 +56,15 @@
                             <label>Location</label>
                         </div>
 						<div class="col-9">
-                            <input id="location" name="location"  value="{{advert.location}}" required>
+                            <select class="input-field" id="location" name="location" required>
+						            {% for county in counties %}
+                                        {% if county.name == county.name%}
+                                            <option value="{{county.name}}" selected >{{county.name}}</option>
+                                        {% else %}
+                                        <option value="{{county.name}}" required>{{county.name}}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                            </select>
                         </div>
 					</div>
 						<div class="row">
