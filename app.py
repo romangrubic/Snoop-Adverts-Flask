@@ -79,7 +79,7 @@ def insert_advert():
     new_advert = {
         'category_name': request.form.get('category_name'),
         'advert_name': request.form.get('advert_name').upper(),
-        'advert_description': request.form.get('advert_description').capitalize(),
+        'advert_description': request.form.get('advert_description'),
         'price': request.form.get('price'),
         'contact_info': request.form.get('contact_info'),
         'location': request.form.get('location'),
@@ -119,7 +119,7 @@ def update_advert(advert_id):
     {
         'category_name': request.form.get('category_name'),
         'advert_name': request.form.get('advert_name').upper(),
-        'advert_description': request.form.get('advert_description').capitalize(),
+        'advert_description': request.form.get('advert_description'),
         'price': request.form.get('price'),
         'contact_info': request.form.get('contact_info'),
         'location': request.form.get('location'),

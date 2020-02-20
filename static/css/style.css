@@ -60,6 +60,7 @@ body{
 }
 /* -------------- Search bar ------------------*/
 .search-bar{
+    margin: 25px;
 }
 .search-outline{
     padding: 15px;
@@ -94,9 +95,6 @@ body{
     background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(0, 0, 0, 0.33);
 }
-.card-img-top{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.33);
-}
 .card-body{
     padding: 0 5px 5px;
 }
@@ -116,7 +114,7 @@ body{
 /* ------------ Delete, Edit, Submit, Cancel buttons ------*/
 .delete-btn{
     width: 150px;
-    margin: 5px;
+    margin: 5px 0 5px auto;
     font-weight: 600;
     background-color: rgb(255, 38, 0);
 }
@@ -169,8 +167,48 @@ body{
     padding: 10px 5px 5px;
 }
 
+/* --------------- View advert page -------------*/
+.view-advert-form{
+    margin: 50px auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px 20px 20px 20px;
+
+}
+.col-6{
+    padding: 0;
+}
+.advert-name{
+    font-weight: 600;
+    font-size: 60px;
+    padding: 30px;
+    letter-spacing: 2px;
+}
+.advert-price{
+    padding: 25px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 35px
+}
+.advert-location,.advert-contact{
+    padding: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    margin: 0;
+}
+.advert-description{
+    padding: 30px;
+    font-weight: 500;
+    font-size: 18px;
+}
+.advert-buttons{
+    margin: auto;
+}
+
 /* -------------- Footer ------------------------*/
 #footer{
+    margin-top: 15px;
+    padding: 20px;
     background-color: rgb(255, 200, 0);
 }
 

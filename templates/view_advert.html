@@ -6,28 +6,29 @@
                             </form>
 	</div>
 </div>
-<h1>Page with Advert info</h1>
-<div class="container">
+<div class="container view-advert-form">
 	<div class="row">
 		<div class="col-6">
-			<img src="{{url_for('file', filename=advert['imageURL'])}}" width="31%" class="card-img-top" alt="{{advert.advert_name}}">
+			<img src="{{url_for('file', filename=advert['imageURL'])}}" height="400px" class="card-img-top" alt="{{advert.advert_name}}">
 		</div>
 			<div class="col-6">
-				<h1>{{advert.advert_name}}</h1>
-                <p>{{advert.location}}</p>
-                <p>€ {{advert.price}}</p>
+				<p class="advert-name">{{advert.advert_name.capitalize()}}</p>
+                <p class="advert-price">€ {{advert.price}}</p>
+                <p class="advert-location">Location: {{advert.location}}</p>
+                <p class="advert-contact">Contact info: {{advert.contact_info}}</p>                
 			</div>
 		</div>
 		<div class="row">
-        <div class="col-12">
-        <p>{{advert.advert_description}}</p>
+        <div class="offset-2 col-8">
+        <p class="advert-description">{{advert.advert_description}}</p>
         </div>
         </div>
-		<div class="row">
+</div>
+		<div class="row advert-buttons">
             <button type="button" class="btn delete-btn" data-toggle="modal" data-target="#exampleModal">Delete</button>
 			<a href="{{url_for('edit_advert', advert_id=advert._id)}}" class="btn edit-btn">Edit</a>
         </div>
-	</div>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
