@@ -12,7 +12,7 @@ body{
 
 /* ---------------- Navbar --------------------*/
 #nav{
-    height: 10vh;
+    height: 80px;
     background-color: rgb(255, 200, 0);
     border-bottom: 2px solid rgba(0, 0, 0, 0.5); 
 }
@@ -36,7 +36,7 @@ body{
 }
 /* -------------- Home page buttons -----------*/
 .home-btn{
-    margin-top: 20vh;
+    margin-top: 200px;
     margin-bottom: 10px;
 }
 .btn-outline-warning{
@@ -88,7 +88,7 @@ body{
 .carousel-home{
     width: 100%;
     max-width: 1500px;
-    height: calc(48vh - 2px);
+    height: 500px;
     z-index: -1;
 }
 /* -------------- Most viewed ad -------------*/
@@ -98,20 +98,22 @@ body{
     font-weight: 600;
     color: black;
 }
+.top-ad-section{
+    padding: 5px 20vw;
+}
 .most-viewed-ad{
-    height: 27vh;
-    padding: 1vh 35vw;
+    height: 350px;
 }
 .border-top-ad{
 border: 3px solid rgba(0, 0, 0, 0.5);
 border-radius: 20px;
 }
 .carousel-top-ad{
-    height: 17vh;
+    height: 250px;
 }
 .carousel-top-ad-img{
     width: 100%;
-    height: calc(18vh - 4px);
+    height: 250px;
     border-right: 1px solid black;
 }
 .carousel-caption{
@@ -143,8 +145,11 @@ margin:0;
 .no-padding{
     padding: 0;
 }
-.padding-right{
-    padding: 0 3px 0 0 ;
+.no-padding-right{
+    padding-right: 0px
+}
+.no-padding-left{
+    padding-left: 0px;
 }
 .card-body{
     padding: 0 5px 5px;
@@ -268,7 +273,7 @@ padding: 5px
 
 /* -------------- Footer ------------------------*/
 #footer{
-    height: 15vh;
+    height: 150px;
     padding: 2vh;
     background-color: rgb(255, 200, 0);
     border-top: 2px solid rgba(0, 0, 0, 0.5); 

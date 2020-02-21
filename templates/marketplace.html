@@ -28,19 +28,19 @@
 								<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{advert.advert_name}}">
 								<div class="card-body">
 									<div class="row">
-										<div class="col-10">
+										<div class="col-9 no-padding-right">
 											<p class="card-title">{{advert.advert_name.capitalize()}}</p>
 										</div>
-										<div class="col-2 padding-right">
+										<div class="col-3 text-left">
 											<img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views">
                         {{advert.views}}
                         </div>
 										</div>
 										<div class="row">
-											<div class="col-7">
+											<div class="col-7 no-padding-right">
 												<p class="card-text">{{advert.location}}</p>
 											</div>
-											<div class="col-5">
+											<div class="col-5 no-padding">
 												<p class="card-text">€ {{advert.price}}</p>
 											</div>
 										</div>

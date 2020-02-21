@@ -26,46 +26,55 @@
 			</div>
 		</div>
 
-        <div class="most-viewed-ad">		
-						<p class="text-center top-ad-header no-margin">Top 5 Ads</p>
-						<div id="carousel-top-ad" class="carousel slide" data-ride="carousel" data-interval="3000">
-							<div class="border-top-ad carousel-inner">
-								<div class="carousel-item carousel-top-ad active">
-									<img src="{{url_for('static', filename='images/carousel/image-2.jpeg')}}" alt="...">
-									<div class="carousel-caption d-none d-md-block">
-										<h5>Reklama</h5>
-										<p>Looking for something?</p>
-									</div>
+		<div class="row no-margin most-viewed-ad">
+			<div class="col-1 no-padding">
+				<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="350px" alt="side-advert" display>
+		</div>
+				<div class="col-10 top-ad-section">
+					<p class="text-center top-ad-header">Top 5 Ads</p>
+					<div id="carousel-top-ad" class="carousel slide" data-ride="carousel" data-interval="3000">
+						<div class="border-top-ad carousel-inner">
+							<div class="carousel-item carousel-top-ad active">
+								<img src="{{url_for('static', filename='images/carousel/image-2.jpeg')}}" alt="...">
+								<div class="carousel-caption d-none d-md-block">
+									<h5>Reklama</h5>
+									<p>Looking for something?</p>
 								</div>
-								{% for top_ad in top_ads %}
-								<div class="carousel-item carousel-top-ad">
-									<div class="row no-padding no-margin bg-color">
-										<div class="col-6">
-											<a href="{{url_for('view_advert', advert_id=top_ad._id)}}"
-												class="btn no-padding">
-												<img src="{{url_for('file', filename=top_ad['imageURL'])}}" class="carousel-top-ad-img" alt="{{top_ad.advert_name}}">
-                                </a>
-										</div>
-
-										<div class="col-6">
-											<a href="{{url_for('view_advert', advert_id=top_ad._id)}}"
-												class="btn no-padding">
-												<div class="carousel-caption">
-													<h2>{{top_ad.advert_name.capitalize()}}</h2>
-													<span class="top-ad-text">€ {{top_ad.price}}<br></span>
-													<span class="top-ad-text">{{top_ad.location}}<br></span>
-													<span class="top-ad-text"><img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views"> {{top_ad.views}}</span>
-												</div>
-
-											</a>
-										</div>
-
-									</div>
-								</div>
-								{% endfor %}
 							</div>
+							{% for top_ad in top_ads %}
+							<div class="carousel-item carousel-top-ad">
+								<div class="row no-padding no-margin bg-color">
+									<div class="col-6">
+										<a href="{{url_for('view_advert', advert_id=top_ad._id)}}"
+											class="btn no-padding">
+											<img src="{{url_for('file', filename=top_ad['imageURL'])}}" class="carousel-top-ad-img" alt="{{top_ad.advert_name}}">
+                                </a>
+									</div>
+
+									<div class="col-6">
+										<a href="{{url_for('view_advert', advert_id=top_ad._id)}}"
+											class="btn no-padding">
+											<div class="carousel-caption">
+												<h2>{{top_ad.advert_name.capitalize()}}</h2>
+												<span class="top-ad-text">€ {{top_ad.price}}<br></span>
+												<span class="top-ad-text">{{top_ad.location}}<br></span>
+												<span class="top-ad-text"><img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views"> {{top_ad.views}}</span>
+											</div>
+
+										</a>
+									</div>
+
+								</div>
+							</div>
+							{% endfor %}
 						</div>
-				
-        </div>
-	
+					</div>
+
+
+				</div>
+				<div class="col-1 no-padding">
+					<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="350px" alt="side-advert" display>
+		</div>
+				</div>
+
 				{% endblock %}
