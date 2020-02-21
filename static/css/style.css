@@ -190,7 +190,9 @@ margin:0;
 .marketplace-form{
     margin: 50px auto;
 }
-
+.marketplace-btn{
+padding: 5px 
+}
 
 /* ------------ Add advert ---------------------*/
 .add-advert-page{
