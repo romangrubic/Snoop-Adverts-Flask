@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, DESCENDING
 from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
@@ -18,7 +18,10 @@ mongo = PyMongo(app)
 @app.route('/home')
 def home():
     total_view()
-    return render_template('home.html', tittle="Home", views=mongo.db.total_view.find())
+    return render_template('home.html', 
+                        tittle="Home", 
+                        views=mongo.db.total_view.find(),
+                        top_ads=mongo.db.advert.find().sort('views', DESCENDING).limit(4))
 
 
 def total_view():
