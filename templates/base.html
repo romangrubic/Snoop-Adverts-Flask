@@ -35,7 +35,7 @@
 		<div class="row">
 			<div class="col-3 text-center vertical-align">
 				{% for view in views %}
-				<h5>This page has been visited {{view.views}} times!<br><br> Thank you!</h5>
+				<h5>This page has been visited {{view.views}} times!<br> Thank you!</h5>
 				{% endfor %}
 			</div>
             <div class="col-6 text-center vertical-align-center">
@@ -61,7 +61,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h2 class="modal-title" id="contactModalheading">Feedback info</h2>
+					<h2 class="modal-title" id="contactModalheading">Ask me!</h2>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -70,7 +70,7 @@
 					<form id="contactForm">
 						<input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
 						<input type="email" name="emailaddress" class="form-control" id="emailaddress" minlength="10" pattern=".+.com" placeholder="Email adress" required/>
-						<textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Write your question or project idea and click submit!" required></textarea>
+						<textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Write your question and click submit!" required></textarea>
 						<button form="contactForm" type="submit" id="submit" class="btn btn-danger" >Submit!</button>
 					</form>
 				</div>

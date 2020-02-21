@@ -98,16 +98,14 @@ body{
 }
 .most-viewed-ad{
     height: 27vh;
-    padding: 0 35vw 1vh 35vw;
-
+    padding: 1vh 35vw;
 }
 .border-top-ad{
 border: 3px solid rgba(0, 0, 0, 0.5);
 border-radius: 20px;
 }
 .carousel-top-ad{
-    height: 18vh;
-    width: 100%;
+    height: 17vh;
 }
 .carousel-top-ad-img{
     width: 100%;
@@ -192,6 +190,8 @@ margin:0;
 .marketplace-form{
     margin: 50px auto;
 }
+
+
 /* ------------ Add advert ---------------------*/
 .add-advert-page{
     height: 75vh;

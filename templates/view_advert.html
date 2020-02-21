@@ -1,54 +1,68 @@
 {% extends 'base.html'%} {% block content %}
-<div class="view-advert-page">
-<div class="search-bar d-flex justify-content-center">
-	<div class="row search-outline">
-		<form action="{{url_for('search')}}">
-			<input id="search" name="search" type="text" class="validate" placeholder="Search by name" required>
-                            </form>
-	</div>
-</div>
-<div class="container view-advert-form">
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-6">
-			<img src="{{url_for('file', filename=advert['imageURL'])}}" height="400px" class="card-img-top" alt="{{advert.advert_name}}">
+		<div class="col-1 no-padding">
+			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" display>
 		</div>
-			<div class="col-6">
-				<p class="advert-name">{{advert.advert_name.capitalize()}}</p>
-                <p class="advert-price">€ {{advert.price}}</p>
-                <p class="advert-location">Location: {{advert.location}}</p>
-                <p class="advert-contact">Contact info: {{advert.contact_info}}</p>                
-			</div>
+			<div class="col-10">
+				<div class="view-advert-page">
+					<div class="search-bar d-flex justify-content-center">
+						<div class="row search-outline">
+							<form action="{{url_for('search')}}">
+								<input id="search" name="search" type="text" class="validate" placeholder="Search by name" required>
+                            </form>
+						</div>
+					</div>
+					<div class="container view-advert-form">
+						<div class="row">
+							<div class="col-6">
+								<img src="{{url_for('file', filename=advert['imageURL'])}}" height="400px" class="card-img-top" alt="{{advert.advert_name}}">
 		</div>
-		<div class="row">
-        <div class="offset-2 col-8">
-        <p class="advert-description">{{advert.advert_description}}</p>
-        </div>
-        </div>
-</div>
-		<div class="row advert-buttons">
-            <button type="button" class="btn delete-btn" data-toggle="modal" data-target="#exampleModal">Delete</button>
-			<a href="{{url_for('edit_advert', advert_id=advert._id)}}" class="btn edit-btn">Edit</a>
-        </div>
+								<div class="col-6">
+									<p class="advert-name">{{advert.advert_name.capitalize()}}</p>
+									<p class="advert-price">€ {{advert.price}}</p>
+									<p class="advert-location">Location: {{advert.location}}</p>
+									<p class="advert-contact">Contact info: {{advert.contact_info}}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="offset-2 col-8">
+									<p class="advert-description">{{advert.advert_description}}</p>
+								</div>
+							</div>
+						</div>
+						<div class="row advert-buttons">
+							<button type="button" class="btn delete-btn" data-toggle="modal" data-target="#exampleModal">Delete</button>
+							<a href="{{url_for('edit_advert', advert_id=advert._id)}}" class="btn edit-btn">Edit</a>
+						</div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Milestone project</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+							aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Milestone project</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-        <h3>This advert is part of my milestone project for CodeInstitute.</h3>
-        <p>Are you sure you want to delete this advert?</p>
-      </div>
-      <div class="modal-footer">
-        <a href="{{url_for('delete_advert', advert_id=advert._id)}}" class="btn delete-btn">Delete</a>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-	{% endblock %}
+									</div>
+									<div class="modal-body">
+										<h3>This advert is part of my milestone project for CodeInstitute.</h3>
+										<p>Are you sure you want to delete this advert?</p>
+									</div>
+									<div class="modal-footer">
+										<a href="{{url_for('delete_advert', advert_id=advert._id)}}"
+											class="btn delete-btn">Delete</a>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-1 no-padding">
+					<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" display>
+		</div>
+				</div>
+			</div>
+			{% endblock %}
