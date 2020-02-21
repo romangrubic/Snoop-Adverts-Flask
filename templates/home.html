@@ -1,12 +1,12 @@
 {% extends 'base.html'%} {% block content %}
 
 <div class="container-fluid">
-	<div id="carousel" class="row carousel slide" data-ride="carousel" data-pause="False" data-interval="5000">
+	<div id="carousel" class="row carousel slide" data-ride="carousel" data-pause="False" data-interval="8000">
 		<div class="carousel-inner">
-			<div class="carousel-item active">
+			<div class="carousel-item carousel-home active">
 				<img src="{{url_for('static', filename='images/carousel/image-2.jpeg')}}" alt="Second slide">
             </div>
-				<div class="carousel-item">
+				<div class="carousel-item carousel-home">
 					<img src="{{url_for('static', filename='images/carousel/image-3.jpeg')}}" alt="Third slide">
             </div>
 					<div class="home-btn d-flex justify-content-center">
@@ -25,28 +25,42 @@
 				</div>
 			</div>
 		</div>
-		<div class="most-viewed-ad">			
-			<div class="row">
-            {% for top_ad in top_ads %}
-				<div class="col-8 col-sm-6 col-md-4 col-lg-3">
-                
-					<div class="card">
-							<div class="card-body">
-								<div class="row">
-									<div class="col-10">
-										<p class="card-title">{{top_ad.advert_name.capitalize()}}</p>
-									</div>
-									<div class="col-2 padding-right">
-										<img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views">
-                                            {{top_ad.views}}
-                                    </div>
-									</div>
-								</div>
-							</div>
-						
+		<div class="most-viewed-ad">
+			<p class="text-center top-ad-header no-margin">Top 5 Ads</p>
+			<div id="carousel-top-ad" class="carousel slide" data-ride="carousel" data-interval="3000">
+				<div class="carousel-inner">
+					<div class="carousel-item carousel-top-ad active">
+						<img src="{{url_for('static', filename='images/carousel/image-2.jpeg')}}" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<h5>Reklama</h5>
+							<p>Looking for something?</p>
+						</div>
 					</div>
-                    {% endfor %}
+					{% for top_ad in top_ads %}
+					<div class="carousel-item carousel-top-ad">
+						<div class="row no-padding no-margin bg-color">
+							<div class="col-6">
+								<a href="{{url_for('view_advert', advert_id=top_ad._id)}}" class="btn no-padding">
+									<img src="{{url_for('file', filename=top_ad['imageURL'])}}" class="carousel-top-ad-img" alt="{{top_ad.advert_name}}">
+                                </a>
+							</div>
+							
+                            <div class="col-6">
+								<a href="{{url_for('view_advert', advert_id=top_ad._id)}}" class="btn no-padding">                                
+									<div class="carousel-caption">
+										<h2>{{top_ad.advert_name.capitalize()}}</h2>
+										<span class="top-ad-text">€ {{top_ad.price}}<br></span>
+										<span class="top-ad-text">{{top_ad.location}}<br></span>
+										<span class="top-ad-text"><img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views"> {{top_ad.views}}</span>
+									</div>
+                               
+								</a>
+                                     </div>
+							
+						</div>
+					</div>
+					{% endfor %}
 				</div>
-				
 			</div>
-			{% endblock %}
+		</div>
+		{% endblock %}
