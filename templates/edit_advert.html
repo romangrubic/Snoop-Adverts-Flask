@@ -1,6 +1,5 @@
 {% extends 'base.html'%} {% block content %}
-
-<h3>Edit Advert page</h3>
+<div class="add-advert-page">
 <div class="add-advert-form">
 	<form action="{{ url_for('update_advert', advert_id=advert._id) }}" method="POST" enctype="multipart/form-data">
 		<div class="row">
@@ -93,6 +92,7 @@
 							</div>
 
 	</form>
+</div>
 </div>
 
 {% endblock %}

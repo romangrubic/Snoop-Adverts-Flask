@@ -10,16 +10,18 @@
 	<div class="row">
 		{% for advert in adverts %}
 		<div class="col-8 col-sm-6 col-md-4 col-lg-3">
-			<a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn">
+			
 				<div class="card">
+                    <a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn no-padding">
 					<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{advert.advert_name}}">
 					<div class="card-body">
                     <div class="row">
                     <div class="col-10">
 						<p class="card-title">{{advert.advert_name.capitalize()}}</p>
                         </div>
-                        <div class="col-2">
-                        <p>{{advert.views}}</p>
+                        <div class="col-2 padding-right">
+                        <img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views">
+                        {{advert.views}}
                         </div>
                         </div>
 						<div class="row">
@@ -31,8 +33,9 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				
 			</a>
+            </div>
 		</div>
 		{% endfor %}
 	</div>
