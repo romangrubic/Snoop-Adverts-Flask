@@ -33,14 +33,15 @@
 	{% endblock %}
 	<footer id="footer">
 		<div class="row">
-			<div class="col-4">
+			<div class="col-3 text-center vertical-align">
 				{% for view in views %}
-				<h5>This page has been visited {{view.views}} times! Thank you!</h5>
+				<h5>This page has been visited {{view.views}} times!<br><br> Thank you!</h5>
 				{% endfor %}
 			</div>
-            <div class="col-4">
+            <div class="col-6 text-center vertical-align-center">
+            <h4>© 2020 For educational purposes</h4>
             </div>
-            <div class="col-4 text-center">
+            <div class="col-3 text-center">
                 <h5 >Connect with me!</h5>
                 <ul class="no-padding">
                   <li class="list-inline footer-icons"><a href="https://www.linkedin.com/in/roman-grubic-b835ab67/" target="-blank">
@@ -60,7 +61,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h2 class="modal-title" id="contactModalheading">I'm looking for new projects!</h2>
+					<h2 class="modal-title" id="contactModalheading">Feedback info</h2>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -68,7 +69,7 @@
 				<div class="modal-body">
 					<form id="contactForm">
 						<input type="text" name="name" class="form-control" id="fullname" placeholder="Name" required/>
-						<input type="email" name="emailaddress" class="form-control" id="emailaddress" minlength="10" pattern=".+.com" placeholder="Email" required/>
+						<input type="email" name="emailaddress" class="form-control" id="emailaddress" minlength="10" pattern=".+.com" placeholder="Email adress" required/>
 						<textarea rows="5" name="projectsummary" class="form-control" id="projectsummary" placeholder="Write your question or project idea and click submit!" required></textarea>
 						<button form="contactForm" type="submit" id="submit" class="btn btn-danger" >Submit!</button>
 					</form>

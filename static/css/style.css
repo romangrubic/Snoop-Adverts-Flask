@@ -94,10 +94,16 @@ body{
     padding: 0.5vh;
     font-size: 4vh;
     font-weight: 600;
+    color: black;
 }
 .most-viewed-ad{
     height: 27vh;
-    padding: 0 30vw 1vh 30vw;
+    padding: 0 35vw 1vh 35vw;
+
+}
+.border-top-ad{
+border: 3px solid rgba(0, 0, 0, 0.5);
+border-radius: 20px;
 }
 .carousel-top-ad{
     height: 18vh;
@@ -119,7 +125,6 @@ text-align: center;
     font-size: 18px;
 }
 .bg-color{
-border: 1px solid black;
 background-color: rgba(255, 255, 255, 0.75);
 }
 .no-margin{
@@ -284,6 +289,33 @@ margin:0;
 .footer-icon:hover{
     background-color: rgba(255, 64, 64, 0.9);
 }
+.vertical-align{
+padding-top: 2vh;
+}
+.vertical-align-center{
+padding-top: 3vh;
+}
+
+/* --- Modals --- */
+.modal-body {
+    text-align: center;
+}
+.modal-body > p {
+    margin-bottom:  15px;
+    font-size: 20px;
+}
+.modal-body > h2 {
+    font-size: 50px;
+    margin-top: 30px;
+}
+.modal-body > h4 {
+    font-weight: 500;
+}
+.form-control{
+margin: 8px 0;
+}
+
+
 
 /* --------- Media queries ---------------*/
 @media only screen and (max-width: 575px) {
