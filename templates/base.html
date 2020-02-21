@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Adverts - {{ tittle }}</title>
 	<link rel="icon" type="image/png" sizes="16x16" href="{{url_for('static', filename='images/logo/logo.png')}}">
+    <script src="https://kit.fontawesome.com/41a908fb89.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css">
 </head>
@@ -22,21 +23,37 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{{url_for('marketplace')}}">Marketplace</a>
 			</li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url_for('add_advert')}}">Add advert</a>
-            </li>
+			<li class="nav-item">
+				<a class="nav-link" href="{{url_for('add_advert')}}">Add advert</a>
+			</li>
 		</ul>
 	</nav>
 	{% block content %}
 	{% endblock %}
-    <footer id="footer" >
-        <div>
-            <h1>Footer</h1>
-            {% for view in views %}
-            <h5>This page has been visited {{view.views}} times! Thank you!</h5>
-            {% endfor %}
-        </div>
-    </footer>
+	<footer id="footer">
+		<div class="row">
+			<div class="col-4">
+				{% for view in views %}
+				<h5>This page has been visited {{view.views}} times! Thank you!</h5>
+				{% endfor %}
+			</div>
+            <div class="col-4">
+            </div>
+            <div class="col-4 text-center">
+                <h5 >Connect with me!</h5>
+                <ul class="no-padding">
+                  <li class="list-inline footer-icons"><a href="https://www.linkedin.com/in/roman-grubic-b835ab67/" target="-blank">
+						<i class="fab fa-linkedin  footer-icon" aria-hidden="true"></i>
+						<span class="sr-only">LinkedIn</span></a></li>
+                  <li class="list-inline footer-icons"><a href="https://github.com/romangrubic" target="-blank">
+						<i class="fab fa-github  footer-icon" aria-hidden="true"></i>
+						<span class="sr-only">Github</span></a></li>
+                  <li class="list-inline footer-icons"><i class="fas fa-envelope-open-text footer-icon" aria-hidden="true" data-toggle="modal" data-target="#contactModal"></i>
+					<span class="sr-only">E-mail</span></li>
+                </ul>
+            </div>
+		</div>
+	</footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
