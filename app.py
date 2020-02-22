@@ -5,6 +5,7 @@ from bson.objectid import ObjectId
 from os import path
 if path.exists("env.py"):
     import env
+import math
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'adverts'
@@ -12,6 +13,7 @@ app.config["MONGO_URI"] = os.environ.get('MONGO_DATA_URI')
 
 mongo = PyMongo(app)
 
+ADS_PER_PAGE = 12
 
 @app.route('/')
 # --------- Home page -------------------------------------------
@@ -19,9 +21,9 @@ mongo = PyMongo(app)
 def home():
     total_view()
     return render_template('home.html', 
-                        tittle="Home", 
-                        views=mongo.db.total_view.find(),
-                        top_ads=mongo.db.advert.find().sort('views', DESCENDING).limit(4))
+                            tittle="Home", 
+                            views=mongo.db.total_view.find(),
+                            top_ads=mongo.db.advert.find().sort('views', DESCENDING).limit(4))
 
 
 def total_view():
@@ -33,7 +35,13 @@ def total_view():
 # --------- Marketplace page ----------------------------------------
 @app.route('/marketplace')
 def marketplace():
-    return render_template('marketplace.html', tittle="Marketplace", adverts=mongo.db.advert.find())
+    page_number = int(request.args.get('page', 1))
+    ads_to_skip = (page_number - 1) * ADS_PER_PAGE
+    ads_count = mongo.db.advert.find().count()
+    page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
+    page_numbers = range(1, page_count + 1)
+    ads_on_page = mongo.db.advert.find().skip(ads_to_skip).limit(ADS_PER_PAGE)
+    return render_template('marketplace.html', tittle="Marketplace", adverts=ads_on_page, ads=ads_on_page, page=page_number, pages=page_numbers, total=page_count)
 
 
 # --------- Filter: Motors ------------------------------------
