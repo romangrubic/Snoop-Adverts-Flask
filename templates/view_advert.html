@@ -21,18 +21,18 @@
 					</div>
 					<div class="container view-advert-form">
 						<div class="row">
-							<div class="col-6">
-								<img src="{{url_for('file', filename=advert['imageURL'])}}" height="400px" class="card-img-top" alt="{{advert.advert_name}}">
+							<div class="col-12 col-lg-7 no-padding">
+								<img src="{{url_for('file', filename=advert['imageURL'])}}" height="400px" class="card-img-top card-img-view" alt="{{advert.advert_name}}">
 		</div>
-								<div class="col-6">
-									<p class="advert-name">{{advert.advert_name.capitalize()}}</p>
-									<p class="advert-price">€ {{advert.price}}</p>
+								<div class="col-12 col-lg-5 no-padding">
+									<p class="advert-name no-margin">{{advert.advert_name.capitalize()}}</p>
+									<p class="advert-price no-margin">€ {{advert.price}}</p>
 									<p class="advert-location">Location: {{advert.location}}</p>
 									<p class="advert-contact">Contact info: {{advert.contact_info}}</p>
 								</div>
 							</div>
 							<div class="row">
-								<div class="offset-2 col-8">
+								<div class="col-12 no-padding">
 									<p class="advert-description">{{advert.advert_description}}</p>
 								</div>
 							</div>
