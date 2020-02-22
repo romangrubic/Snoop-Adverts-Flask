@@ -99,7 +99,7 @@ body{
     color: black;
 }
 .top-ad-section{
-    padding: 5px 20vw;
+    padding: 5px 15vw;
 }
 .most-viewed-ad{
     height: 350px;
@@ -118,7 +118,7 @@ border-radius: 20px;
 }
 .carousel-caption{
 margin: 0;
-padding: 0;
+padding-bottom: 50px;
 color: black;
 text-align: center;
 }
@@ -361,6 +361,27 @@ margin: 8px 0;
   .card-img-view{
       max-height: 200px;
   }
+}
+
+@media only screen and (max-width: 992px) {
+    .top-ad-section{
+        padding: 5px 7.5vw;
+    }
+    .top-ad-header{
+        padding-top: 20px;
+    }
+    .carousel-top-ad{
+        max-height: 200px;
+    }
+    .carousel-top-ad-img{
+        height: 200px;
+    }
+    .carousel-caption{
+        padding-bottom: 25px;
+    }
+    .border-top-ad{
+        margin-top: 30px;
+    }
 }
 
 @media only screen and (min-width: 992px) {
