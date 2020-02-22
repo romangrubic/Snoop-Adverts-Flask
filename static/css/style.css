@@ -286,7 +286,7 @@ padding: 5px
 }
 /* -------------- Footer ------------------------*/
 #footer{
-    height: 150px;
+    height: 185px;
     padding: 2vh;
     background-color: rgb(255, 200, 0);
     border-top: 2px solid rgba(0, 0, 0, 0.5); 
@@ -313,10 +313,10 @@ padding: 5px
     background-color: rgba(255, 64, 64, 0.9);
 }
 .vertical-align{
-padding-top: 2vh;
+padding-top: 45px;
 }
 .vertical-align-center{
-padding-top: 3vh;
+padding-top: 25px;
 }
 
 /* --- Modals --- */
@@ -344,5 +344,11 @@ margin: 8px 0;
 @media only screen and (max-width: 575px) {
    .col-8,.col-sm-6,.col-md-4,.col-lg-3{
     margin:auto;
+  }
+  #footer {
+      height: 265px;
+  }
+  #search{
+      width: 300px;
   }
 }

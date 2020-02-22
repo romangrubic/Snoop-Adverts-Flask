@@ -18,7 +18,7 @@
 		<ul class="nav fixed-top justify-content-center">
 			<li>
 				<a class="nav-link" href="{{url_for('home')}}">
-					<img src="{{url_for('static', filename='images/logo/logo.png')}}" width="30" height="30" class="d-inline-block align-top" alt="Adverts"> Adverts
+					<img src="{{url_for('static', filename='images/logo/logo.png')}}" width="45" height="35" class="d-inline-block align-top" alt="Adverts">
                 </a>
 			</li>
 			<li class="nav-item">
@@ -32,14 +32,25 @@
 	{% block content %}
 	{% endblock %}
 	<footer id="footer">
-		<div class="row no-margin">
-			<div class="d-sm-none d-md-block col-3 text-center vertical-align">
-				{% for view in views %}
-				<h5>This page has been visited {{view.views}} times!<br> Thank you!</h5>
+        <div class="row no-margin d-none d-md-block text-center">
+        {% for view in views %}
+				<h5>This page has been visited {{view.views}} times! Thank you!</h5>
 				{% endfor %}
+        </div>
+		<div class="row no-margin">
+			<div class="d-none d-md-block col-3 text-center vertical-align-center">
+				<h5>My projects</h5>
+                <ul class="no-padding">
+                  <li class="list-inline footer-icons"><a href="https://romangrubic.github.io/weather-app-openweather/" target="-blank">
+						<i class="fas fa-cloud-sun-rain  footer-icon" aria-hidden="true"></i>
+						<span class="sr-only">Weather 360° </span></a></li>
+                  <li class="list-inline footer-icons"><a href="https://romangrubic.github.io/memory-game-js/" target="-blank">
+						<i class="fas fa-clipboard-list  footer-icon" aria-hidden="true"></i>
+						<span class="sr-only">Github</span></a></li>
+                </ul>
 			</div>
-            <div class="col-6 text-center vertical-align-center">
-            <h4>© 2020 For educational purposes</h4>
+            <div class="col-sm-6 col-6 text-center vertical-align">
+            <h4>© 2020 for Education</h4>
             </div>
             <div class="col-sm-6 col-md-3 text-center vertical-align-center no-padding">
                 <h5 >Connect with me!</h5>
