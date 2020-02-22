@@ -29,7 +29,7 @@
 				<label for="advert_name">Name</label>
 			</div>
 			<div class="col-9 inputs">
-				<input class="add-inputs" id="advert_name" name="advert_name" type="text" value="{{advert.advert_name}}" required>
+				<input class="add-inputs" id="advert_name" name="advert_name" type="text" value="{{advert.advert_name}}" required maxlength="9"/>
                 </div>
 			</div>
 			<div class="row">
@@ -45,7 +45,7 @@
 					<label for="price">Price</label>
 				</div>
 				<div class="col-9 inputs">
-					<input class="add-inputs" id="price" name="price" type="text" value="{{advert.price}}" required>
+					<input class="add-inputs" id="price" name="price" type="number" min="0" max="99999" value="{{advert.price}}" required>
                 </div>
 				</div>
 				<div class="row">

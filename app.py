@@ -86,8 +86,14 @@ def search():
     query = request.args.get('search').upper()
     results = mongo.db.advert.find({'advert_name': {"$regex": query}})
     results_number = results.count()
-    return render_template("search.html", tittle="Search", results=results, results_number=results_number)
 
+    page_number = int(request.args.get('page', 1))
+    ads_to_skip = (page_number - 1) * ADS_PER_PAGE
+    ads_count = mongo.db.advert.find({'advert_name': {"$regex": query}}).count()
+    page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
+    page_numbers = range(1, page_count + 1)
+    ads_on_page = mongo.db.advert.find({'advert_name': {"$regex": query}}).skip(ads_to_skip).limit(ADS_PER_PAGE)
+    return render_template('search.html', tittle="Search", results=ads_on_page, ads=ads_on_page, results_number=results_number, page=page_number, pages=page_numbers, total=page_count)
 
 
 # --------- Single advert page ----------------------------------
