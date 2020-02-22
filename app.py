@@ -47,19 +47,37 @@ def marketplace():
 # --------- Filter: Motors ------------------------------------
 @app.route('/motors_and_vehicles')
 def motors_and_vehicles():
-    return render_template('marketplace.html', tittle="Motors and vehicles", adverts=mongo.db.advert.find({'category_name': 'Motors and vehicles'}))
+    page_number = int(request.args.get('page', 1))
+    ads_to_skip = (page_number - 1) * ADS_PER_PAGE
+    ads_count = mongo.db.advert.find({'category_name': 'Motors and vehicles'}).count()
+    page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
+    page_numbers = range(1, page_count + 1)
+    ads_on_page = mongo.db.advert.find({'category_name': 'Motors and vehicles'}).skip(ads_to_skip).limit(ADS_PER_PAGE)
+    return render_template('marketplace.html', tittle="Motors and vehicles", adverts=ads_on_page, ads=ads_on_page, page=page_number, pages=page_numbers, total=page_count)
 
 
 # --------- Filter: Home ------------------------------------
 @app.route('/home_garden_diy')
 def home_garden_diy():
-    return render_template('marketplace.html', tittle="Home, garden and DIY", adverts=mongo.db.advert.find({'category_name': 'Home, garden, DIY'}))
+    page_number = int(request.args.get('page', 1))
+    ads_to_skip = (page_number - 1) * ADS_PER_PAGE
+    ads_count = mongo.db.advert.find({'category_name': 'Home, garden, DIY'}).count()
+    page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
+    page_numbers = range(1, page_count + 1)
+    ads_on_page = mongo.db.advert.find({'category_name': 'Home, garden, DIY'}).skip(ads_to_skip).limit(ADS_PER_PAGE)
+    return render_template('marketplace.html', tittle="Home, garden and DIY", adverts=ads_on_page, ads=ads_on_page, page=page_number, pages=page_numbers, total=page_count)
 
 
 # --------- Filter: PC stuff-----------------------------------
 @app.route('/pc_stuff_and_games')
 def pc_stuff_and_games():
-    return render_template('marketplace.html', tittle="PC stuff and games", adverts=mongo.db.advert.find({'category_name': 'PC stuff and games'}))
+    page_number = int(request.args.get('page', 1))
+    ads_to_skip = (page_number - 1) * ADS_PER_PAGE
+    ads_count = mongo.db.advert.find({'category_name': 'PC stuff and games'}).count()
+    page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
+    page_numbers = range(1, page_count + 1)
+    ads_on_page = mongo.db.advert.find({'category_name': 'PC stuff and games'}).skip(ads_to_skip).limit(ADS_PER_PAGE)
+    return render_template('marketplace.html', tittle="PC stuff and games", adverts=ads_on_page, ads=ads_on_page, page=page_number, pages=page_numbers, total=page_count)
 
 
 # ----------- Filter: Search ------------------------------------

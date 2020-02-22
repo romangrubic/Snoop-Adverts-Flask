@@ -151,6 +151,9 @@ margin:0;
 .no-padding-left{
     padding-left: 0px;
 }
+.margin-top{
+    margin-top: 10px;
+}
 .card-body{
     padding: 0 5px 5px;
 }
@@ -270,7 +273,17 @@ padding: 5px
 .advert-buttons{
     margin: auto;
 }
-
+/* ------------- Pagination --------------------*/
+.page-item.active .page-link{
+    background-color:red;
+    border-color: rgb(255, 200, 0);
+}
+.page-item .page-link{
+    background-color: rgb(255, 200, 0);
+    border-color: red;
+    color: black;
+    font-weight: 600;
+}
 /* -------------- Footer ------------------------*/
 #footer{
     height: 150px;
