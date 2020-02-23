@@ -34,6 +34,10 @@ body{
     color: black;
     background-color: rgba(255, 255, 255, 0.9);
 }
+.nav-image{
+    width: 45px;
+    height: 35px;
+}
 /* -------------- Home page buttons -----------*/
 .home-btn{
     margin-top: 200px;
@@ -349,11 +353,36 @@ margin: 8px 0;
 
 /* --------- Media queries ---------------*/
 @media only screen and (max-width: 575px) {
+    .nav-link{
+        font-size: 16px;
+        margin: 5px;
+        padding: 10px 5px 5px 5px;
+    }
+    .nav-link:hover{
+        font-size: 17px;
+        padding: 10px 5px 5px 5px;
+    }
+    .nav-image{
+        width: 35px;
+        height: 25px;
+    }
+    .btn-outline-warning{
+        width: 85px;
+    }
+    .top-ad-name{
+        font-size: 23px
+    }
+    .top-ad-text{
+        font-size: 15px;
+    }
    .col-8,.col-sm-6,.col-md-4,.col-lg-3{
     margin:auto;
   }
   #footer {
-      height: 265px;
+      height: 230px;
+  }
+  .vertical-align{
+      padding-top: 20px
   }
   #search{
       width: 300px;
