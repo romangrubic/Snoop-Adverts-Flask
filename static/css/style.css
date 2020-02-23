@@ -8,6 +8,7 @@ body{
     -o-background-size: cover;
     background-size: cover;
 }
+
 /* ---------- Google fonts -------------------*/
 
 /* ---------------- Navbar --------------------*/
@@ -172,6 +173,14 @@ margin:0;
     font-weight: 600;
     text-align: left;
     margin: 8px 5px;
+}
+.price{
+    padding-left: 10px;
+    font-size: 18px;
+
+}
+.location{
+    font-size: 15px
 }
 
 /* ------------ Delete, Edit, Submit, Cancel buttons ------*/
