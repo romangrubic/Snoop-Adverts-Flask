@@ -1,19 +1,21 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-1 no-padding">
+		<div class="d-none d-md-block col-md-1 no-padding">
 			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" display>
 		</div>
-			<div class="col-10">
-<div class="add-advert-page">
-<div class="add-advert-form">
-	<form action="{{ url_for('update_advert', advert_id=advert._id) }}" method="POST" enctype="multipart/form-data">
-		<div class="row">
-			<div class="col-3 text-right">
-				<label>Select category</label>
-			</div>
-			<div class="col-9 inputs">
-				<select class="add-inputs" id="category" name="category_name">
+			<div class="offset-1 col-10 offset-md-0 col-md-10">
+				<div class="add-advert-page">
+					<h1 class="text-center edit-header"> - Edit advert -</h1>
+					<div class="add-advert-form">
+						<form action="{{ url_for('update_advert', advert_id=advert._id) }}" method="POST"
+							enctype="multipart/form-data">
+							<div class="row">
+								<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+									<label>Select category *</label>
+								</div>
+								<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+									<select class="add-inputs" id="category" name="category_name">
                   {% for cat in categories %}
                       {% if cat.category_name == advert.category_name%}
                       <option value="{{advert.category_name}}" selected >{{advert.category_name}}</option>
@@ -22,54 +24,54 @@
                     {% endif %}
                   {% endfor %}
                     </select>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-3 text-right">
-				<label for="advert_name">Name</label>
-			</div>
-			<div class="col-9 inputs">
-				<input class="add-inputs" id="advert_name" name="advert_name" type="text" value="{{advert.advert_name}}" required maxlength="9"/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+									<label for="advert_name">Name *</label>
+								</div>
+								<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+									<input class="add-inputs" id="advert_name" name="advert_name" type="text" value="{{advert.advert_name}}" required maxlength="9"/>
                 </div>
-			</div>
-			<div class="row">
-				<div class="col-3 text-right">
-					<label for="advert_description">Description</label>
-				</div>
-				<div class="col-9 inputs">
-					<textarea class="add-inputs" name="advert_description" id="advert_description" value="{{advert.advert_description}}" required>{{advert.advert_description}}</textarea>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-3 text-right">
-					<label for="price">Price</label>
-				</div>
-				<div class="col-9 inputs">
-					<input class="add-inputs" id="price" name="price" type="number" min="0" max="99999" value="{{advert.price}}" required>
+								</div>
+								<div class="row">
+									<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+										<label for="advert_description">Description *</label>
+									</div>
+									<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+										<textarea class="add-inputs" name="advert_description" id="advert_description" value="{{advert.advert_description}}" required>{{advert.advert_description}}</textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+										<label for="price">Price *</label>
+									</div>
+									<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+										<input class="add-inputs" id="price" name="price" type="number" min="0" max="99999" value="{{advert.price}}" required>
                 </div>
-				</div>
-				<div class="row">
-					<div class="col-3 text-right">
-						<label>Contact info</label>
-					</div>
-					<div class="col-9 inputs">
-						<input class="add-inputs" id="contact_info" name="contact_info"  value="{{advert.contact_info}}" required>
+									</div>
+									<div class="row">
+										<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+											<label>Contact info *</label>
+										</div>
+										<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+											<input class="add-inputs" id="contact_info" name="contact_info"  value="{{advert.contact_info}}" required>
                     </div>
-				</div>
-                <div class="row" hidden>
-					<div class="col-3 text-right">
-						<label>View info</label>
-					</div>
-					<div class="col-9 inputs">
-						<input class="add-inputs" id="views" name="views"  value="{{advert.views}}" required>
+										</div>
+										<div class="row" hidden>
+											<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+												<label>View info</label>
+											</div>
+											<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+												<input class="add-inputs" id="views" name="views"  value="{{advert.views}}" required>
                     </div>
-				</div>
-					<div class="row">
-						<div class="col-3 text-right">
-                            <label>Location</label>
-                        </div>
-						<div class="col-9 inputs">
-                            <select class="input-field add-inputs" id="location" name="location" required>
+											</div>
+											<div class="row">
+												<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+													<label>Location *</label>
+												</div>
+												<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+													<select class="input-field add-inputs" id="location" name="location" required>
 						            {% for county in counties %}
                                         {% if county.name == county.name%}
                                             <option value="{{county.name}}" selected >{{county.name}}</option>
@@ -78,33 +80,33 @@
                                         {% endif %}
                                     {% endfor %}
                             </select>
-                        </div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+													<label for="advert_image">Upload image *</label>
+												</div>
+												<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+													<input class="add-inputs" type="file" id="advert_image" name="advert_image" accept="image/*" value="{{advert.imageURL}}">
+                            </div>
+												</div>
+
+
+											</div>
+											<div class="row justify-content-center">
+												<a href="{{url_for('view_advert', advert_id=advert._id)}}"
+													class="btn btn-cancel">Cancel</a>
+												<button class="btn edit-btn" type="submit" name="action">Save</button>
+											</div>
+						</form>
+
 					</div>
-						<div class="row">
-							<div class="col-3 text-right">
-                                <label for="advert_image">Upload image</label>
-                            </div>
-							<div class="col-9 inputs">
-                                <input class="add-inputs" type="file" id="advert_image" name="advert_image" accept="image/*" value="{{advert.imageURL}}">
-                            </div>
-							</div>
-							<div class="row">
-								<div class="offset-4 col-8 inputs">
-									<button class="btn edit-btn" type="submit" name="action">Edit Advert</button>
-									<a href="{{url_for('view_advert', advert_id=advert._id)}}"
-										class="btn btn-cancel">Cancel</a>
-								</div>
 
-							</div>
-
-	</form>
-</div>
-</div>
-</div>
-				<div class="col-1 no-padding">
+				</div>
+				<div class="d-none d-md-block col-md-1 no-padding">
 					<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" display>
 		</div>
 				</div>
 			</div>
 
-{% endblock %}
+			{% endblock %}
