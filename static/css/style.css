@@ -45,7 +45,7 @@ body{
     margin-bottom: 10px;
 }
 .btn-outline-warning{
-    width: 100px;
+    width: 120px;
     border: 3px solid white;
     background-color: rgba(0, 0, 0, 0.4);
     font-size: 18px;
@@ -381,7 +381,7 @@ margin: 8px 0;
         height: 25px;
     }
     .btn-outline-warning{
-        width: 85px;
+        width: 100px;
     }
     .top-ad-name{
         font-size: 23px

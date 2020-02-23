@@ -40,7 +40,7 @@ def marketplace():
     ads_count = mongo.db.advert.find().count()
     page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
     page_numbers = range(1, page_count + 1)
-    ads_on_page = mongo.db.advert.find().skip(ads_to_skip).limit(ADS_PER_PAGE)
+    ads_on_page = mongo.db.advert.find().sort('views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html', tittle="Marketplace", adverts=ads_on_page, ads=ads_on_page, page=page_number, pages=page_numbers, total=page_count)
 
 
@@ -52,7 +52,7 @@ def motors_and_vehicles():
     ads_count = mongo.db.advert.find({'category_name': 'Motors and vehicles'}).count()
     page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
     page_numbers = range(1, page_count + 1)
-    ads_on_page = mongo.db.advert.find({'category_name': 'Motors and vehicles'}).skip(ads_to_skip).limit(ADS_PER_PAGE)
+    ads_on_page = mongo.db.advert.find({'category_name': 'Motors and vehicles'}).sort('views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html', tittle="Motors and vehicles", adverts=ads_on_page, ads=ads_on_page, page=page_number, pages=page_numbers, total=page_count)
 
 
@@ -64,20 +64,20 @@ def home_garden_diy():
     ads_count = mongo.db.advert.find({'category_name': 'Home, garden, DIY'}).count()
     page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
     page_numbers = range(1, page_count + 1)
-    ads_on_page = mongo.db.advert.find({'category_name': 'Home, garden, DIY'}).skip(ads_to_skip).limit(ADS_PER_PAGE)
+    ads_on_page = mongo.db.advert.find({'category_name': 'Home, garden, DIY'}).sort('views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html', tittle="Home, garden and DIY", adverts=ads_on_page, ads=ads_on_page, page=page_number, pages=page_numbers, total=page_count)
 
 
 # --------- Filter: PC stuff-----------------------------------
-@app.route('/pc_stuff_and_games')
-def pc_stuff_and_games():
+@app.route('/electronics')
+def electronics():
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
-    ads_count = mongo.db.advert.find({'category_name': 'PC stuff and games'}).count()
+    ads_count = mongo.db.advert.find({'category_name': 'Electronics, mobile, PC'}).count()
     page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
     page_numbers = range(1, page_count + 1)
-    ads_on_page = mongo.db.advert.find({'category_name': 'PC stuff and games'}).skip(ads_to_skip).limit(ADS_PER_PAGE)
-    return render_template('marketplace.html', tittle="PC stuff and games", adverts=ads_on_page, ads=ads_on_page, page=page_number, pages=page_numbers, total=page_count)
+    ads_on_page = mongo.db.advert.find({'category_name': 'Electronics, mobile, PC'}).sort('views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
+    return render_template('marketplace.html', tittle="Electronics, mobile and PC", adverts=ads_on_page, ads=ads_on_page, page=page_number, pages=page_numbers, total=page_count)
 
 
 # ----------- Filter: Search ------------------------------------
