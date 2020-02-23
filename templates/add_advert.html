@@ -1,18 +1,19 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-1 no-padding">
+		<div class="d-none d-md-block col-md-1 no-padding">
 			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" display>
 		</div>
-			<div class="col-10">
+			<div class="offset-1 col-10 offset-md-0 col-md-10">
 				<div class="add-advert-page">
+                <h3 class="text-center edit-header"> - Add advert -</h3>
 					<div class="add-advert-form">
 						<form action="{{ url_for('insert_advert') }}" method="POST" enctype="multipart/form-data">
 							<div class="row">
-								<div class="col-3 text-right">
-									<label for="category_name">Select category</label>
+								<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+									<label for="category_name">Select category *</label>
 								</div>
-								<div class="col-9 inputs">
+								<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 									<select class="input-field add-inputs" id="category" name="category_name" required>
                         <option value="" disabled selected>Choose one</option>
 						{% for cat in categories %}
@@ -22,42 +23,42 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-3 text-right">
-									<label>Name</label>
+								<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+									<label>Name *</label>
 								</div>
-								<div class="col-9 inputs">
+								<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 									<input class="add-inputs" id="advert_name" name="advert_name" type="text" required maxlength="9"/>
             </div>
 								</div>
 								<div class="row">
-									<div class="col-3 text-right">
-										<label>Description</label>
+									<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+										<label>Description *</label>
 									</div>
-									<div class="col-9 inputs">
+									<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 										<textarea class="add-inputs" id="advert_description" name="advert_description" required></textarea>
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-3 text-right">
-										<label>Price</label>
+									<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+										<label>Price *</label>
 									</div>
-									<div class="col-9 inputs">
+									<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 										<input class="add-inputs" id="price" name="price" type="number" min="0" max="99999" required>
                 </div>
 									</div>
 									<div class="row">
-										<div class="col-3 text-right">
-											<label>Contact info</label>
+										<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+											<label>Contact info *</label>
 										</div>
-										<div class="col-9 inputs">
+										<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 											<input class="add-inputs" id="contact_info" name="contact_info" required>
                     </div>
 										</div>
 										<div class="row">
-											<div class="col-3 text-right">
-												<label>Location</label>
+											<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+												<label>Location *</label>
 											</div>
-											<div class="col-9 inputs">
+											<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 												<select class="input-field add-inputs" id="location" name="location" required>
                                 <option value="" disabled selected>Choose one</option>
 						            {% for county in counties %}
@@ -67,24 +68,23 @@
 											</div>
 										</div>
 										<div class="row">
-											<div class="col-3 text-right">
-												<label for="advert_image">Upload image</label>
+											<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+												<label for="advert_image">Upload image *</label>
 											</div>
-											<div class="col-9 inputs">
+											<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 												<input class="add-inputs" type="file" id="advert_image" name="advert_image" accept="image/*" required>
                         </div>
 											</div>
-											<div class="row">
-												<div class="offset-4 col-8">
+                                            </div>
+											<div class="row offset-md-1 justify-content-center">
 													<button type="submit" class="btn btn-submit">Submit</button>
 													<a href="{{url_for('home')}}" class="btn btn-cancel">Cancel</a>
-												</div>
 											</div>
 						</form>
-					</div>
+					
 				</div>
 			</div>
-			<div class="col-1 no-padding">
+			<div class="d-none d-md-block col-md-1 no-padding">
 				<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" display>
 		</div>
 			</div>
