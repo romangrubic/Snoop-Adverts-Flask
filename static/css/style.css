@@ -13,8 +13,9 @@ body{
 
 /* ---------------- Navbar --------------------*/
 #nav, .nav{
-    height: 80px;
-    background-color: rgb(255, 200, 0);
+    min-height: 85px;
+    height: 4vw;
+    background-color: rgb(250, 211, 68);
     border-bottom: 2px solid rgba(0, 0, 0, 0.5); 
 }
 .nav{
@@ -68,7 +69,7 @@ body{
 }
 /* -------------- Search bar ------------------*/
 .search-bar{
-    margin: 25px;
+    margin: 30px;
 }
 .search-outline{
     padding: 10px;
@@ -98,13 +99,15 @@ body{
 }
 /* -------------- Most viewed ad -------------*/
 .top-ad-header{
-    padding: 0.5vh;
-    font-size: 4vh;
+    padding: 0px;
+    font-size: 35px;
     font-weight: 600;
     color: black;
 }
 .top-ad-section{
-    padding: 5px 15vw;
+    padding: 5px;
+    margin:auto;
+    max-width: 700px;
 }
 .most-viewed-ad{
     height: 350px;
@@ -213,6 +216,9 @@ margin:0;
     font-weight: 600;
     text-decoration: none;
 }
+.btn-outline-light{
+margin: 10px;
+}
 /* -------------Marketplace -------------------*/
 .marketplace-form{
     margin: 50px auto;
@@ -223,7 +229,7 @@ padding: 5px
 
 /* ------------ Add/Edit advert ---------------------*/
 .add-advert-form{
-    padding: 15px 0;
+    padding: 75px 0;
     margin: 40px auto;
     max-width: 700px;
     text-align: left;
@@ -311,7 +317,8 @@ padding: 5px
 }
 /* -------------- Footer ------------------------*/
 #footer{
-    height: 185px;
+    min-height: 200px;
+    height: 15vh;
     padding: 2vh;
     background-color: rgb(255, 200, 0);
     border-top: 2px solid rgba(0, 0, 0, 0.5); 
