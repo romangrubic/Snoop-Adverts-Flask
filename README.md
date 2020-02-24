@@ -30,7 +30,61 @@ The project is a web-site where user can post their adverts (similar to DoneDeal
 I choose the name Snoop as in "to snoop around" and all similarities with Snoop Dog is accidental.
 
  [Back to top](#summary)
- 
+
+---
+
+## UX
+### User Stories
+As a new user of the web-site, I would like to be able to:
+
+* **see all the ads**
+  - user can see all adverts by clicking on `Marketplace` button. 
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/all-ads.png" width="400" height="200" alt="Marketplace image">
+</p>
+
+* **search for a specific advert**
+  - user can use the search bar for specific word or part of the word. 
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/search-bar.png" width="400" height="200" alt="Seacr by part of the word">
+</p>
+
+* **search by category **
+  - user can search by specific category such as Motors, Home or Electronic by pressing button.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/filter-buttons.png" width="400" height="200" alt="Filter buttons">
+</p>
+
+* **place my own advert**
+  - user can place their own advert just by going to Add advert in the navigation bar. 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/add-advert.png" width="400" height="200" alt="Add advert">
+</p>
+
+* **change my advert**
+  - user can edit adverts if something changed by pressing `Edit` button.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/edit-advert.png" width="400" height="200" alt="Edit advert">
+</p>
+
+* **delete my advert**
+  - user can delete adverts if the advert is no longer valid.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/delete-advert.png" width="400" height="200" alt="Delete advert">
+</p>
+
+As a company, I would like to:
+* **promote my product**
+  - companies can promote their product or buy space to promote themselves by contacting me. Every page has dedicated `Your AD here!` spaces which can be rented by anyone.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/place-ad.png" width="400" height="200" alt="Place your ad!">
+</p>
+
+[Back to top](#summary)
+
 ---
 ## Features
 ### Existing Features
