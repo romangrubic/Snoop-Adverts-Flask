@@ -24,25 +24,57 @@ With **Snoop** you don't have to give your e-mail or phone number! No more long 
 ---
 ## Features
 ### Existing Features
-* View counter
+* Navigation bar
+  - Navigation bar is visible on all pages and on all sizes. It contains a link to home page presented by logo, a link for marketplace where user can see all the ads sorted by views and an add advert page where user can place an advert. 
 
+* Advert section
+  - On each page, on medium screens and bigger sizes, there are parts where owner of the
+   page can promote his own adverts or rent that space to companies for advertisement and earn money that way.
+
+* Filter buttons and search bar
+  - They are visible on all pages and are used to filter ads. User can filter by category or by searching names. In search bar user can search by whole word or by letter.
+
+* Top Ad section 
+  - Top Ad section is a carousel which is showing 4 most viewed adverts on site. Each image in carousel is clickable and if user clicks on it will open that advert in View_advert.html
+
+* Add advert 
+  - User can add advert by typing all the required information that are neccssary to present the advert.
+   All fields are required and have to filled by the requirements. By pressing submit button, advert will be saved to database and presented in Marketplace.
+
+* Adverts cards
+  - Once the user searches or visits Marketplace, adverts will be presented in cards. User can see image of the advert and bellow it
+  are tittle, number of views, location and price. The cards themselves are clickable and once clicked they 
+  will open in a new page where user can see rest of information such as description and contact information.
+
+* View advert
+  - Once user clicks on an advert, a big page opens where user can see all the information about an advert and also can delete the advert or edit the advert if the information is not correct or have changed
+
+* Edit advert
+  - Edit advert is similar to add advert page except it already shows all the data of the advert that is in database. User can then either save the changes that were made or cancel the edit if it was misclicked or no changes added.
+
+* Pagination 
+  - I have added pagination to Marketplace.html and Search.html so that user can only see 12 adverts at a time. 
+
+* "Go to top" button
+  - Instead of user scrolling back to the top of the page when he reaches the bottom, I have put a button that will return to top once pressed.
+
+* "No results" page
+  - I've implemented a 404page in case user types something that is not in database. Upon that, a picture will be shown that the search is not in database and instruc user to search again or filter through categories. The image itself is clickable and once clicked, it will open Home page.
+* View counter
   - View counter is implemented in footer section and is only visible on medium and bigger screen sizes. It increments the counter by +1 every time Home page is visited.
 
 * Social icons
-
   - In the footer are three social icons with links, one leading to my GitHub page, one for my LinkedIn profile (both of them open in a new tab because of 
   `target="_blank"` attribute) and last one opens a contact modal from which user can contact me.
 
-* Contact modal
+* My projects icons
+  - In the footer are two project icons with links, one leading to my **Weather 360°** project and one for my **Memory game** project (both of them open in a new tab because of 
+  `target="_blank"` attribute). Only visible on medium and bigger screen sizes.
 
+* Contact modal
   - When user click on contact icon, it opens a new modal. User has to input all the requested information in order for e-mail to be sent. When the e-mail has been submitted, 
   the text in the submit button will go from red background color and `Submit` to green background color and `E-mail submitted! Closing...` and modal will close itself after 2seconds using `setTimeout` function. 
   If it was unsuccessful, it will turn gray background color with `Failed to submit. Refresh page` text.
-
-* My projects icons
-
-  - In the footer are two project icons with links, one leading to my **Weather 360°** project and one for my **Memory game** project (both of them open in a new tab because of 
-  `target="_blank"` attribute). Only visible on medium and bigger screen sizes.
 
 [Back to top](#summary)
 
@@ -82,7 +114,7 @@ Adverts Collection
 | Location           | location     |  user chooses from a list of choices      | string    |
 | Upload Image       | imageURL     | image, image/*                            | string    |
 | Views              | views        | number                                    | integer   |
-|
+
 
 [JSON file showing adverts collection structure](https://github.com/romangrubic/database-project/tree/master/data/database/adverts.json) 
 
@@ -125,6 +157,8 @@ create an email template, and use their Javascript library to trigger an email. 
     - https://github.com/
 * Heroku: Cloud platform as a service supporting several programming languages and is used to deploy this project
     
+    - https://www.heroku.com
+
 [Back to top](#summary)
 
 ---
