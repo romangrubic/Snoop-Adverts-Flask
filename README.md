@@ -41,47 +41,92 @@ As a new user of the web-site, I would like to be able to:
   - user can see all adverts by clicking on `Marketplace` button. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/all-ads.png" width="400" height="200" alt="Marketplace image">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/all-ads.png" width="500" height="300" alt="Marketplace image">
 </p>
 
 * **search for a specific advert**
   - user can use the search bar for specific word or part of the word. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/search-bar.png" width="400" height="200" alt="Seacr by part of the word">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/search-bar.png" width="500" height="300" alt="Seacr by part of the word">
 </p>
 
-* **search by category **
+* **search by category**
   - user can search by specific category such as Motors, Home or Electronic by pressing button.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/filter-buttons.png" width="400" height="200" alt="Filter buttons">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/filter-buttons.png" width="500" height="300" alt="Filter buttons">
+</p>
+
+* **view advert that I'm interested in**
+  - user can view advert in full view by clicking anywhere on the advert. 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/view-ad.png" width="500" height="300" alt="View advert">
 </p>
 
 * **place my own advert**
   - user can place their own advert just by going to Add advert in the navigation bar. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/add-advert.png" width="400" height="200" alt="Add advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/add-advert.png" width="500" height="300" alt="Add advert">
 </p>
 
 * **change my advert**
   - user can edit adverts if something changed by pressing `Edit` button.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/edit-advert.png" width="400" height="200" alt="Edit advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/edit-advert.png" width="500" height="300" alt="Edit advert">
 </p>
 
 * **delete my advert**
   - user can delete adverts if the advert is no longer valid.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/delete-advert.png" width="400" height="200" alt="Delete advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/delete-advert.png" width="500" height="300" alt="Delete advert">
 </p>
 
 As a company, I would like to:
 * **promote my product**
   - companies can promote their product or buy space to promote themselves by contacting me. Every page has dedicated `Your AD here!` spaces which can be rented by anyone.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/place-ad.png" width="400" height="200" alt="Place your ad!">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/place-ad.png" width="500" height="300" alt="Place your ad!">
 </p>
+
+[Back to top](#summary)
+
+### Strategy
+
+**Snoop** web-site purpose is to be a marketplace where users can put their things to sell and earn money and companies to promote their bussines by renting advertisement place.
+
+### Scope
+
+In designing this page, I wanted for the user to have a positive experience and for the web-site to be simple to use. User can
+in just a few clicks, see what interests him. 
+
+
+
+### Structure
+
+When the user arrives on site, it will see buttons and search bar as a call to action. Navigation is centered and is always on top of the screen and has a logo which acts as a link to Home page,
+Marketplace button where he can see all the adverts sorted by number of views and Add advert where new advert can be added with ease. There is also "Top Ad" section where adverts with highest number of views are displayed on a carousel.
+
+Footer is visible on any page and icons themselves are clickable and leading to my projects, different pages or opening a 
+contact modal. 
+
+#### Further description of buttons, icons and elements used is in the next section (Features).
+
+### Wireframes
+
+* **Home page**
+  
+
+* **Marketplace page**
+  
+
+* **Not in database**
+  
+
+### Surface 
+Using bright colors I'm calling the user to interact with the page.
+By making all the elements stand out correctly and are simple to use, I'm creating environment where 
+user can see what it wants, look at adverts that interest it. Users experience of **Snoop** will be that it is simple and you can put your adverts with ease.
 
 [Back to top](#summary)
 
@@ -172,7 +217,7 @@ Adverts Collection
 | Advert Id          | _id          | None                                      | ObjectId  |
 | Category name      | category_name| user chooses from a list of choices       | string    |
 | Advert Name        | advert_name  | text, maxlength="9"                       | string    |
-| Advert Description | advert_description | text/number , maxlength="200"       | string    |
+| Advert Description | advert_description | text/number , maxlength="300"       | string    |
 | Price              | price        | number , min="0" max="99999"              | string    |
 | Contact info       | contact_info | text/number/email, maxlength="25"         | string    |
 | Location           | location     |  user chooses from a list of choices      | string    |
