@@ -15,7 +15,7 @@ body{
 #nav, .nav{
     min-height: 85px;
     height: 4vw;
-    background-color: rgb(250, 211, 68);
+    background-color: #FBDE44FF;
     border-bottom: 2px solid rgba(0, 0, 0, 0.5); 
 }
 .nav{
@@ -320,7 +320,7 @@ padding: 5px
     min-height: 200px;
     height: 15vh;
     padding: 2vh;
-    background-color: rgb(255, 200, 0);
+    background-color: #FBDE44FF;
     border-top: 2px solid rgba(0, 0, 0, 0.5); 
 }
 .list-inline{

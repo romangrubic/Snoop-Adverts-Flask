@@ -5,6 +5,7 @@ Tired or signing up just to place your toaster or TV for sell? Tired of unwanted
 With **Snoop** you don't have to give your e-mail or phone number! No more long sign-up process and you have more time to snoop for a good deal on that car you like!
 
 #### A live demo is hosted [here](https://adverts-project.herokuapp.com/home)
+![Snoop Demo](https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/responsive.png "Snoop Demo")
 
 ---
 ## Summary
@@ -21,6 +22,15 @@ With **Snoop** you don't have to give your e-mail or phone number! No more long 
 * [Deployment](#deployment)
 * [Credits](#credits)
 
+---
+## Project Background
+
+Welcome to my Data Centric Milestone Project for Code Institute. The goal of this project was to allow the user to make simple operations where it could create, retrieve, update and delete data. Database used is a noSQL database MongoDB.
+The project is a web-site where user can post their adverts (similar to DoneDeal, Adverts, Gumtree...).
+I choose the name Snoop as in "to snoop around" and all similarities with Snoop Dog is accidental.
+
+ [Back to top](#summary)
+ 
 ---
 ## Features
 ### Existing Features
