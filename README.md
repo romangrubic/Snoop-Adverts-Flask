@@ -15,13 +15,51 @@ With **Snoop** you don't have to give your e-mail or phone number! No more long 
 * [Features](#features)
     * [Existing Features](#existing-features)
     * [Future Features](#future-features)
+* [Information Architecture](#information-architecture)
 * [Technology used](#technology-used)
 * [Testing](#testing)
 * [Deployment](#deployment)
 * [Credits](#credits)
 
 ---
+## Features
+### Existing Features
+* View counter
 
+  - View counter is implemented in footer section and is only visible on medium and bigger screen sizes. It increments the counter by +1 every time Home page is visited.
+
+* Social icons
+
+  - In the footer are three social icons with links, one leading to my GitHub page, one for my LinkedIn profile (both of them open in a new tab because of 
+  `target="_blank"` attribute) and last one opens a contact modal from which user can contact me.
+
+* Contact modal
+
+  - When user click on contact icon, it opens a new modal. User has to input all the requested information in order for e-mail to be sent. When the e-mail has been submitted, 
+  the text in the submit button will go from red background color and `Submit` to green background color and `E-mail submitted! Closing...` and modal will close itself after 2seconds using `setTimeout` function. 
+  If it was unsuccessful, it will turn gray background color with `Failed to submit. Refresh page` text.
+
+* My projects icons
+
+  - In the footer are two project icons with links, one leading to my **Weather 360°** JS project and one for my **Memory game** project (both of them open in a new tab because of 
+  `target="_blank"` attribute). Only visible on medium and bigger screen sizes.
+
+[Back to top](#summary)
+
+### Future Features
+  - A login systems for users on the page would've provided another level of security to adverts on this page. This could be performed in the back end using conditional statements to check if the current user is logged in or not with the current user being gotten from the session. Only if these criteria were satisfied then the user would be allowed to edit, delete or add adverts etc.
+
+[Back to top](#summary)
+
+---
+## Information Architecture
+
+### Database
+As this is the MS3 of the course a NoSQL database is used, this project employs the NoSQL database MongoDB. Inner arrays were utilised in the data structure in order to iterate through the items in a list with relative ease.
+
+[Back to top](#summary)
+
+---
 ## Technology used
 
 * HTML5 & CCS3: Essential languages used to build a websites foundations.
@@ -61,6 +99,24 @@ create an email template, and use their Javascript library to trigger an email. 
 
 ---
 
+## Testing
+### Validating code
+HTML
+ - code is validated through [W3 validator](https://validator.w3.org/).
+
+CSS
+ - code is validated through [W3 Jigsaw](https://jigsaw.w3.org/css-validator/).
+
+JavaScript
+ - code is validated through [JS Hint](https://jshint.com/).
+
+Python
+ - code is validated through [PEP8](http://pep8online.com/).
+
+ [Back to top](#summary)
+
+---
+
 ## Deployment
 The project was written and developed in the Gitpod IDE.
 
@@ -74,5 +130,26 @@ The process for deployment on Heroku was:
   - Configuration variables had to be set in order to get the project running. These had to be set in both the Gitpod IDE and on Heroku. These included, PORT, IP and Mongo URL.
   - Open the app to test successful deployment.
 
+To run locally, you can clone this repository directly into the editor of your choice by pasting `git clone https://github.com/romangrubic/database-project.git` into your terminal. To cut ties with this GitHub repository, type `git remote rm origin` into the terminal.  
 
+Further help with cloning can be found on this GitHub Help [page](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
+
+[Back to top](#summary)
+
+---
+
+## Credits
+### Content
++ All content was written by myself and by users.
+
+### Media
++ Background photo used in this web-site was obtained from [Komana](http://komana.amcworks.co/color-background/).
+
+### Acknowledgement
+* I would like to thank my mentor for help during project and great ideas.
+* Videos on [CodeInstitute](https://codeinstitute.net/).
+* Big thanks to [W3 Schools](https://www.w3schools.com/) for all the content and clarification of different methods.
+* Other advertisement site like [DoneDeal](https://www.donedeal.ie/), [Advert](https://www.adverts.ie/), [Gumtree](https://www.gumtree.ie/) etc.
+
+#### This is for educational use.
 [Back to top](#summary)
