@@ -41,7 +41,7 @@ With **Snoop** you don't have to give your e-mail or phone number! No more long 
 
 * My projects icons
 
-  - In the footer are two project icons with links, one leading to my **Weather 360°** JS project and one for my **Memory game** project (both of them open in a new tab because of 
+  - In the footer are two project icons with links, one leading to my **Weather 360°** project and one for my **Memory game** project (both of them open in a new tab because of 
   `target="_blank"` attribute). Only visible on medium and bigger screen sizes.
 
 [Back to top](#summary)
@@ -55,7 +55,37 @@ With **Snoop** you don't have to give your e-mail or phone number! No more long 
 ## Information Architecture
 
 ### Database
-As this is the MS3 of the course a NoSQL database is used, this project employs the NoSQL database MongoDB. Inner arrays were utilised in the data structure in order to iterate through the items in a list with relative ease.
+This project employs the NoSQL database [MongoDB](https://www.mongodb.com/). 
+
+### Data Types
+
+Below are the different data types in the MongoDB that I'm using:
+
+- ObjectId
+- String
+- Integer
+
+### Data Structure 
+
+Below is the data base collection:
+
+Adverts Collection
+
+| Title              | DB Key       | Form Validation                           | Data type |
+| ------------------ | ------------ | ----------------------------------------- | --------- |
+| Advert Id          | _id          | None                                      | ObjectId  |
+| Category name      | category_name| user chooses from a list of choices       | string    |
+| Advert Name        | advert_name  | text, maxlength="9"                       | string    |
+| Advert Description | advert_description | text/number , maxlength="200"       | string    |
+| Price              | price        | number , min="0" max="99999"              | string    |
+| Contact info       | contact_info | text/number/email, maxlength="25"         | string    |
+| Location           | location     |  user chooses from a list of choices      | string    |
+| Upload Image       | imageURL     | image, image/*                            | string    |
+| Views              | views        | number                                    | integer   |
+|
+
+[JSON file showing adverts collection structure](https://github.com/romangrubic/database-project/tree/master/data/database/adverts.json) 
+
 
 [Back to top](#summary)
 
