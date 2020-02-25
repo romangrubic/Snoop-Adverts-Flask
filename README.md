@@ -339,11 +339,7 @@ Further help with cloning can be found on this GitHub Help [page](https://help.g
 ### Content
 + All content was written by myself and by users.
 
-### Media
-+ Background photo used in this web-site was obtained from [Komana](http://komana.amcworks.co/color-background/).
-
 ### Acknowledgement
-* I would like to thank my mentor for help during project and great ideas.
 * Videos on [CodeInstitute](https://codeinstitute.net/).
 * Big thanks to [W3 Schools](https://www.w3schools.com/) for all the content and clarification of different methods.
 * Other advertisement site like [DoneDeal](https://www.donedeal.ie/), [Advert](https://www.adverts.ie/), [Gumtree](https://www.gumtree.ie/) etc.
