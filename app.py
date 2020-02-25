@@ -136,7 +136,7 @@ def insert_advert():
         'views': 0
     }
     advert.insert_one(new_advert)
-    return redirect(url_for('marketplace'))
+    return redirect(url_for('home'))
 
 
 # ------------ Uploading ---------------------------------------
@@ -184,7 +184,7 @@ def update_advert(advert_id):
 def delete_advert(advert_id):
     advert = mongo.db.advert
     advert.remove({'_id': ObjectId(advert_id)})
-    return redirect(url_for('marketplace'))
+    return redirect(url_for('home'))
 
 
 # ------------- Host/Port/Debug --------------------------------

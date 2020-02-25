@@ -294,6 +294,9 @@ create an email template, and use their Javascript library to trigger an email. 
 ---
 
 ## Testing
+
+### Testing section [here](https://github.com/romangrubic/database-project/blob/master/testing.md)
+
 ### Validating code
 HTML
  - code is validated through [W3 validator](https://validator.w3.org/).
