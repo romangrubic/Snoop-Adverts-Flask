@@ -1,7 +1,7 @@
 ## Data Centric Development Project - Code Institute
 ---
 # Snoop
-Tired or signing up just to place your toaster or TV for sell? Tired of unwanted spam mail in your e-mail about adverts that don't interest you?
+Tired or signing up just to place your toaster or TV in order to get few bobs? Tired of unwanted spam mail in your e-mail about adverts that don't interest you?
 With **Snoop** you don't have to give your e-mail or phone number! No more long sign-up process and you have more time to snoop for a good deal on that car you like!
 
 #### A live demo is hosted [here](https://adverts-project.herokuapp.com/home)
@@ -93,12 +93,12 @@ As a company, I would like to:
 
 ### Strategy
 
-**Snoop** web-site purpose is to be a marketplace where users can put their things to sell and earn money and companies to promote their bussines by renting advertisement place.
+**Snoop** web-site purpose is to be a marketplace where users can put their things to sell and earn money and companies to promote their bussines by renting advertisement space.
 
 ### Scope
 
-In designing this page, I wanted for the user to have a positive experience and for the web-site to be simple to use. User can
-in just a few clicks, see what interests him. 
+In designing this page, I wanted for the user to have a positive experience and for the web-site to be simple to use. So I wanted to make a page like that. 
+User can easily search with one click (by pressing Marketplace in navbar or by pressing one of the filter buttons to search for adverts in a certain category).
 
 
 
@@ -107,8 +107,20 @@ in just a few clicks, see what interests him.
 When the user arrives on site, it will see buttons and search bar as a call to action. Navigation is centered and is always on top of the screen and has a logo which acts as a link to Home page,
 Marketplace button where he can see all the adverts sorted by number of views and Add advert where new advert can be added with ease. There is also "Top Ad" section where adverts with highest number of views are displayed on a carousel.
 
+When user goes to Marketplace page, adverts will show up ranked by number of views they have. Also, there are only 12 adverts visible per page and a `Go to top` button at the end of the page. Adverts are presented as cards with a decent size picture and below their name, number of views, location and price. 
+Adverts are clickable on all of their size so user can easily see the whole advert. If user clicks on advert, a new page will open where information will be presented in a bigger format and advert description will also be visible. 
+There are buttons on the end of the page where user can delete the advert or edit it if neccessary. If user presses `Delete` button, a modal will show up asking the user are they sure they want to delete it. If they press `Edit` button, an edit page will open 
+containing all the data of the advert in database and user can change anty part of it.
+
+User can click on filter button that are visible on all main pages, where he can fast search a specific category of adverts. If he wants to see `Motors`, all adverts in category of Motors will show. Same 
+for the rest of the categories.
+
+There is also an `Add advert` link in the navigation where user can put things to sale.
+
 Footer is visible on any page and icons themselves are clickable and leading to my projects, different pages or opening a 
 contact modal. 
+
+As an addition, I have implemented a designated space on all of the pages where companies or anyone can rent and promote themselves and me as an owner can earn some money on the side.
 
 #### Further description of buttons, icons and elements used is in the next section (Features).
 
@@ -116,17 +128,26 @@ contact modal.
 
 * **Home page**
   
+  <p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-home" width="500" height="300" alt="Home page">
+</p>
 
 * **Marketplace page**
   
+  <p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-market" width="300" height="500" alt="Marketplace page">
+</p>
 
-* **Not in database**
+* **View advert**
   
+  <p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-view" width="500" height="300" alt="View advert">
+</p>
 
 ### Surface 
-Using bright colors I'm calling the user to interact with the page.
+Using light color scheme I'm creating an environment where user will stay as long as possible because there are not bright colors which will tired users eyes.
 By making all the elements stand out correctly and are simple to use, I'm creating environment where 
-user can see what it wants, look at adverts that interest it. Users experience of **Snoop** will be that it is simple and you can put your adverts with ease.
+user can see what it wants, look at adverts that interest it. Users experience of **Snoop** will be that it is simple and easy to use.
 
 [Back to top](#summary)
 
