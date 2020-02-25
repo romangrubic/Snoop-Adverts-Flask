@@ -1,5 +1,5 @@
 ## Summary
-* [Responsivnes](#responsivnes)
+* [Responsiveness](#responsiveness)
 * [CRUD](#crud)
     * [Create](#create-advert)
     * [Read](#read-advert)
@@ -14,7 +14,10 @@
     * [Footer](#footer)
 ---
 
-## Responsivnes
+## Responsiveness
+This site was was tested on multiple browsers (Google Chrome, Mozzila Firefox and Opera), multiple mobile devices (Samsung Galaxy, Huawei, Sony) and tablet device(Samsung Galaxy Tab) and it shown responsivness and compatibility.
+Web-site is responsive for screens from 350px to 2k. Everything is in order and responsive. But, viewing it on a 4k desktop, Home page carousels are too small and they cover 2/3 of the width. 
+Marketplace adverts card are 4 in a row and they appear stretched. It would be great if they would be showing 6 in a row instead of 4. Add advert and Edit advert are small pages and there is not enough content on them to fill a 4k screen height.
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Viewing on mobile device | Images adapted, no side adverts visible | As Expected | Pass |
@@ -29,6 +32,8 @@
 
 ## CRUD
 
+CRUD functionality is working as expected, no errors.
+
 ### Create Advert
 
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
@@ -37,14 +42,12 @@
 | Clicking on `Submit` button after filling all the forms | Redirect to the home page and the advert is added | As expected | Pass |
 | Clicking on `Cancel` button | Redirect to the home page | As expected | Pass |
 
-[Back to top](#summary)
 
 ### Read Advert
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on advert cards | Displays advert in View advert page | As Expected | Pass |
 
-[Back to top](#summary)
 
 ### Update Advert
 
@@ -54,7 +57,6 @@
 | Clicking `Save` button after changing some of the forms | Redirect to the view advert page and the advert is edited | As expected | Pass |
 | Click on `Cancel` button | Cancel all changes and redirects to view advert page | As expected | Pass | 
 
-[Back to top](#summary)
 
 ### Delete Advert
 
@@ -77,7 +79,6 @@
 | Clicking on `Marketplace` link | Opens "Marketplace" page | As expected | Pass |
 | Clicking on `Add advert` link | Open "Add advert" page | As expected | Pass |
 
-[Back to top](#summary)
 
 
 ### Search and Filter
@@ -89,7 +90,6 @@
 | Clicking on filter button when choosing Home | Displays all the adverts with category of "Home" | As Expected | Pass |
 | Clicking on filter button when choosing Electronics | Displays all the adverts with category of "Electronics" | As Expected | Pass |
 
-[Back to top](#summary)
 
 
 ### Top Advert section
@@ -98,7 +98,6 @@
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on an advert | Open that advert in view advert page | As Expected | Pass |
 
-[Back to top](#summary)
 
 
 ### Button "Go to top" 
@@ -107,19 +106,17 @@
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on `Go to top` button | Scrolls up to top of the page | As Expected | Pass |
 
-[Back to top](#summary)
 
 
-## Pagination
+### Pagination
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on `<< Previous` button | Open the previous page (if on page 3, open page 2) | As Expected | Pass |
 | Clicking on button with page number | Opens that page (if clicked on `3`, opens third page)  | As Expected | Pass |
 | Clicking on `Next >>` button | Open the next page (if on page 2, open page 3) | As Expected | Pass |
 
-[Back to top](#summary)
 
-## Footer 
+### Footer 
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on My projects `Weather 360°` icon | Opens "Weather 360°" project in new tab | As Expected | Pass |

@@ -35,7 +35,7 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 
 ## UX
 ### User Stories
-As a new user of the web-site, I would like to be able to:
+#### As a new user of the web-site, I would like to be able to:
 
 * **see all the ads**
   - user can see all adverts by clicking on `Marketplace` button. 
@@ -82,7 +82,7 @@ As a new user of the web-site, I would like to be able to:
   <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/delete-advert.png" width="500" height="300" alt="Delete advert">
 </p>
 
-As a company, I would like to:
+#### As a company, I would like to:
 * **promote my product**
   - companies can promote their product or buy space to promote themselves by contacting me. Every page has dedicated `Your AD here!` spaces which can be rented by anyone.
 <p align="center">
@@ -93,7 +93,7 @@ As a company, I would like to:
 
 ### Strategy
 
-**Snoop** web-site purpose is to be a marketplace where users can put their things to sell and earn money and companies to promote their bussines by renting advertisement space.
+**Snoop** web-site purpose is to be a marketplace where users can put their things to sell and earn money and companies to promote their bussines by renting advertisement space. Also, for the owner of the page to earn money by renting out designated advertisement space.
 
 ### Scope
 
@@ -295,7 +295,7 @@ create an email template, and use their Javascript library to trigger an email. 
 
 ## Testing
 
-### Testing section [here](https://github.com/romangrubic/database-project/blob/master/testing.md)
+### Testing section is located [here](https://github.com/romangrubic/database-project/blob/master/testing.md)
 
 ### Validating code
 HTML
