@@ -129,19 +129,19 @@ As an addition, I have implemented a designated space on all of the pages where 
 * **Home page**
   
   <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-home" width="500" height="300" alt="Home page">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-home.jpg" width="500" height="300" alt="Home page">
 </p>
 
 * **Marketplace page**
   
   <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-market" width="300" height="500" alt="Marketplace page">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-market.jpg" width="400" height="500" alt="Marketplace page">
 </p>
 
 * **View advert**
   
   <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-view" width="500" height="300" alt="View advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-view.jpg" width="500" height="300" alt="View advert">
 </p>
 
 ### Surface 
