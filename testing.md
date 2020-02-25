@@ -79,7 +79,6 @@
 
 [Back to top](#summary)
 
----
 
 ### Search and Filter
 
@@ -92,7 +91,6 @@
 
 [Back to top](#summary)
 
----
 
 ### Top Advert section
 
@@ -102,7 +100,6 @@
 
 [Back to top](#summary)
 
----
 
 ### Button "Go to top" 
 
@@ -112,7 +109,6 @@
 
 [Back to top](#summary)
 
----
 
 ## Pagination
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
@@ -123,14 +119,16 @@
 
 [Back to top](#summary)
 
----
-
 ## Footer 
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on My projects `Weather 360°` icon | Opens "Weather 360°" project in new tab | As Expected | Pass |
 | Clicking on My projects `Memory game` icon  | Opens "Memory game" project in new tab | As expected | Pass |
-| Clicking on `Add advert` link | Open "Add advert" page | As expected | Pass |
+| Clicking on `Github` icon | Opens "Github" profile in new tab | As expected | Pass |
+| Clicking on `LinkedIn` icon | Opens "LinkedIn" profile in new tab | As expected | Pass |
+| Clicking on `E-mail` icon | Opens contact modal for user to contact me | As expected | Pass |
+| Clicking on `Submit` button without filling e-mail modal form | User is not able to send | As expected | Pass |
+| Clicking on `Submit` button after filling e-mail modal form | Changes `Submit` button from red to green and modal closes itself  | As expected | Pass |
 
 [Back to top](#summary)
 
