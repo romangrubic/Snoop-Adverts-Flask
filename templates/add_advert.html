@@ -11,7 +11,7 @@
 						<form action="{{ url_for('insert_advert') }}" method="POST" enctype="multipart/form-data">
 							<div class="row">
 								<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-									<label for="category_name">Select category *</label>
+									<label for="category_name">Select category <span class="red-star">*</span></label>
 								</div>
 								<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 									<select class="input-field add-inputs" id="category" name="category_name" required>
@@ -24,7 +24,7 @@
 							</div>
 							<div class="row">
 								<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-									<label>Name *</label>
+									<label>Name <span class="red-star">*</span></label>
 								</div>
 								<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 									<input class="add-inputs" id="advert_name" name="advert_name" type="text" required maxlength="9"/>
@@ -32,7 +32,7 @@
 								</div>
 								<div class="row">
 									<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-										<label>Description *</label>
+										<label>Description <span class="red-star">*</span></label>
 									</div>
 									<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 										<textarea class="add-inputs" id="advert_description" name="advert_description" required maxlength="200"></textarea>
@@ -40,7 +40,7 @@
 								</div>
 								<div class="row">
 									<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-										<label>Price *</label>
+										<label>Price <span class="red-star">*</span></label>
 									</div>
 									<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 										<input class="add-inputs" id="price" name="price" type="number" min="0" max="99999" required>
@@ -48,7 +48,7 @@
 									</div>
 									<div class="row">
 										<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-											<label>Contact info *</label>
+											<label>Contact info <span class="red-star">*</span></label>
 										</div>
 										<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 											<input class="add-inputs" id="contact_info" name="contact_info" maxlength="25" required>
@@ -56,7 +56,7 @@
 										</div>
 										<div class="row">
 											<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-												<label>Location *</label>
+												<label>Location <span class="red-star">*</span></label>
 											</div>
 											<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 												<select class="input-field add-inputs" id="location" name="location" required>
@@ -69,19 +69,19 @@
 										</div>
 										<div class="row">
 											<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-												<label for="advert_image">Upload image *</label>
+												<label for="advert_image">Upload image <span class="red-star">*</span></label>
 											</div>
 											<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 												<input class="add-inputs" type="file" id="advert_image" name="advert_image" accept="image/*" required>
-                        </div>
-											</div>
                                             </div>
+											</div>
+                                            
 											<div class="row offset-md-1 justify-content-center">
 													<button type="submit" class="btn btn-submit">Submit</button>
 													<a href="{{url_for('home')}}" class="btn btn-cancel">Cancel</a>
 											</div>
 						</form>
-					
+					</div>
 				</div>
 			</div>
 			<div class="d-none d-md-block col-md-1 no-padding">

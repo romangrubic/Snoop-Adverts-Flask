@@ -2,13 +2,13 @@
     box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+
 }
 body{
-    background-color: #ebebeb;
+    background-color: #ebebeb; 
 }
 
-/* ---------- Google fonts -------------------*/
 
 /* ---------------- Navbar --------------------*/
 #nav, .nav{
@@ -287,6 +287,9 @@ padding: 5px
 .edit-header{
   color: rgba(0, 0, 0);
     margin: 50px 0 25px;
+}
+.red-star{
+    color: red;
 }
 
 /* --------------- View advert page -------------*/

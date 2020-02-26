@@ -12,7 +12,7 @@
 							enctype="multipart/form-data">
 							<div class="row">
 								<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-									<label>Select category *</label>
+									<label>Select category <span class="red-star">*</span></label>
 								</div>
 								<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 									<select class="add-inputs" id="category" name="category_name">
@@ -28,7 +28,7 @@
 							</div>
 							<div class="row">
 								<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-									<label for="advert_name">Name *</label>
+									<label for="advert_name">Name <span class="red-star">*</span></label>
 								</div>
 								<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 									<input class="add-inputs" id="advert_name" name="advert_name" type="text" value="{{advert.advert_name}}" required maxlength="9"/>
@@ -36,15 +36,15 @@
 								</div>
 								<div class="row">
 									<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-										<label for="advert_description">Description *</label>
+										<label for="advert_description">Description <span class="red-star">*</span></label>
 									</div>
 									<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
-										<textarea class="add-inputs" name="advert_description" id="advert_description" value="{{advert.advert_description}}" required required maxlength="200">{{advert.advert_description}}</textarea>
+										<textarea class="add-inputs" name="advert_description" id="advert_description" value="{{advert.advert_description}}" required maxlength="200">{{advert.advert_description}}</textarea>
 									</div>
 								</div>
 								<div class="row">
 									<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-										<label for="price">Price *</label>
+										<label for="price">Price <span class="red-star">*</span></label>
 									</div>
 									<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 										<input class="add-inputs" id="price" name="price" type="number" min="0" max="99999" value="{{advert.price}}" required>
@@ -52,7 +52,7 @@
 									</div>
 									<div class="row">
 										<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-											<label>Contact info *</label>
+											<label>Contact info <span class="red-star">*</span></label>
 										</div>
 										<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 											<input class="add-inputs" id="contact_info" name="contact_info"  value="{{advert.contact_info}}" maxlength="25" required>
@@ -68,7 +68,7 @@
 											</div>
 											<div class="row">
 												<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-													<label>Location *</label>
+													<label>Location <span class="red-star">*</span></label>
 												</div>
 												<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 													<select class="input-field add-inputs" id="location" name="location" required>
@@ -84,7 +84,7 @@
 											</div>
 											<div class="row">
 												<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-													<label for="advert_image">Upload image *</label>
+													<label for="advert_image">Upload image <span class="red-star">*</span></label>
 												</div>
 												<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 													<input class="add-inputs" type="file" id="advert_image" name="advert_image" accept="image/*" value="{{advert.imageURL}}">
@@ -92,14 +92,14 @@
 												</div>
 
 
-											</div>
+											
 											<div class="row offset-md-1 justify-content-center">
 												<button class="btn edit-btn" type="submit" name="action">Save</button>
 											<a href="{{url_for('view_advert', advert_id=advert._id)}}"
 													class="btn btn-cancel">Cancel</a>
                                             </div>
 						</form>
-
+</div>
 					</div>
 
 				</div>
