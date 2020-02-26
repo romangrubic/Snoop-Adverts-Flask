@@ -10,6 +10,18 @@ body{
     font-family: 'Lato', sans-serif;
     
 }
+.no-margin{
+    margin: 0px;
+}
+.no-padding{
+    padding: 0;
+}
+.no-padding-right{
+    padding-right: 0px
+}
+.no-padding-left{
+    padding-left: 0px;
+}
 
 /* ---------------------- Google fonts -------*/
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
@@ -51,32 +63,25 @@ body{
     margin-top: 200px;
     margin-bottom: 10px;
 }
-.btn-outline-warning{
+.btn-outline-light{
     width: 120px;
     border: 3px solid white;
     background-color: rgba(0, 0, 0, 0.4);
     font-size: 18px;
     font-weight: 600;
     padding: 10px 0;
+    margin: 10px 0 10px 0;
 }
-.btn-outline-warning:hover{
+.btn-outline-light:hover{
     background-color: #ebebeb;
     color: black;
     border-color: rgba(0, 0, 0, 0.5);
-}
-.btn-outline-warning:not(:disabled):not(.disabled):active:focus, .btn-outline-warning:not(:disabled):not(.disabled).active:focus,
-.show > .btn-outline-warning.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
-    background-color: white;
-    border: white;
 }
 .btn-motors{
     border-radius: 20px 0 0 20px;
     color: white;
 }
 .btn-home{
-    border-left: none;
-    border-right: none;
     border-radius: 0;
     color: white;
 }
@@ -110,10 +115,10 @@ body{
 }
 .carousel-home{
     width: 100%;
-    max-width: 1500px;
     height: 500px;
     z-index: -1;
 }
+
 /* -------------- Most viewed ad -------------*/
 .top-ad-header{
     padding: 0px;
@@ -130,8 +135,8 @@ body{
     height: 350px;
 }
 .border-top-ad{
-border: 3px solid rgba(0, 0, 0, 0.5);
-border-radius: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
 }
 .carousel-top-ad{
     height: 250px;
@@ -142,20 +147,17 @@ border-radius: 20px;
     border-right: 1px solid black;
 }
 .carousel-caption{
-margin: 0;
-padding-bottom: 50px;
-color: black;
-text-align: center;
+    margin: 0;
+    padding-bottom: 50px;
+    color: black;
+    text-align: center;
 }
 .top-ad-text{
     font-weight: 600;
     font-size: 18px;
 }
 .bg-color{
-background-color: rgba(255, 255, 255, 0.75);
-}
-.no-margin{
-margin:0;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 /* ----------------- Cards --------------------*/
@@ -166,15 +168,6 @@ margin:0;
     margin:5px;
     background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid rgba(0, 0, 0, 0.33);
-}
-.no-padding{
-    padding: 0;
-}
-.no-padding-right{
-    padding-right: 0px
-}
-.no-padding-left{
-    padding-left: 0px;
 }
 .margin-top{
     margin-top: 7px;
@@ -197,7 +190,6 @@ margin:0;
 .price{
     padding-left: 10px;
     font-size: 18px;
-
 }
 .location{
     font-size: 15px
@@ -249,15 +241,13 @@ margin:0;
 .btn-cancel:hover{
     background-color:rgb(255, 230, 0); 
 }
-.btn-outline-light{
-margin: 10px;
-}
+
 /* -------------Marketplace -------------------*/
 .marketplace-form{
     margin: 50px auto;
 }
 .marketplace-btn{
-padding: 5px 
+    padding: 5px 
 }
 
 /* ------------ Add/Edit advert ---------------------*/
@@ -289,8 +279,10 @@ padding: 5px
     padding: 10px 5px 5px;
 }
 .edit-header{
-  color: rgba(0, 0, 0);
+    color: rgba(0, 0, 0);
+    font-size: 35px;
     margin: 50px 0 25px;
+    font-weight: 700;
 }
 .red-star{
     color: red;
@@ -340,6 +332,7 @@ padding: 5px
 .advert-buttons{
     margin: auto;
 }
+
 /* ------------- Pagination --------------------*/
 .page-item.active .page-link{
     background-color: rgb(87, 87, 87);
@@ -351,6 +344,7 @@ padding: 5px
     color: rgb(87, 87, 87);
     font-weight: 600;
 }
+
 /* -------------- Footer ------------------------*/
 #footer{
     min-height: 200px;
@@ -383,10 +377,10 @@ padding: 5px
     background-color: rgba(34, 34, 34, 0.9);
 }
 .vertical-align{
-padding-top: 45px;
+    padding-top: 45px;
 }
 .vertical-align-center{
-padding-top: 25px;
+    padding-top: 25px;
 }
 
 /* --- Modals --- */
@@ -405,10 +399,8 @@ padding-top: 25px;
     font-weight: 500;
 }
 .form-control{
-margin: 8px 0;
+    margin: 8px 0;
 }
-
-
 
 /* --------- Media queries ---------------*/
 @media only screen and (max-width: 575px) {
@@ -435,21 +427,20 @@ margin: 8px 0;
         font-size: 15px;
     }
    .col-8,.col-sm-6,.col-md-4,.col-lg-3{
-    margin:auto;
-  }
-  #footer {
-      height: 230px;
-  }
-  .vertical-align{
-      padding-top: 20px
-  }
-  #search{
-      width: 300px;
-  }
-  .card-img-view{
-      max-height: 200px;
-  }
-    
+        margin:auto;
+    }
+    #footer {
+        height: 230px;
+    }
+    .vertical-align{
+        padding-top: 20px
+    }
+    #search{
+        width: 300px;
+    }
+    .card-img-view{
+        max-height: 200px;
+    }    
 }
 
 @media only screen and (max-width: 992px) {
@@ -475,10 +466,10 @@ margin: 8px 0;
         padding: 10px;
     }
     .card-img-view{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom: 1px solid black;
-    border-right: none;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom: 1px solid black;
+        border-right: none;
     }
     .advert-price{
         padding: 10px;
