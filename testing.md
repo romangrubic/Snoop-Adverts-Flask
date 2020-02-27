@@ -56,18 +56,24 @@ CRUD functionality is working as expected, no errors.
 
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
+| Clicking on `Edit` button | Displays `Access key` modal | As Expected | Pass |
+| Typing wrong `Access key` in modal | Closes `Access key` modal | As Expected | Pass |
+| Typing correct `Access key` in modal | Opens Edit advert page | As Expected | Pass |
+| Clicking outside modal | Closes `Access key` modal | As Expected | Pass |
 | Clicking on `Save` button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
 | Clicking `Save` button after changing some of the forms | Redirect to the view advert page and the advert is edited | As expected | Pass |
 | Click on `Cancel` button | Cancel all changes and redirects to view advert page | As expected | Pass | 
+
 
 
 ### Delete Advert
 
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
-| Clicking on `Delete` button | Opens a modal to confirm deletion | As Expected | Pass |
-| Clicking on `Delete` button inside modal | Deletes advert and redirects to Home page | As Expected | Pass |
-| Clicking on `Close` button inside modal | Closes modal and cancels deletion | As Expected | Pass |
+| Clicking on `Delete` button | Display `Access key` modal | As Expected | Pass |
+| Typing wrong `Access key` in modal | Closes `Access key` modal | As Expected | Pass |
+| Typing correct `Access key` in modal | Deletes advert and redirects to Home page | As Expected | Pass |
+| Clicking outside modal | Closes `Access key` modal | As Expected | Pass |
 
 [Back to top](#summary)
 
