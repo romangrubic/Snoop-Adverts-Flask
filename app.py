@@ -185,7 +185,9 @@ def insert_advert():
         'contact_info': request.form.get('contact_info'),
         'location': request.form.get('location'),
         'imageURL': advert_image.filename,
-        'views': 0
+        'views': 0,
+        'key': request.form.get('access_key')
+
     }
     advert.insert_one(new_advert)
     return redirect(url_for('home'))
@@ -231,17 +233,28 @@ def update_advert(advert_id):
         'contact_info': request.form.get('contact_info'),
         'location': request.form.get('location'),
         'imageURL': image_filename,
-        'views': int(request.form.get('views'))
+        'views': int(request.form.get('views')),
+        'key': request.form.get('access_key')
     })
     return redirect(url_for('view_advert', advert_id=advert_id))
 
 
 # ------------------ Deleting advert ---------------------------
-@app.route('/delete_advert/<advert_id>')
-def delete_advert(advert_id):
+def delete(advert_id):
     advert = mongo.db.advert
     advert.remove({'_id': ObjectId(advert_id)})
     return redirect(url_for('home'))
+
+
+@app.route('/delete_advert/<advert_id>', methods=['POST'])
+def delete_advert(advert_id):
+    advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
+
+    if advert['key'] == request.form.get('access_key2'):
+        delete(advert_id)
+        return redirect(url_for('home'))
+    else:
+        return redirect(url_for('marketplace'))
 
 
 # ------------- Host/Port/Debug --------------------------------
