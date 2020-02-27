@@ -200,15 +200,18 @@ def file(filename):
 
 
 # ------------- Edit advert ------------------------------------
-@app.route('/edit_advert/<advert_id>', methods=['GET'])
+@app.route('/edit_advert/<advert_id>', methods=['GET', 'POST'])
 def edit_advert(advert_id):
     the_advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
     all_categories = mongo.db.categories.find()
-    return render_template('edit_advert.html',
-                           tittle="Edit Advert",
-                           advert=the_advert,
-                           categories=all_categories,
-                           counties=mongo.db.county.find())
+    if the_advert['key'] == request.form.get('access_key2'):
+        return render_template('edit_advert.html',
+                               tittle="Edit Advert",
+                               advert=the_advert,
+                               categories=all_categories,
+                               counties=mongo.db.county.find())
+    else:
+        return redirect(url_for('view_advert', advert_id=advert_id))
 
 
 # ------------ Update advert -----------------------------------

@@ -39,29 +39,41 @@
 						</div>
 						<div class="row advert-buttons">
 							<button type="button" class="btn delete-btn" data-toggle="modal" data-target="#deletemodal">Delete</button>
-							<a href="{{url_for('edit_advert', advert_id=advert._id)}}" class="btn edit-btn">Edit</a>
+							<button type="button" class="btn edit-btn" data-toggle="modal" data-target="#editmodal">Edit</button>
 						</div>
 
+                        		</div>
+						<!-- Delete Modal -->
 						<div class="modal fade" id="deletemodal" tabindex="-1" role="dialog"
 							aria-labelledby="deletemodalLabel" aria-hidden="true">
-							<div class="modal-dialog" role="document">
+							<div class="modal-dialog modal-dialog-centered" role="document">
 								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="deletemodalLabel">Delete advert</h5>
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-									</div>
-									<div class="modal-body">
+										<div class="modal-body">
                                     <form action="{{url_for('delete_advert', advert_id=advert._id)}}" enctype="multipart/form-data" method="POST">
 										<h3>Access key:</h3>
 										<input class="add-inputs" id="access_key" name="access_key2" minlength="4" maxlength="15" required>
                                         <button type="submit" name="action" class="btn delete-btn">Delete</button>
                                     </form>
 									</div>
+							</div>
+						</div>
+                        
+					</div>
+                    <!-- Edit Modal -->
+						<div class="modal fade" id="editmodal" tabindex="-1" role="dialog"
+							aria-labelledby="editmodalLabel" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+										<div class="modal-body">
+                                    <form action="{{url_for('edit_advert', advert_id=advert._id)}}" enctype="multipart/form-data" method="POST">
+										<h3>Access key:</h3>
+										<input class="add-inputs" id="access_key" name="access_key2" minlength="4" maxlength="15" required>
+                                        <button type="submit" name="action" class="btn edit-btn">Edit</button>
+                                    </form>
 								</div>
 							</div>
 						</div>
+                        
 					</div>
 				</div>
 				<div class="d-none d-md-block col-md-1 no-padding">
