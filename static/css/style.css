@@ -198,7 +198,7 @@ body{
 /* ------------ Delete, Edit, Submit, Cancel buttons ------*/
 .delete-btn{
     color: white;
-    width: 100px;
+    width: 150px;
     margin: 5px 0 5px auto;
     font-weight: 600;
     background-color: rgb(255, 81, 0, 0.6);
@@ -252,7 +252,7 @@ body{
 
 /* ------------ Add/Edit advert ---------------------*/
 .add-advert-form{
-    padding: 75px 0;
+    padding: 75px 0 20px;
     margin: 40px auto;
     max-width: 700px;
     text-align: left;
@@ -287,7 +287,9 @@ body{
 .red-star{
     color: red;
 }
-
+.submit-row{
+    padding-top: 45px
+}
 /* --------------- View advert page -------------*/
 .view-advert-form{
     margin: 50px auto;

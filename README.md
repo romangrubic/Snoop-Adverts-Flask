@@ -71,13 +71,13 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 </p>
 
 * **change my advert**
-  - user can edit adverts if something changed by pressing `Edit` button.
+  - user can edit adverts if something changed by pressing `Edit` button and entering `Access key`.
 <p align="center">
   <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/edit-advert.png" width="500" height="300" alt="Edit advert">
 </p>
 
 * **delete my advert**
-  - user can delete adverts if the advert is no longer valid.
+  - user can delete adverts if the advert is no longer valid by pressing `Delete` button and entering `Access key`.
 <p align="center">
   <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/delete-advert.png" width="500" height="300" alt="Delete advert">
 </p>
@@ -109,7 +109,7 @@ Marketplace button where he can see all the adverts sorted by number of views an
 
 When user goes to Marketplace page, adverts will show up ranked by number of views they have. Also, there are only 12 adverts visible per page and a `Go to top` button at the end of the page. Adverts are presented as cards with a decent size picture and below their name, number of views, location and price. 
 Adverts are clickable on all of their size so user can easily see the whole advert. If user clicks on advert, a new page will open where information will be presented in a bigger format and advert description will also be visible. 
-There are buttons on the end of the page where user can delete the advert or edit it if neccessary. If user presses `Delete` button, a modal will show up asking the user are they sure they want to delete it. If they press `Edit` button, an edit page will open 
+There are buttons on the end of the page where user can delete the advert or edit it if neccessary. If user presses `Delete` button, a modal will show up asking the user for `Access key`. If the `Access key` is same as the advert key, advert is deleted, otherwise modal will close itself. If they press `Edit` button, a modal will show up asking the user for `Access key`. If the `Access key` is same as the advert key, edit page will open
 containing all the data of the advert in database and user can change anty part of it.
 
 User can click on filter button that are visible on all main pages, where he can fast search a specific category of adverts. If he wants to see `Motors`, all adverts in category of Motors will show. Same 
@@ -170,6 +170,9 @@ user can see what it wants, look at adverts that interest it. Users experience o
 * Add advert 
   - User can add advert by typing all the required information that are neccssary to present the advert.
    All fields are required and have to filled by the requirements. By pressing submit button, advert will be saved to database and presented in Marketplace.
+
+* Access key
+  - On adding advert, user will be asked to put in "Access key" which will then be used for deleting or editing advert. It is made as a security measure from unauthorized deleting or editing on the site.
 
 * Adverts cards
   - Once the user searches or visits Marketplace, adverts will be presented in cards. User can see image of the advert and bellow it
@@ -244,6 +247,7 @@ Adverts Collection
 | Location           | location     |  user chooses from a list of choices      | string    |
 | Upload Image       | imageURL     | image, image/*                            | string    |
 | Views              | views        | number                                    | integer   |
+| Key              | key        | text/number, minlength="4", maxlength="15"    | string   |
 
 
 [JSON file showing adverts collection structure](https://github.com/romangrubic/database-project/tree/master/data/database/adverts.json) 
