@@ -73,10 +73,10 @@
 												<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
 													<select class="input-field add-inputs" id="location" name="location" required>
 						            {% for county in counties %}
-                                        {% if county.name == county.name%}
-                                            <option value="{{county.name}}" selected >{{county.name}}</option>
+                                        {% if county.name == advert.location %}
+                                            <option value="{{advert.location}}" selected >{{advert.location}}</option>
                                         {% else %}
-                                        <option value="{{county.name}}" required>{{county.name}}</option>
+                                        <option value="{{county.name}}">{{county.name}}</option>
                                         {% endif %}
                                     {% endfor %}
                             </select>
@@ -95,7 +95,7 @@
 													<label>Access key<span class="red-star">*</span></label>
 												</div>
 												<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
-                                                    <input class="add-inputs" id="access_key" name="access_key"  value="{{advert.access_key}}" minlength="4" maxlength="15" required>											
+                                                    <input class="add-inputs" id="access_key" name="access_key"  value="{{advert.key}}" minlength="4" maxlength="15" required>											
 												</div>
                                                 </div>
                                             <div class="row offset-md-1 justify-content-center">

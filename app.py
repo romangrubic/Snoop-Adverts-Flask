@@ -254,7 +254,7 @@ def delete_advert(advert_id):
         delete(advert_id)
         return redirect(url_for('home'))
     else:
-        return redirect(url_for('marketplace'))
+        return redirect(url_for('view_advert', advert_id=advert_id))
 
 
 # ------------- Host/Port/Debug --------------------------------
