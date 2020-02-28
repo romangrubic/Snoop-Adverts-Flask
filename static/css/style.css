@@ -336,7 +336,9 @@ body{
     margin: auto;
 }
 /* ------------ Side adverts for rent ---------*/
-
+.d-none{
+    cursor: pointer;
+}
 
 /* ------------- Pagination --------------------*/
 .page-item.active .page-link{
