@@ -35,11 +35,15 @@
 					<div id="carousel-top-ad" class="carousel slide" data-ride="carousel" data-interval="3000">
 						<div class="border-top-ad carousel-inner">
 							<div class="carousel-item carousel-top-ad active">
-								<img src="{{url_for('static', filename='images/carousel/image-2.jpeg')}}" alt="...">
+                            <a href="https://romangrubic.github.io/Roman-Grubic-portfolio/"
+											class="btn no-padding" target="-blank" >
+								<img src="{{url_for('static', filename='images/background/bg-image.jpg')}}" alt="...">
+                            
 								<div class="carousel-caption d-none d-md-block">
-									<h5>Reklama</h5>
-									<p>Looking for something?</p>
+									<h4 class="my-ad no-margin">Looking for a Full-stack Developer?</h4>
+									<p class="my-ad">Check out this portfolio!</p>
 								</div>
+                                </a>
 							</div>
 							{% for top_ad in top_ads %}
 							<div class="carousel-item carousel-top-ad">

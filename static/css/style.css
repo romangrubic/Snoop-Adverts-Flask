@@ -6,7 +6,7 @@ html {
 
 }
 body{
-    background-color: #ebebeb;
+    background-color: #ededed;
     font-family: 'Lato', sans-serif;
     
 }
@@ -74,7 +74,7 @@ body{
 
 }
 .btn-outline-light:hover{
-    background-color:rgba(255, 255, 255, 0.66);
+    background-color:rgba(255, 255, 255, 0.75);
     color: rgb(0, 0, 0);
     border-color: white;
 }
@@ -95,14 +95,14 @@ body{
     margin: 30px;
 }
 .search-outline{
-    padding: 10px;
+    padding: 7px;
     background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 #search{
     text-align: center;
     width: 450px;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 5px;
     background-color: white;
     outline: none;
@@ -132,12 +132,17 @@ body{
     margin:auto;
     max-width: 700px;
 }
+.my-ad{
+    color: white;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
 .most-viewed-ad{
     height: 350px;
 }
 .border-top-ad{
     border: 3px solid rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .carousel-top-ad{
     height: 250px;
@@ -167,7 +172,7 @@ body{
 }
 .card{
     margin:5px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.33);
 }
 .margin-top{
@@ -196,13 +201,13 @@ body{
     font-size: 15px
 }
 
-/* ------------ Delete, Edit, Submit, Cancel buttons ------*/
+/* ------------ Delete, Edit, Submit, Cancel, Go to top buttons ------*/
 .delete-btn{
     color: white;
     width: 150px;
     margin: 5px 0 5px auto;
     font-weight: 600;
-    background-color: rgb(255, 81, 0, 0.6);
+    background-color: rgb(255, 81, 0, 0.8);
     border-color: rgb(255, 81, 0); 
 }
 .delete-btn:hover{
@@ -213,7 +218,7 @@ body{
     width: 150px;
     margin: 5px;
     font-weight: 600;
-    background-color: rgb(86, 164, 253, 0.6);
+    background-color: rgb(86, 164, 253, 0.8);
     border-color: rgb(86, 164, 253);
 }
 .edit-btn:hover{
@@ -224,7 +229,7 @@ body{
     width: 150px;
     margin: 5px;
     font-weight: 600;
-    background-color: rgba(0, 173, 0, 0.6);
+    background-color: rgba(0, 173, 0, 0.8);
     border-color: rgba(0, 173, 0);
 }
 .btn-submit:hover{
@@ -234,7 +239,7 @@ body{
     color: white;
     width: 100px;
     margin: 5px 10px;
-    background-color:rgb(255, 230, 0, 0.6);
+    background-color:rgba(231, 197, 0, 0.8);
     font-weight: 600;
     text-decoration: none;
     border-color:rgb(255, 230, 0);
@@ -242,7 +247,13 @@ body{
 .btn-cancel:hover{
     background-color:rgb(255, 230, 0); 
 }
-
+.btn-outline-secondary{
+    border-width: 2px;
+    font-weight: 600;
+}
+.btn-outline-secondary:hover{
+    background-color: rgb(87, 87, 87)
+}
 /* -------------Marketplace -------------------*/
 .marketplace-form{
     margin: 50px auto;
@@ -296,14 +307,14 @@ body{
     margin: 50px auto;
     background-color: rgba(255, 255, 255, 0.85);
     border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 10px 10px 10px 10px;
 }
 .view-advert-page{
     padding: 0 5%;
 }
 .card-img-view{
     border-top-left-radius: 20px;
-    border-right: 1px solid black;
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
 }
 .col-6{
     padding: 0;
@@ -327,7 +338,7 @@ body{
     margin: 0;
 }
 .advert-description{
-    border-top: 1px solid black;
+    border-top: 2px solid rgba(0, 0, 0, 0.5);
     padding: 30px 0 30px 50px;
     font-weight: 500;
     font-size: 18px;
@@ -475,7 +486,7 @@ body{
     .card-img-view{
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
-        border-bottom: 1px solid black;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.5);
         border-right: none;
     }
     .advert-price{
