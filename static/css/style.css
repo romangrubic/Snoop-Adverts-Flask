@@ -65,20 +65,21 @@ body{
 }
 .btn-outline-light{
     width: 120px;
-    border: 3px solid white;
+    border: 2px solid white;
     background-color: rgba(0, 0, 0, 0.4);
     font-size: 18px;
     font-weight: 600;
     padding: 10px 0;
     margin: 10px 0 10px 0;
+
 }
 .btn-outline-light:hover{
-    background-color: #ebebeb;
-    color: black;
-    border-color: rgba(0, 0, 0, 0.5);
+    background-color:rgba(255, 255, 255, 0.66);
+    color: rgb(0, 0, 0);
+    border-color: white;
 }
 .btn-motors{
-    border-radius: 20px 0 0 20px;
+    border-radius: 10px 0 0 10px;
     color: white;
 }
 .btn-home{
@@ -86,7 +87,7 @@ body{
     color: white;
 }
 .btn-pc{
-    border-radius: 0 20px 20px 0;
+    border-radius: 0 10px 10px 0;
     color: white;
 }
 /* -------------- Search bar ------------------*/
@@ -334,6 +335,8 @@ body{
 .advert-buttons{
     margin: auto;
 }
+/* ------------ Side adverts for rent ---------*/
+
 
 /* ------------- Pagination --------------------*/
 .page-item.active .page-link{

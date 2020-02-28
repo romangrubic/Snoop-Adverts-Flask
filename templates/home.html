@@ -11,9 +11,9 @@
             </div>
 					<div class="home-btn d-flex justify-content-center">
 						<a class="btn btn-outline-light btn-motors"
-							href="{{url_for('motors_and_vehicles')}}">Motors</a>
-						<a class="btn btn-outline-light btn-home" href="{{url_for('home_garden_diy')}}">Home</a>
-						<a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}">Electronics</a>
+							href="{{url_for('motors_and_vehicles')}}" data-toggle="tooltip" title="Motors and vehicles">Motors</a>
+						<a class="btn btn-outline-light btn-home" href="{{url_for('home_garden_diy')}}" data-toggle="tooltip" title="Home, garden and DIY">Home</a>
+						<a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}" data-toggle="tooltip" title="Electronic, mobile and PC">Electronics</a>
 					</div>
 					<div class="search-bar d-flex justify-content-center">
 						<div class="row search-outline">
@@ -27,7 +27,7 @@
 		</div>
 
 		<div class="row no-margin most-viewed-ad">
-			<div class="d-none d-sm-block col-sm-1 no-padding">
+			<div class="d-none d-sm-block col-sm-1 no-padding"  data-toggle="modal" data-target="#contactModal">
 				<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="350px" alt="side-advert" display>
 		</div>
 				<div class="col-12 col-sm-10 top-ad-section">
@@ -72,7 +72,7 @@
 
 
 				</div>
-				<div class="d-none d-sm-block col-sm-1 no-padding">
+				<div class="d-none d-sm-block col-sm-1 no-padding"  data-toggle="modal" data-target="#contactModal">
 					<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="350px" alt="side-advert" display>
 		</div>
 				</div>

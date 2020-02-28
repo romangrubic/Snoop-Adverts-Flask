@@ -16,16 +16,16 @@
 <body>
 	<nav id="nav">
 		<ul class="nav fixed-top justify-content-center">
-			<li>
+			<li data-toggle="tooltip" title="Home page">
 				<a class="nav-link" href="{{url_for('home')}}">
 					<img src="{{url_for('static', filename='images/logo/logo.png')}}" class="d-inline-block align-top nav-image" alt="Adverts">
                 </a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="{{url_for('marketplace')}}">Marketplace</a>
+				<a class="nav-link" href="{{url_for('marketplace')}}" data-toggle="tooltip" title="See ALL the adverts!">Marketplace</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="{{url_for('add_advert')}}">Add advert</a>
+				<a class="nav-link" href="{{url_for('add_advert')}}" data-toggle="tooltip" title="No registration needed! Place your add for free!">Add advert</a>
 			</li>
 		</ul>
 	</nav>

@@ -14,9 +14,9 @@
 				</div>
                 <div class="marketplace-btn d-flex justify-content-center">
 						<a class="btn btn-outline-light btn-motors"
-							href="{{url_for('motors_and_vehicles')}}">Motors</a>
-						<a class="btn btn-outline-light btn-home" href="{{url_for('home_garden_diy')}}">Home</a>
-						<a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}">Electronics</a>
+							href="{{url_for('motors_and_vehicles')}}" data-toggle="tooltip" title="Motors and vehicles">Motors</a>
+						<a class="btn btn-outline-light btn-home" href="{{url_for('home_garden_diy')}}" data-toggle="tooltip" title="Home, garden and DIY">Home</a>
+						<a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}" data-toggle="tooltip" title="Electronic, mobile and PC">Electronics</a>
 					</div>
 				<div class="marketplace-form">
 					<div class="row">
@@ -27,7 +27,7 @@
 							{% else %}
 							{% for result in results %}
 							<div class="col-8 col-sm-6 col-md-4 col-lg-3">
-								<div class="card">
+								<div class="card" data-toggle="tooltip" title="Click to see full details">
 									<a href="{{url_for('view_advert', advert_id=result._id)}}" class="btn no-padding">
 										<img src="{{url_for('file', filename=result['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{result.advert_name}}">
 										<div class="card-body">
