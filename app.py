@@ -39,6 +39,8 @@ def total_view():
 # --------- Marketplace page ----------------------------------------
 @app.route('/marketplace')
 def marketplace():
+    counties = mongo.db.county.find()
+    categories = mongo.db.categories.find()
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
     ads_count = mongo.db.advert.find().count()
@@ -47,7 +49,34 @@ def marketplace():
     ads_on_page = mongo.db.advert.find().sort(
         'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
+                           counties=counties,
+                           categories=categories,
                            tittle="Marketplace",
+                           adverts=ads_on_page,
+                           ads=ads_on_page,
+                           page=page_number,
+                           pages=page_numbers,
+                           total=page_count)
+
+
+@app.route('/marketplace', methods=['GET', 'POST'])
+def county_search():
+    counties = mongo.db.county.find()
+    categories = mongo.db.categories.find()
+    county = request.form.get('county')
+    category = request.form.get('category_name')
+    page_number = int(request.args.get('page', 1))
+    ads_to_skip = (page_number - 1) * ADS_PER_PAGE
+    ads_count = mongo.db.advert.find({'category_name': category, 'location': county}).count()
+    page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
+    page_numbers = range(1, page_count + 1)
+    ads_on_page = mongo.db.advert.find({'category_name': category, 'location': county}).sort(
+        'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
+    return render_template('marketplace.html',
+                           counties=counties,
+                           categories=categories,
+                           subtittle="Marketplace",
+                           tittle=category,
                            adverts=ads_on_page,
                            ads=ads_on_page,
                            page=page_number,
@@ -58,6 +87,8 @@ def marketplace():
 # --------- Filter search: Motors and Vehicles ------------------------------------
 @app.route('/motors_and_vehicles')
 def motors_and_vehicles():
+    counties = mongo.db.county.find()
+    categories = mongo.db.categories.find()
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
     ads_count = mongo.db.advert.find(
@@ -68,6 +99,8 @@ def motors_and_vehicles():
         {'category_name': 'Motors and vehicles'}).sort(
         'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
+                           counties=counties,
+                           categories=categories,
                            subtittle="Marketplace",
                            tittle="Motors and vehicles",
                            adverts=ads_on_page,
@@ -80,6 +113,8 @@ def motors_and_vehicles():
 # --------- Filter search: Home, garden and Diy ----------------------------------
 @app.route('/home_garden_diy')
 def home_garden_diy():
+    counties = mongo.db.county.find()
+    categories = mongo.db.categories.find()
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
     ads_count = mongo.db.advert.find(
@@ -90,6 +125,8 @@ def home_garden_diy():
         {'category_name': 'Home, garden, DIY'}).sort('views', DESCENDING).skip(
             ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
+                           counties=counties,
+                           categories=categories,
                            subtittle="Marketplace",
                            tittle="Home, garden and DIY",
                            adverts=ads_on_page,
@@ -102,6 +139,8 @@ def home_garden_diy():
 # --------- Filter search: Electronic, mobile and PC -----------------------------
 @app.route('/electronics')
 def electronics():
+    counties = mongo.db.county.find()
+    categories = mongo.db.categories.find()
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
     ads_count = mongo.db.advert.find(
@@ -112,6 +151,8 @@ def electronics():
         {'category_name': 'Electronics, mobile, PC'}
     ).sort('views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
+                           counties=counties,
+                           categories=categories,
                            subtittle="Marketplace",
                            tittle="Electronics, mobile and PC",
                            adverts=ads_on_page, ads=ads_on_page,
