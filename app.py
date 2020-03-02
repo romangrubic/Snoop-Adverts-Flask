@@ -68,6 +68,7 @@ def motors_and_vehicles():
         {'category_name': 'Motors and vehicles'}).sort(
         'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
+                           subtittle="Marketplace",
                            tittle="Motors and vehicles",
                            adverts=ads_on_page,
                            ads=ads_on_page,
@@ -89,6 +90,7 @@ def home_garden_diy():
         {'category_name': 'Home, garden, DIY'}).sort('views', DESCENDING).skip(
             ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
+                           subtittle="Marketplace",
                            tittle="Home, garden and DIY",
                            adverts=ads_on_page,
                            ads=ads_on_page,
@@ -110,6 +112,7 @@ def electronics():
         {'category_name': 'Electronics, mobile, PC'}
     ).sort('views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
+                           subtittle="Marketplace",
                            tittle="Electronics, mobile and PC",
                            adverts=ads_on_page, ads=ads_on_page,
                            page=page_number,

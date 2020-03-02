@@ -57,6 +57,13 @@ body{
     width: 45px;
     height: 35px
 }
+/* -------- Breadcrumbs -----------------------*/
+.breadcrumb{
+    margin-bottom: 0px;
+    margin-top: 20px;
+    color: black;
+    text-decoration: none;
+}
 /* -------------- Home page buttons -----------*/
 .home-btn{
     margin-top: 200px;
@@ -91,7 +98,7 @@ body{
 }
 /* -------------- Search bar ------------------*/
 .search-bar{
-    margin: 30px;
+    margin: 15px;
 }
 .search-outline{
     padding: 7px;
