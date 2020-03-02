@@ -4,24 +4,23 @@
 		<div class="d-none d-md-block col-md-1 no-padding">
 			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
 		</div>
-			<div class="offset-1 col-10 offset-md-0 col-md-10">
-				<div class="search-bar d-flex justify-content-center">
-					<div class="row search-outline">
-						<form action="{{url_for('search')}}">
-							<input id="search" name="search" type="text" class="validate" placeholder="Search by name" required>
-                            </form>
-					</div>
+		<div class="offset-1 col-10 offset-md-0 col-md-10">
+			<div class="search-bar d-flex justify-content-center">
+				<div class="row search-outline">
+					<form action="{{url_for('search')}}">
+						<input id="search" name="search" type="text" class="validate" placeholder="Search by name" required>
+                    </form>
 				</div>
-				<div class="marketplace-btn d-flex justify-content-center">
-					<a class="btn btn-outline-light btn-motors" href="{{url_for('motors_and_vehicles')}}" data-toggle="tooltip" title="Motors and vehicles">Motors</a>
-					<a class="btn btn-outline-light btn-home" href="{{url_for('home_garden_diy')}}" data-toggle="tooltip" title="Home, garden and DIY">Home</a>
-					<a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}" data-toggle="tooltip" title="Electronic, mobile and PC">Electronics</a>
-				</div>
-				<div class="marketplace-form">
-					<div class="row">
-						{% for advert in adverts %}
+			</div>
+			<div class="marketplace-btn d-flex justify-content-center">
+				<a class="btn btn-outline-light btn-motors" href="{{url_for('motors_and_vehicles')}}" data-toggle="tooltip" title="Motors and vehicles">Motors</a>
+				<a class="btn btn-outline-light btn-home" href="{{url_for('home_garden_diy')}}" data-toggle="tooltip" title="Home, garden and DIY">Home</a>
+				<a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}" data-toggle="tooltip"	title="Electronic, mobile and PC">Electronics</a>
+			</div>
+			<div class="marketplace-form">
+				<div class="row">
+					{% for advert in adverts %}
 						<div class="col-8 col-sm-6 col-md-4 col-lg-3">
-
 							<div class="card" data-toggle="tooltip" title="Click to see full details">
 								<a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn no-padding">
 									<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{advert.advert_name}}">
@@ -31,66 +30,68 @@
 												<p class="card-title">{{advert.advert_name.capitalize()}}</p>
 											</div>
 											<div class="col-3 no-padding text-left">
-												<p class="margin-top"><img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views">
-                        {{advert.views}}</p>
-                        </div>
-											</div>
-											<div class="row">
-												<div class="col-7 no-padding-right location">
-													<p class="card-text">{{advert.location}}</p>
-												</div>
-												<div class="col-5 no-padding">
-													<p class="card-text price">€ {{advert.price}}</p>
-												</div>
+												<p class="margin-top">
+                                                    <img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views">{{advert.views}}
+                                                </p>
 											</div>
 										</div>
-
+										<div class="row">
+											<div class="col-7 no-padding-right location">
+												<p class="card-text">{{advert.location}}</p>
+											</div>
+											<div class="col-5 no-padding">
+												<p class="card-text price">€ {{advert.price}}</p>
+											</div>
+										</div>
+									</div>
 								</a>
 							</div>
 						</div>
-						{% endfor %}
-					</div>
+					{% endfor %}
 				</div>
-                <div class="text-right">
-                <a class="btn btn-outline-secondary" href="#nav">Go to top</a>
-                </div>
-				<div>
-					<div aria-label="" class="card-sm">
-						<ul class="pagination justify-content-center">
-							{% if page > 1 %}
-							<li class="page-item">
-								<a class="page-link" href="{{url_for('marketplace', page=page-1)}}"
-									aria-label="Previous">
-									<span aria-hidden="true">&laquo;</span>
-									<span class="sr-only">Previous</span>
-								</a>
-							</li>
-							{% endif %}
-							{% for pag in pages %}
-							{% if pag == page %}
+			</div>
+			<div class="text-right">
+				<a class="btn btn-outline-secondary" href="#nav">Go to top</a>
+			</div>
+			<div>
+				<div aria-label="" class="card-sm">
+					<ul class="pagination justify-content-center">
+						{% if page > 1 %}
+						<li class="page-item">
+							<a class="page-link" href="{{url_for('marketplace', page=page-1)}}"	aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+								<span class="sr-only">Previous</span>
+							</a>
+						</li>
+						{% endif %}
+						{% for pag in pages %}
+						    {% if pag == page %}
 							<li class="page-item active" aria-current="page">
-								<a class="page-link" href="#">{{ pag }}<span class="sr-only">(current)</span></a>
-							</li> {% else %}
+								<a class="page-link" href="#">{{ pag }}
+                                    <span class="sr-only">(current)</span>
+                                </a>
+							</li>
+                            {% else %}
 							<li class="page-item">
 								<a class="page-link" href="{{url_for('marketplace', page=pag)}}">{{ pag }}</a>
 							</li>
 							{% endif %}
-							{% endfor %}
-							{% if page < total %}
+						{% endfor %}
+						{% if page < total %}
 							<li class="page-item">
 								<a class="page-link" href="{{url_for('marketplace', page=page+1)}}" aria-label="Next">
 									<span aria-hidden="true">&raquo;</span>
 									<span class="sr-only">Next</span>
 								</a>
 							</li>
-							{% endif %}
-						</ul>
-					</div>
+						{% endif %}
+					</ul>
 				</div>
 			</div>
-			<div class="d-none d-md-block col-md-1 no-padding">
-				<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
-		    </div>
-			</div>
 		</div>
-		{% endblock %}
+		<div class="d-none d-md-block col-md-1 no-padding">
+			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
+		</div>
+	</div>
+</div>
+{% endblock %}

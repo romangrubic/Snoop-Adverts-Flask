@@ -4,96 +4,96 @@
 		<div class="d-none d-md-block col-md-1 no-padding">
 			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
 		</div>
-			<div class="offset-1 col-10 offset-md-0 col-md-10">
-				<div class="add-advert-page">
-					<h3 class="text-center edit-header"> - Add advert -</h3>
-					<div class="add-advert-form">
-						<form action="{{ url_for('insert_advert') }}" method="POST" enctype="multipart/form-data">
-							<div class="row">
-								<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-									<label for="category_name">Select category <span class="red-star">*</span></label>
-								</div>
-								<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
-									<select class="input-field add-inputs" id="category" name="category_name" required>
-                                        <option value="" disabled selected>Choose one</option>
-                                        {% for cat in categories %}
-                                        <option value="{{cat.category_name}}" required>{{cat.category_name}}</option>
-                                        {% endfor %}
-                                    </select>
-								</div>
+		<div class="offset-1 col-10 offset-md-0 col-md-10">
+			<div class="add-advert-page">
+				<h3 class="text-center edit-header"> - Add advert -</h3>
+				<div class="add-advert-form">
+					<form action="{{ url_for('insert_advert') }}" method="POST" enctype="multipart/form-data">
+						<div class="row">
+							<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+								<label for="category_name">Select category <span class="red-star">*</span></label>
 							</div>
-							<div class="row">
-								<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-									<label>Name <span class="red-star">*</span></label>
-								</div>
-								<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
-									<input class="add-inputs" id="advert_name" name="advert_name" type="text" required maxlength="9"/>
-                                </div>
-								</div>
-								<div class="row">
-									<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-										<label>Description <span class="red-star">*</span></label>
-									</div>
-									<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
-										<textarea class="add-inputs" id="advert_description" name="advert_description" required maxlength="200"></textarea>
-									</div>
-								</div>
-								<div class="row">
-									<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-										<label>Price <span class="red-star">*</span></label>
-									</div>
-									<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
-										<input class="add-inputs" id="price" name="price" type="number" min="0" max="99999" required>
-                                    </div>
-									</div>
-									<div class="row">
-										<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-											<label>Contact info <span class="red-star">*</span></label>
-										</div>
-										<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
-											<input class="add-inputs" id="contact_info" name="contact_info" maxlength="25" required>
-                                    </div>
-										</div>
-										<div class="row">
-											<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-												<label>Location <span class="red-star">*</span></label>
-											</div>
-											<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
-												<select class="input-field add-inputs" id="location" name="location" required>
-                                                    <option value="" disabled selected>Choose one</option>
-                                                    {% for county in counties %}
-                                                    <option value="{{county.name}}" required>{{county.name}}</option>
-                                                    {% endfor %}
-                                                </select>
-											</div>
-										</div>
-										<div class="row">
-											<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-												<label for="advert_image">Upload image <span class="red-star">*</span></label>
-											</div>
-											<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
-												<input class="add-inputs" type="file" id="advert_image" name="advert_image" accept="image/*" required>
-                                            </div>
-											</div>
-                                            <div class="row">
-										<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
-											<label>Access Key <span class="red-star">*</span></label>
-										</div>
-										<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
-											<input class="add-inputs" id="access_key" name="access_key" minlength="4" maxlength="15" placeholder="Access key for editing and deleting advert" required>
-                                    </div>
-										</div>
-											<div class="row offset-md-1 justify-content-center submit-row">
-												<button type="submit" class="btn btn-submit">Submit</button>
-												<a href="{{url_for('home')}}" class="btn btn-cancel">Cancel</a>
-											</div>
-						</form>
-					</div>
+							<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+								<select class="input-field add-inputs" id="category" name="category_name" required>
+                                    <option value="" disabled selected>Choose one</option>
+                                    {% for cat in categories %}
+                                    <option value="{{cat.category_name}}" required>{{cat.category_name}}</option>
+                                    {% endfor %}
+                                </select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+								<label>Name <span class="red-star">*</span></label>
+							</div>
+							<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+								<input class="add-inputs" id="advert_name" name="advert_name" type="text" required maxlength="9"/>
+                            </div>
+						</div>
+						<div class="row">
+							<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+								<label>Description <span class="red-star">*</span></label>
+							</div>
+							<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+								<textarea class="add-inputs" id="advert_description" name="advert_description" required maxlength="200"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+								<label>Price <span class="red-star">*</span></label>
+							</div>
+							<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+								<input class="add-inputs" id="price" name="price" type="number" min="0" max="99999" required>
+                            </div>
+						</div>
+						<div class="row">
+							<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+								<label>Contact info <span class="red-star">*</span></label>
+							</div>
+							<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+								<input class="add-inputs" id="contact_info" name="contact_info" maxlength="25" required>
+                            </div>
+						</div>
+						<div class="row">
+							<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+								<label>Location <span class="red-star">*</span></label>
+							</div>
+							<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+								<select class="input-field add-inputs" id="location" name="location" required>
+                                    <option value="" disabled selected>Choose one</option>
+                                    {% for county in counties %}
+                                    <option value="{{county.name}}" required>{{county.name}}</option>
+                                    {% endfor %}
+                                </select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+								<label for="advert_image">Upload image <span class="red-star">*</span></label>
+							</div>
+							<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+								<input class="add-inputs" type="file" id="advert_image" name="advert_image" accept="image/*" required>
+                            </div>
+						</div>
+                        <div class="row">
+							<div class="offset-1 col-10 offset-md-0 col-md-4 text-md-right">
+								<label>Access Key <span class="red-star">*</span></label>
+							</div>
+							<div class="offset-2 col-10 offset-md-0 col-md-8 inputs">
+								<input class="add-inputs" id="access_key" name="access_key" minlength="4" maxlength="15" placeholder="Access key for editing and deleting advert" required>
+                            </div>
+						</div>
+						<div class="row offset-md-1 justify-content-center submit-row">
+							<button type="submit" class="btn btn-submit">Submit</button>
+							<a href="{{url_for('home')}}" class="btn btn-cancel">Cancel</a>
+						</div>
+					</form>
 				</div>
 			</div>
-			<div class="d-none d-md-block col-md-1 no-padding">
-				<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
-		    </div>
-			</div>
 		</div>
-		{% endblock %}
+		<div class="d-none d-md-block col-md-1 no-padding">
+			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
+		</div>
+	</div>
+</div>
+{% endblock %}

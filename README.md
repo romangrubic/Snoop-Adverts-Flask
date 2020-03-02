@@ -1,7 +1,7 @@
 ## Data Centric Development Project - Code Institute
 ---
 # Snoop
-Tired or signing up just to place your toaster or TV in order to get few bobs? Tired of unwanted spam mail in your e-mail about adverts that don't interest you?
+Tired of signing up just to place your toaster or TV in order to get few bobs? Tired of unwanted spam mail in your e-mail about adverts that don't interest you?
 With **Snoop** you don't have to give your e-mail or phone number! No more long sign-up process and you have more time to snoop for a good deal on that car you like!
 
 #### A live demo is hosted [here](https://adverts-project.herokuapp.com/home)
@@ -26,7 +26,7 @@ With **Snoop** you don't have to give your e-mail or phone number! No more long 
 ## Project Background
 
 Welcome to my Data Centric Milestone Project for Code Institute. The goal of this project was to allow the user to make simple operations where it could create, retrieve, update and delete data. Database used is a noSQL database MongoDB.
-The project is a web-site where user can post their adverts (similar to DoneDeal, Adverts, Gumtree...).
+The project is a web-site where user can post their adverts (similar to DoneDeal, Adverts, Gumtree...) and buy from other.
 I choose the name Snoop as in "to snoop around" and all similarities with Snoop Dog is accidental.
 
  [Back to top](#summary)
@@ -171,7 +171,7 @@ user can see what it wants, look at adverts that interest it. Users experience o
   - User can add advert by typing all the required information that are neccssary to present the advert.
    All fields are required and have to filled by the requirements. By pressing submit button, advert will be saved to database and presented in Marketplace.
 
-* Access key
+* Access key - security
   - On adding advert, user will be asked to put in "Access key" which will then be used for deleting or editing advert. It is made as a security measure from unauthorized deleting or editing on the site.
 
 * Adverts cards
@@ -321,7 +321,7 @@ Python
 ## Deployment
 The project was written and developed in the Gitpod IDE.
 
-A local repository was intialized using Git. Regular changes were commited to the local repository.
+A local repository was intialized using Github. Regular changes were commited to the local repository.
 
 The process for deployment on Heroku was:
 

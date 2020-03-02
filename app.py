@@ -55,7 +55,7 @@ def marketplace():
                            total=page_count)
 
 
-# --------- Filter: Motors ------------------------------------
+# --------- Filter search: Motors and Vehicles ------------------------------------
 @app.route('/motors_and_vehicles')
 def motors_and_vehicles():
     page_number = int(request.args.get('page', 1))
@@ -76,7 +76,7 @@ def motors_and_vehicles():
                            total=page_count)
 
 
-# --------- Filter: Home ------------------------------------
+# --------- Filter search: Home, garden and Diy ----------------------------------
 @app.route('/home_garden_diy')
 def home_garden_diy():
     page_number = int(request.args.get('page', 1))
@@ -97,7 +97,7 @@ def home_garden_diy():
                            total=page_count)
 
 
-# --------- Filter: PC stuff-----------------------------------
+# --------- Filter search: Electronic, mobile and PC -----------------------------
 @app.route('/electronics')
 def electronics():
     page_number = int(request.args.get('page', 1))
@@ -117,7 +117,7 @@ def electronics():
                            total=page_count)
 
 
-# ----------- Filter: Search ------------------------------------
+# ----------- Filter search: Search query ------------------------------------
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     query = request.args.get('search').upper()
@@ -193,7 +193,7 @@ def insert_advert():
     return redirect(url_for('home'))
 
 
-# ------------ Uploading ---------------------------------------
+# ------------ Uploading images ---------------------------------------
 @app.route('/file/<filename>')
 def file(filename):
     return mongo.send_file(filename)

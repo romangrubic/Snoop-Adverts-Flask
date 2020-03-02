@@ -1,84 +1,73 @@
 {% extends 'base.html'%} {% block content %}
-
 <div class="container-fluid">
 	<div id="carousel" class="row carousel slide" data-ride="carousel" data-pause="False" data-interval="10000">
 		<div class="carousel-inner">
 			<div class="carousel-item carousel-home active">
 				<img src="{{url_for('static', filename='images/carousel/image-2.jpeg')}}" alt="Second slide">
             </div>
-				<div class="carousel-item carousel-home">
-					<img src="{{url_for('static', filename='images/carousel/image-3.jpeg')}}" alt="Third slide">
+			<div class="carousel-item carousel-home">
+				<img src="{{url_for('static', filename='images/carousel/image-3.jpeg')}}" alt="Third slide">
             </div>
-					<div class="home-btn d-flex justify-content-center">
-						<a class="btn btn-outline-light btn-motors"
-							href="{{url_for('motors_and_vehicles')}}" data-toggle="tooltip" title="Motors and vehicles">Motors</a>
-						<a class="btn btn-outline-light btn-home" href="{{url_for('home_garden_diy')}}" data-toggle="tooltip" title="Home, garden and DIY">Home</a>
-						<a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}" data-toggle="tooltip" title="Electronic, mobile and PC">Electronics</a>
-					</div>
-					<div class="search-bar d-flex justify-content-center">
-						<div class="row search-outline">
-							<form action="{{url_for('search')}}">
-								<input id="search" name="search" type="text" class="validate" placeholder="Search by name or click on the categories above" required>
-                            </form>
-						</div>
-					</div>
+			<div class="home-btn d-flex justify-content-center">
+				<a class="btn btn-outline-light btn-motors"	href="{{url_for('motors_and_vehicles')}}" data-toggle="tooltip" title="Motors and vehicles">Motors</a>
+				<a class="btn btn-outline-light btn-home" href="{{url_for('home_garden_diy')}}" data-toggle="tooltip" title="Home, garden and DIY">Home</a>
+				<a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}" data-toggle="tooltip" title="Electronic, mobile and PC">Electronics</a>
+			</div>
+			<div class="search-bar d-flex justify-content-center">
+				<div class="row search-outline">
+					<form action="{{url_for('search')}}">
+						<input id="search" name="search" type="text" class="validate" placeholder="Search by name or click on the categories above" required>
+                    </form>
 				</div>
 			</div>
 		</div>
-
-		<div class="row no-margin most-viewed-ad">
-			<div class="d-none d-sm-block col-sm-1 no-padding" data-toggle="modal" data-target="#contactModal">
-				<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="350px" alt="side-advert" display>
-		</div>
-				<div class="col-12 col-sm-10 top-ad-section">
-					<p class="text-center top-ad-header">Top 5 Ads</p>
-					<div id="carousel-top-ad" class="carousel slide" data-ride="carousel" data-interval="3000">
-						<div class="border-top-ad carousel-inner">
-							<div class="carousel-item carousel-top-ad active">
-                            <a href="https://romangrubic.github.io/Roman-Grubic-portfolio/"
-											class="btn no-padding" target="-blank" >
-								<img src="{{url_for('static', filename='images/background/bg-image.jpg')}}" alt="...">
-                            
-								<div class="carousel-caption d-none d-md-block">
-									<h4 class="my-ad no-margin">Looking for a Full-stack Developer?</h4>
-									<p class="my-ad">Check out this portfolio!</p>
-								</div>
-                                </a>
-							</div>
-							{% for top_ad in top_ads %}
-							<div class="carousel-item carousel-top-ad">
-								<div class="row no-padding no-margin bg-color">
-									<div class="col-6">
-										<a href="{{url_for('view_advert', advert_id=top_ad._id)}}"
-											class="btn no-padding">
-											<img src="{{url_for('file', filename=top_ad['imageURL'])}}" class="carousel-top-ad-img" alt="{{top_ad.advert_name}}">
-                                </a>
-									</div>
-
-									<div class="col-6">
-										<a href="{{url_for('view_advert', advert_id=top_ad._id)}}"
-											class="btn no-padding">
-											<div class="carousel-caption">
-												<h2 class="top-ad-name">{{top_ad.advert_name.capitalize()}}</h2>
-												<span class="top-ad-text">€ {{top_ad.price}}<br></span>
-												<span class="top-ad-text">{{top_ad.location}}<br></span>
-												<span class="top-ad-text"><img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views"> {{top_ad.views}}</span>
-											</div>
-
-										</a>
-									</div>
-
-								</div>
-							</div>
-							{% endfor %}
-						</div>
+	</div>
+</div>
+<div class="row no-margin most-viewed-ad">
+	<div class="d-none d-sm-block col-sm-1 no-padding" data-toggle="modal" data-target="#contactModal">
+		<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="350px" alt="side-advert" display>
+	</div>
+	<div class="col-12 col-sm-10 top-ad-section">
+		<p class="text-center top-ad-header">Top 5 Ads</p>
+			<div id="carousel-top-ad" class="carousel slide" data-ride="carousel" data-interval="3000">
+				<div class="border-top-ad carousel-inner">
+					<div class="carousel-item carousel-top-ad active">
+                        <a href="https://romangrubic.github.io/Roman-Grubic-portfolio/"	class="btn no-padding" target="-blank" >
+								<img src="{{url_for('static', filename='images/background/bg-image.jpg')}}" alt="...">                            
+						    <div class="carousel-caption d-none d-md-block">
+							    <h4 class="my-ad no-margin">Looking for a Full-stack Developer?</h4>
+							    <p class="my-ad">Check out this portfolio!</p>
+						    </div>
+                        </a>
 					</div>
-
-
+					{% for top_ad in top_ads %}
+						<div class="carousel-item carousel-top-ad">
+							<div class="row no-padding no-margin bg-color">
+								<div class="col-6">
+									<a href="{{url_for('view_advert', advert_id=top_ad._id)}}" class="btn no-padding">
+										<img src="{{url_for('file', filename=top_ad['imageURL'])}}" class="carousel-top-ad-img" alt="{{top_ad.advert_name}}">
+                                    </a>
+								</div>
+								<div class="col-6">
+									<a href="{{url_for('view_advert', advert_id=top_ad._id)}}" class="btn no-padding">
+										<div class="carousel-caption">
+											<h2 class="top-ad-name">{{top_ad.advert_name.capitalize()}}</h2>
+											<span class="top-ad-text">€ {{top_ad.price}}<br></span>
+											<span class="top-ad-text">{{top_ad.location}}<br></span>
+											<span class="top-ad-text">
+                                                <img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views"> {{top_ad.views}}
+                                            </span>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
 				</div>
-				<div class="d-none d-sm-block col-sm-1 no-padding"  data-toggle="modal" data-target="#contactModal">
-					<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="350px" alt="side-advert" display>
-		</div>
-				</div>
-
-				{% endblock %}
+			</div>
+	</div>
+    <div class="d-none d-sm-block col-sm-1 no-padding"  data-toggle="modal" data-target="#contactModal">
+	    <img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="350px" alt="side-advert" display>
+    </div>
+</div>
+{% endblock %}
