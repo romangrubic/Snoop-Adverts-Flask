@@ -169,6 +169,8 @@ def electronics():
 # ----------- Filter search: Search query ------------------------------------
 @app.route('/search', methods=['GET', 'POST'])
 def search():
+    counties = mongo.db.county.find()
+    categories = mongo.db.categories.find()
     query = request.args.get('search').upper()
     results = mongo.db.advert.find({'advert_name': {"$regex": query}})
     results_number = results.count()
@@ -183,6 +185,8 @@ def search():
         {'advert_name': {"$regex": query}}).skip(
         ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('search.html',
+                           counties=counties,
+                           categories=categories,
                            tittle="Search",
                            results=ads_on_page,
                            ads=ads_on_page,

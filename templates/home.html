@@ -14,9 +14,9 @@
 				<a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}" data-toggle="tooltip" title="Electronic, mobile and PC">Electronics</a>
 			</div>
 			<div class="search-bar d-flex justify-content-center">
-				<div class="row search-outline">
+				<div class="row search-outline search-outline-home">
 					<form action="{{url_for('search')}}">
-						<input id="search" name="search" type="text" class="validate" placeholder="Search by name or click on the categories above" required>
+						<input id="search" name="search" type="text" class="validate home-search" placeholder="Search by name or click on the categories above" required>
                     </form>
 				</div>
 			</div>
@@ -32,14 +32,14 @@
                         {% endfor %}
                     </select>
                     
-                    <select class=" add-inputs" id="county" name="county" required>
+                    <select class=" add-inputs search-filter-input" id="county" name="county" required>
                     <option value="" disabled selected>Choose county</option>
                     {% for county in counties %}
                     <option value="{{county.name}}" required>{{county.name}}</option>
                     {% endfor %}
                     </select>
                     <div>
-                    <button type="submit">Search</button>
+                    <button class="btn btn-submit" type="submit">Search</button>
                     </div>
                     </div>
                 </form>

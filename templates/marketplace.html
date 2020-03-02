@@ -30,22 +30,24 @@
 			</div>
             <div class="row">
                 <form action="{{url_for('county_search')}}" method="POST" enctype="multipart/form-data">
-                    <button id="more-filters">More filters</button>
+                    <button id="more-filters" class="btn btn-outline-secondary text-center">More filters</button>
                     <div class="search-filter">
-                    <select class="input-field add-inputs" id="category" name="category_name" required>
-                        <option value="" disabled selected>Choose category</option>
+                    <select class="input-field add-inputs search-filter-input" id="category" name="category_name" required>
+                        <option value="" selected>Choose category</option>
                         {% for cat in categories %}
                         <option value="{{cat.category_name}}" required>{{cat.category_name}}</option>
                         {% endfor %}
                     </select>
                     
-                    <select class="input-field add-inputs" id="county" name="county" required>
+                    <select class="input-field add-inputs search-filter-input" id="county" name="county" required>
                     <option value="" disabled selected>Choose county</option>
                     {% for county in counties %}
                     <option value="{{county.name}}" required>{{county.name}}</option>
                     {% endfor %}
                     </select>
-                    <button type="submit">Search</button>
+                    <div>
+                    <button class="btn btn-submit" type="submit">Search</button>
+                    </div>
                     </div>
                 </form>
             </div>
