@@ -30,7 +30,8 @@
 			</div>
             <div class="row">
                 <form action="{{url_for('county_search')}}" method="POST" enctype="multipart/form-data">
-                    <h3 id="more-filters">More filters</h3>
+                    <button id="more-filters">More filters</button>
+                    <div class="search-filter">
                     <select class="input-field add-inputs" id="category" name="category_name" required>
                         <option value="" disabled selected>Choose category</option>
                         {% for cat in categories %}
@@ -45,6 +46,7 @@
                     {% endfor %}
                     </select>
                     <button type="submit">Search</button>
+                    </div>
                 </form>
             </div>
 			<div class="marketplace-form">

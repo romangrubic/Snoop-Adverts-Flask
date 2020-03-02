@@ -22,7 +22,11 @@ ADS_PER_PAGE = 12
 @app.route('/home')
 def home():
     total_view()
+    counties = mongo.db.county.find()
+    categories = mongo.db.categories.find()
     return render_template('home.html',
+                           counties=counties,
+                           categories=categories,
                            tittle="Home",
                            views=mongo.db.total_view.find(),
                            top_ads=mongo.db.advert.find()
@@ -59,7 +63,7 @@ def marketplace():
                            total=page_count)
 
 
-@app.route('/marketplace', methods=['GET', 'POST'])
+@app.route('/county', methods=['GET', 'POST'])
 def county_search():
     counties = mongo.db.county.find()
     categories = mongo.db.categories.find()
@@ -72,13 +76,14 @@ def county_search():
     page_numbers = range(1, page_count + 1)
     ads_on_page = mongo.db.advert.find({'category_name': category, 'location': county}).sort(
         'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
-    return render_template('marketplace.html',
+    return render_template('search.html',
                            counties=counties,
                            categories=categories,
                            subtittle="Marketplace",
                            tittle=category,
-                           adverts=ads_on_page,
+                           results=ads_on_page,
                            ads=ads_on_page,
+                           results_number=ads_count,
                            page=page_number,
                            pages=page_numbers,
                            total=page_count)
