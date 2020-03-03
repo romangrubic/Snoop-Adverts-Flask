@@ -7,7 +7,9 @@
     * [Delete](#delete-advert)
 * [Overall](#overall)
     * [Navigation](#navigation)
+    * [Breadcrumbs](#breadcrumbs)
     * [Search and Filter](#search-and-filter)
+    * [County filter](#county-filter)
     * [Top Advert section](#top-advert-section)
     * [Button "Go to top"](#button-"go-to-top")
     * [Pagination](#pagination)
@@ -88,6 +90,10 @@ CRUD functionality is working as expected, no errors.
 | Clicking on `Marketplace` link | Opens "Marketplace" page | As expected | Pass |
 | Clicking on `Add advert` link | Open "Add advert" page | As expected | Pass |
 
+### Breadcrumbs 
+| Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
+| :-------------: |:----------------:| :--------------: | :---------: |
+| Clicking on a link in breadcrumbs | Opens that specific page | As Expected | Pass |
 
 
 ### Search and Filter
@@ -99,6 +105,16 @@ CRUD functionality is working as expected, no errors.
 | Clicking on filter button when choosing Home | Displays all the adverts with category of "Home" | As Expected | Pass |
 | Clicking on filter button when choosing Electronics | Displays all the adverts with category of "Electronics" | As Expected | Pass |
 
+### County filter
+
+| Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
+| :-------------: |:----------------:| :--------------: | :---------: |
+| Clicking on `More filters` | Toggles `div` with search options and button | As Expected | Pass |
+| Clicking on `Search` button without selecting options | Tooltip with "Select item from list" shows | As Expected | Pass |
+| Clicking on `Choose category` | Shows list of categories | As Expected | Pass |
+| Clicking on `Choose county` | Shows list of counties | As Expected | Pass |
+| Clicking on `Search` button after selecting options | Results that have the selected options show up | As Expected | Pass |
+| If there is no results with selected options | No results image shows up | As Expected | Pass |
 
 
 ### Top Advert section
