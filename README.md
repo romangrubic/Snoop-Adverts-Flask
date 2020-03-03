@@ -58,10 +58,23 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
   <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/filter-buttons.png" width="500" height="300" alt="Filter buttons">
 </p>
 
+* **search by county**
+  - user can search by specific category and specific county.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/county.png" width="500" height="300" alt="County filter">
+</p>
+
 * **view advert that I'm interested in**
   - user can view advert in full view by clicking anywhere on the advert. 
 <p align="center">
   <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/view-ad.png" width="500" height="300" alt="View advert">
+</p>
+
+* **view my location in relation to Home page**
+  - user can see location just beneath navigation bar. 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/breadcrumbs.png" width="500" height="300" alt="View advert">
 </p>
 
 * **place my own advert**
@@ -113,7 +126,7 @@ There are buttons on the end of the page where user can delete the advert or edi
 containing all the data of the advert in database and user can change anty part of it.
 
 User can click on filter button that are visible on all main pages, where he can fast search a specific category of adverts. If he wants to see `Motors`, all adverts in category of Motors will show. Same 
-for the rest of the categories.
+for the rest of the categories. Also they can search by specific county if they wish on `More filters` button.
 
 There is also an `Add advert` link in the navigation where user can put things to sale.
 
@@ -122,7 +135,7 @@ contact modal.
 
 As an addition, I have implemented a designated space on all of the pages where companies or anyone can rent and promote themselves and me as an owner can earn some money on the side.
 
-#### Further description of buttons, icons and elements used is in the next section (Features).
+#### Further description of buttons, icons and elements used is in the next section [Features](#existing-features).
 
 ### Wireframes
 
@@ -144,6 +157,12 @@ As an addition, I have implemented a designated space on all of the pages where 
   <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-view.jpg" width="500" height="300" alt="View advert">
 </p>
 
+* **Add/Edit advert page**
+  
+  <p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-add.jpg" width="400" height="500" alt="Marketplace page">
+</p>
+
 ### Surface 
 Using light color scheme I'm creating an environment where user will stay as long as possible because there are not bright colors which will tired users eyes.
 By making all the elements stand out correctly and are simple to use, I'm creating environment where 
@@ -159,10 +178,17 @@ user can see what it wants, look at adverts that interest it. Users experience o
 
 * Advert section
   - On each page, on medium screens and bigger sizes, there are parts where owner of the
-   page can promote his own adverts or rent that space to companies for advertisement and earn money that way.
+   page can promote his own adverts or rent that space to companies for advertisement and earn money that way. When user clicks on "Click here", a contact modal pops-up where user can contact me in relation with advertising space.
+
+* Breadcrumbs
+  - On every page excluding Home page, there are breadcrumbs just beneath navigation bar where user can see his/hers location in relation to Home page. If user decides to click on it,
+  it will open that page.
 
 * Filter buttons and search bar
   - They are visible on all pages and are used to filter ads. User can filter by category or by searching names. In search bar user can search by whole word or by letter.
+
+* More filter button
+  - Users can specify their search by specifying category and by specifying a chosen county.
 
 * Top Ad section 
   - Top Ad section is a carousel which is showing 4 most viewed adverts on site. Each image in carousel is clickable and if user clicks on it will open that advert in View_advert.html
@@ -346,6 +372,7 @@ Further help with cloning can be found on this GitHub Help [page](https://help.g
 ### Acknowledgement
 * Videos on [CodeInstitute](https://codeinstitute.net/).
 * Big thanks to [W3 Schools](https://www.w3schools.com/) for all the content and clarification of different methods.
+* Background photos used in this site were obtained from [Pexels](https://www.pexels.com/), a stock image library.
 * Other advertisement site like [DoneDeal](https://www.donedeal.ie/), [Advert](https://www.adverts.ie/), [Gumtree](https://www.gumtree.ie/) etc.
 
 #### This is for educational use.
