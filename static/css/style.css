@@ -63,7 +63,7 @@ body{
 }
 /* -------------- Home page buttons -----------*/
 .home-btn{
-    margin-top: 150px;
+    margin-top: 200px;
     margin-bottom: 10px;
 }
 .btn-outline-light{
@@ -103,7 +103,7 @@ body{
     border-radius: 10px;
 }
 .search-outline-home{
-    margin: 30px 0 15px;
+    margin: 15px 0 15px;
 }
 #search{
     text-align: center;
@@ -120,7 +120,11 @@ body{
     margin-left: 5px;
 }
 .search-filter-input{
+    color: rgba(0, 0, 0, 0.85);
     margin: 5px;
+}
+.btn-search{
+    margin-left: 5px;
 }
 /* --------------- Carousel -------------------*/
 #carousel{
@@ -129,7 +133,7 @@ body{
 }
 .carousel-home{
     width: 100%;
-    height: 530px;
+    height: 500px;
     z-index: -1;
 }
 

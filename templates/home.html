@@ -20,31 +20,7 @@
                     </form>
 				</div>
 			</div>
-            <div class="row d-flex justify-content-center">
-                <div class="text-center">
-                <form action="{{url_for('county_search')}}" method="POST" enctype="multipart/form-data">
-                    <button id="more-filters" class="btn btn-outline-light text-center">More filters</button>
-                    <div class="search-filter">
-                    <select class=" add-inputs search-filter-input" id="category" name="category_name" required>
-                        <option value="" disabled selected>Choose category</option>
-                        {% for cat in categories %}
-                        <option value="{{cat.category_name}}" required>{{cat.category_name}}</option>
-                        {% endfor %}
-                    </select>
-                    
-                    <select class=" add-inputs search-filter-input" id="county" name="county" required>
-                    <option value="" disabled selected>Choose county</option>
-                    {% for county in counties %}
-                    <option value="{{county.name}}" required>{{county.name}}</option>
-                    {% endfor %}
-                    </select>
-                    <div>
-                    <button class="btn btn-submit" type="submit">Search</button>
-                    </div>
-                    </div>
-                </form>
-                </div>
-            </div>
+            
 		</div>
 	</div>
 </div>

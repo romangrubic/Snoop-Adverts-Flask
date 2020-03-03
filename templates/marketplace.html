@@ -19,7 +19,7 @@
 			<div class="search-bar d-flex justify-content-center">
 				<div class="row search-outline">
 					<form action="{{url_for('search')}}">
-						<input id="search" name="search" type="text" class="validate" placeholder="Search by name" required>
+						<input id="search" name="search" type="text" class="validate" placeholder="Search ALL adverts by name" required>
                     </form>
 				</div>
 			</div>
@@ -33,7 +33,7 @@
                     <button id="more-filters" class="btn btn-outline-secondary text-center">More filters</button>
                     <div class="search-filter">
                     <select class="input-field add-inputs search-filter-input" id="category" name="category_name" required>
-                        <option value="" selected>Choose category</option>
+                        <option value="" disabled selected>Choose category</option>
                         {% for cat in categories %}
                         <option value="{{cat.category_name}}" required>{{cat.category_name}}</option>
                         {% endfor %}
@@ -46,7 +46,7 @@
                     {% endfor %}
                     </select>
                     <div>
-                    <button class="btn btn-submit" type="submit">Search</button>
+                    <button class="btn btn-primary btn-search" type="submit">Search</button>
                     </div>
                     </div>
                 </form>
