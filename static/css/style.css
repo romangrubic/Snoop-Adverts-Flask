@@ -38,24 +38,24 @@ body{
 .nav-link{
     padding: 10px;
     height: 50px;
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 20px;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 22px;
     font-weight: 700;
     margin: 0 10px;
 }
 .nav-link:hover{
     border-radius: 20px;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 23px;
     color: black;
 }
 .nav-image{
-    width: 40px;
-    height: 30px;
+    width: 45px;
+    height: 35px;
 }
 .nav-image:hover{
-    width: 45px;
-    height: 35px
+    width: 50px;
+    height: 40px
 }
 /* -------- Breadcrumbs -----------------------*/
 .breadcrumb{
@@ -68,18 +68,19 @@ body{
 }
 .btn-outline-light{
     width: 120px;
-    border: 2px solid white;
-    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     padding: 10px 0;
     margin: 10px 0 10px 0;
 
 }
 .btn-outline-light:hover{
-    background-color:rgba(255, 255, 255, 0.75);
+    background-color:rgba(255, 255, 255, 0.85);
     color: rgb(0, 0, 0);
     border-color: white;
+    font-weight: 600;
 }
 .btn-motors{
     border-radius: 10px 0 0 10px;
@@ -92,6 +93,13 @@ body{
 .btn-pc{
     border-radius: 0 10px 10px 0;
     color: white;
+}
+.open-filters{
+    height: 35px;
+    padding: 2px;
+    margin: 3px 0px 0px 0px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 /* -------------- Search bar ------------------*/
 .search-bar{
@@ -112,8 +120,8 @@ body{
     padding: 5px;
     background-color: white;
     outline: none;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 17px;
 }
 /* -------------- More filters button -------------*/
 #more-filters{
