@@ -53,14 +53,14 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
   - user can use the search bar for specific word or part of the word. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/search-bar.png" width="500" height="300" alt="Seacr by part of the word">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/search-bar.png" width="500" height="150" alt="Search by part of the word">
 </p>
 
 * **search by category**
   - user can search by specific category such as Motors, Home or Electronic by pressing button.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/filter-buttons.png" width="500" height="300" alt="Filter buttons">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/filter-buttons.png" width="500" height="200" alt="Filter buttons">
 </p>
 
 * **search by county**
@@ -79,7 +79,7 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 * **view my location in relation to Home page**
   - user can see location just beneath navigation bar. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/breadcrumbs.png" width="500" height="300" alt="View advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/breadcrumbs.png" width="500" height="150" alt="Location of the user">
 </p>
 
 * **place my own advert**
