@@ -1,10 +1,12 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container-fluid">
 	<div class="row">
+        <!-- Advertising space -->
 		<div class="d-none d-md-block col-md-1 no-padding">
 			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
 		</div>
 		<div class="offset-1 col-10 offset-md-0 col-md-10">
+            <!-- Breadcrumbs -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{url_for('home')}}">Home</a></li>
@@ -12,6 +14,7 @@
                     <li class="breadcrumb-item active" aria-current="page">{{ tittle }}</li>
                 </ol>
             </nav>
+            <!-- Add advert template -->
 			<div class="add-advert-page">
 				<h3 class="text-center edit-header"> - Add advert -</h3>
 				<div class="add-advert-form">
@@ -98,6 +101,7 @@
 				</div>
 			</div>
 		</div>
+        <!-- Advertising space -->
 		<div class="d-none d-md-block col-md-1 no-padding">
 			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
 		</div>
