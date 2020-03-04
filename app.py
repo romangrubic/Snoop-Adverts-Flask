@@ -63,33 +63,7 @@ def marketplace():
                            total=page_count)
 
 
-@app.route('/county', methods=['GET', 'POST'])
-def county_search():
-    counties = mongo.db.county.find()
-    categories = mongo.db.categories.find()
-    county = request.form.get('county')
-    category = request.form.get('category_name')
-    page_number = int(request.args.get('page', 1))
-    ads_to_skip = (page_number - 1) * ADS_PER_PAGE
-    ads_count = mongo.db.advert.find({'category_name': category, 'location': county}).count()
-    page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
-    page_numbers = range(1, page_count + 1)
-    ads_on_page = mongo.db.advert.find({'category_name': category, 'location': county}).sort(
-        'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
-    return render_template('search.html',
-                           counties=counties,
-                           categories=categories,
-                           subtittle="Marketplace",
-                           tittle=category,
-                           results=ads_on_page,
-                           ads=ads_on_page,
-                           results_number=ads_count,
-                           page=page_number,
-                           pages=page_numbers,
-                           total=page_count)
-
-
-# --------- Filter search: Motors and Vehicles ------------------------------------
+# --------- Filter search: Motors and Vehicles ------------------------------
 @app.route('/motors_and_vehicles')
 def motors_and_vehicles():
     counties = mongo.db.county.find()
@@ -115,7 +89,7 @@ def motors_and_vehicles():
                            total=page_count)
 
 
-# --------- Filter search: Home, garden and Diy ----------------------------------
+# --------- Filter search: Home, garden and Diy -----------------------------
 @app.route('/home_garden_diy')
 def home_garden_diy():
     counties = mongo.db.county.find()
@@ -141,7 +115,7 @@ def home_garden_diy():
                            total=page_count)
 
 
-# --------- Filter search: Electronic, mobile and PC -----------------------------
+# --------- Filter search: Electronic, mobile and PC -------------------------
 @app.route('/electronics')
 def electronics():
     counties = mongo.db.county.find()
@@ -196,6 +170,35 @@ def search():
                            total=page_count)
 
 
+# ---------- Filter by Category AND by County ---------------------------
+@app.route('/county', methods=['GET', 'POST'])
+def county_search():
+    counties = mongo.db.county.find()
+    categories = mongo.db.categories.find()
+    county = request.form.get('county')
+    category = request.form.get('category_name')
+    page_number = int(request.args.get('page', 1))
+    ads_to_skip = (page_number - 1) * ADS_PER_PAGE
+    ads_count = mongo.db.advert.find({'category_name': category,
+                                      'location': county}).count()
+    page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
+    page_numbers = range(1, page_count + 1)
+    ads_on_page = mongo.db.advert.find({'category_name': category,
+                                        'location': county}).sort(
+        'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
+    return render_template('search.html',
+                           counties=counties,
+                           categories=categories,
+                           subtittle="Marketplace",
+                           tittle=category,
+                           results=ads_on_page,
+                           ads=ads_on_page,
+                           results_number=ads_count,
+                           page=page_number,
+                           pages=page_numbers,
+                           total=page_count)
+
+
 # --------- Single advert page ----------------------------------
 @app.route('/view_advert/<advert_id>')
 def view_advert(advert_id):
@@ -210,6 +213,7 @@ def view_advert(advert_id):
                            advert=advert)
 
 
+# ----------- Increments Adverts view counter by +1 -------------
 def view_count(advert_id):
     advert = mongo.db.advert
     advert.update({'_id': ObjectId(advert_id)}, {'$inc': {'views': 1}})
