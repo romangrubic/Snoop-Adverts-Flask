@@ -327,7 +327,7 @@ body{
     border-radius: 10px 10px 10px 10px;
 }
 .view-advert-page{
-    padding: 0 5%;
+    padding: 0 4%;
 }
 .card-img-view{
     border-top-left-radius: 20px;
@@ -336,27 +336,30 @@ body{
 .col-6{
     padding: 0;
 }
+.img-view-ad{
+    height: 450px;
+}
 .advert-name{
     font-weight: 600;
     font-size: 40px;
-    padding: 20px 0px 10px 30px;
+    padding: 10px 0px 0px 20px;
     letter-spacing: 2px;
 }
 .advert-price{
-    padding: 45px;
+    padding: 0px 0px 15px;
     text-align: center;
     font-weight: 500;
     font-size: 35px
 }
 .advert-location,.advert-contact{
-    padding: 0 0 20px 30px;
+    padding: 0 0 10px 20px;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
 }
 .advert-description{
     border-top: 2px solid rgba(0, 0, 0, 0.5);
-    padding: 30px 0 30px 50px;
+    padding: 30px 15px 10px 20px;
     font-weight: 500;
     font-size: 18px;
 }
@@ -513,6 +516,6 @@ body{
 
 @media only screen and (min-width: 992px) {
     .advert-name{
-        padding-top: 70px;
+        padding-top: 10px;
     }
 }
