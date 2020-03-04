@@ -30,7 +30,7 @@ def home():
                            tittle="Home",
                            views=mongo.db.total_view.find(),
                            top_ads=mongo.db.advert.find()
-                           .sort('views', DESCENDING).limit(4))
+                           .sort('views', DESCENDING).limit(5))
 
 
 def total_view():

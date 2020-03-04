@@ -109,7 +109,7 @@ CRUD functionality is working as expected, no errors.
 
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
-| Clicking on `More filters` | Toggles `div` with search options and button | As Expected | Pass |
+| Clicking on `Open filters` | Toggles `div` with search options and button | As Expected | Pass |
 | Clicking on `Search` button without selecting options | Tooltip with "Select item from list" shows | As Expected | Pass |
 | Clicking on `Choose category` | Shows list of categories | As Expected | Pass |
 | Clicking on `Choose county` | Shows list of counties | As Expected | Pass |

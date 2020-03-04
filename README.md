@@ -4,8 +4,8 @@
 Tired of signing up just to place your toaster or TV in order to get few bobs? Tired of unwanted spam mail in your e-mail about adverts that don't interest you?
 With **Snoop** you don't have to give your e-mail or phone number! No more long sign-up process and you have more time to snoop for a good deal on that car you like!
 
-#### A live demo is hosted [here](https://adverts-project.herokuapp.com/home)
-![Snoop Demo](https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/responsive.png "Snoop Demo")
+#### Click on the picture to see live demo!
+[![Snoop Demo](https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/responsive/responsive.png "Snoop Demo")](https://adverts-project.herokuapp.com/home)
 
 ---
 ## Summary
@@ -25,8 +25,13 @@ With **Snoop** you don't have to give your e-mail or phone number! No more long 
 ---
 ## Project Background
 
-Welcome to my Data Centric Milestone Project for Code Institute. The goal of this project was to allow the user to make simple operations where it could create, retrieve, update and delete data. Database used is a noSQL database MongoDB.
-The project is a web-site where user can post their adverts (similar to DoneDeal, Adverts, Gumtree...) and buy from other.
+Welcome to my Data Centric Milestone Project for Code Institute. 
+
+The goal of this project was to allow the user to make simple operations where it could create, retrieve, update and delete data. Database used is a noSQL database MongoDB.
+
+The project is a web-site where user can post their adverts (similar to DoneDeal, Adverts, Gumtree...) and buy from others and also for companies or users to rent out side 
+spaces on the pages to promote their bussines (that space is coloured ![#99D9EA](https://placehold.it/15/99D9EA/000000?text=+) `#99D9EA` in order to be visible from rest of the site and is clickable. When it is clicked, it will open a contact modal).
+
 I choose the name Snoop as in "to snoop around" and all similarities with Snoop Dog is accidental.
 
  [Back to top](#summary)
@@ -41,77 +46,78 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
   - user can see all adverts by clicking on `Marketplace` button. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/all-ads.png" width="500" height="300" alt="Marketplace image">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/all-ads.png" width="500" height="300" alt="Marketplace image">
 </p>
 
 * **search for a specific advert**
   - user can use the search bar for specific word or part of the word. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/search-bar.png" width="500" height="300" alt="Seacr by part of the word">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/search-bar.png" width="500" height="300" alt="Seacr by part of the word">
 </p>
 
 * **search by category**
   - user can search by specific category such as Motors, Home or Electronic by pressing button.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/filter-buttons.png" width="500" height="300" alt="Filter buttons">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/filter-buttons.png" width="500" height="300" alt="Filter buttons">
 </p>
 
 * **search by county**
   - user can search by specific category and specific county.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/county.png" width="500" height="300" alt="County filter">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/county.png" width="500" height="300" alt="County filter">
 </p>
 
 * **view advert that I'm interested in**
   - user can view advert in full view by clicking anywhere on the advert. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/view-ad.png" width="500" height="300" alt="View advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/view-ad.png" width="500" height="300" alt="View advert">
 </p>
 
 * **view my location in relation to Home page**
   - user can see location just beneath navigation bar. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/breadcrumbs.png" width="500" height="300" alt="View advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/breadcrumbs.png" width="500" height="300" alt="View advert">
 </p>
 
 * **place my own advert**
   - user can place their own advert just by going to Add advert in the navigation bar. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/add-advert.png" width="500" height="300" alt="Add advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/add-advert.png" width="500" height="300" alt="Add advert">
 </p>
 
 * **change my advert**
   - user can edit adverts if something changed by pressing `Edit` button and entering `Access key`.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/edit-advert.png" width="500" height="300" alt="Edit advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/edit-advert.png" width="500" height="300" alt="Edit advert">
 </p>
 
 * **delete my advert**
   - user can delete adverts if the advert is no longer valid by pressing `Delete` button and entering `Access key`.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/delete-advert.png" width="500" height="300" alt="Delete advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/delete-advert.png" width="500" height="300" alt="Delete advert">
 </p>
 
 #### As a company, I would like to:
 * **promote my product**
-  - companies can promote their product or buy space to promote themselves by contacting me. Every page has dedicated `Your AD here!` spaces which can be rented by anyone.
+  - companies/users can promote their product or rent space to promote themselves by contacting me. Every page has dedicated places to rent coloured ![#99D9EA](https://placehold.it/15/99D9EA/000000?text=+) `#99D9EA`.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/place-ad.png" width="500" height="300" alt="Place your ad!">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/place-ad.png" width="500" height="300" alt="Place your ad!">
 </p>
 
 [Back to top](#summary)
 
 ### Strategy
 
-**Snoop** web-site purpose is to be a marketplace where users can put their things to sell and earn money and companies to promote their bussines by renting advertisement space. Also, for the owner of the page to earn money by renting out designated advertisement space.
+**Snoop** web-site purpose is to be a marketplace where users can put their things to sell and earn money and companies to promote their bussines by renting advertisement space. 
+Also, for the owner of the page to earn money by renting out designated advertisement space (side spaces coloured ![#99D9EA](https://placehold.it/15/99D9EA/000000?text=+) `#99D9EA` ).
 
 ### Scope
 
 In designing this page, I wanted for the user to have a positive experience and for the web-site to be simple to use. So I wanted to make a page like that. 
-User can easily search with one click (by pressing Marketplace in navbar or by pressing one of the filter buttons to search for adverts in a certain category).
+User can easily search with one click (by pressing Marketplace in navbar or by pressing one of the filter buttons to search for adverts in a certain category and certain county).
 
 
 
@@ -123,17 +129,17 @@ Marketplace button where he can see all the adverts sorted by number of views an
 When user goes to Marketplace page, adverts will show up ranked by number of views they have. Also, there are only 12 adverts visible per page and a `Go to top` button at the end of the page. Adverts are presented as cards with a decent size picture and below their name, number of views, location and price. 
 Adverts are clickable on all of their size so user can easily see the whole advert. If user clicks on advert, a new page will open where information will be presented in a bigger format and advert description will also be visible. 
 There are buttons on the end of the page where user can delete the advert or edit it if neccessary. If user presses `Delete` button, a modal will show up asking the user for `Access key`. If the `Access key` is same as the advert key, advert is deleted, otherwise modal will close itself. If they press `Edit` button, a modal will show up asking the user for `Access key`. If the `Access key` is same as the advert key, edit page will open
-containing all the data of the advert in database and user can change anty part of it.
+containing all the data of the advert in database and user can change all or any part of it.
 
-User can click on filter button that are visible on all main pages, where he can fast search a specific category of adverts. If he wants to see `Motors`, all adverts in category of Motors will show. Same 
-for the rest of the categories. Also they can search by specific county if they wish on `More filters` button.
+User can click on filter buttons that are visible on all main pages, where he can fast search a specific category of adverts. If he wants to see `Motors`, all adverts in category of Motors will show. Same 
+for the rest of the categories. There is also a search bar where user can search for a keyword or part of the keyword. Also they can search by specific county if they wish on `Open filters` button.
 
-There is also an `Add advert` link in the navigation where user can put things to sale.
+There is also an `Add advert` link in the navigation where by clicking on it, new page will show up and user can put item for sale.
 
-Footer is visible on any page and icons themselves are clickable and leading to my projects, different pages or opening a 
+Footer is visible on any page and icons themselves are clickable and leading to my projects, my Github or my LinkedIn and opening a 
 contact modal. 
 
-As an addition, I have implemented a designated space on all of the pages where companies or anyone can rent and promote themselves and me as an owner can earn some money on the side.
+As an addition, I have implemented a designated space (coloured ![#99D9EA](https://placehold.it/15/99D9EA/000000?text=+) `#99D9EA`) on all of the pages where companies or anyone can rent and promote themselves and me as an owner can earn some money on the side.
 
 #### Further description of buttons, icons and elements used is in the next section [Features](#existing-features).
 
@@ -142,31 +148,38 @@ As an addition, I have implemented a designated space on all of the pages where 
 * **Home page**
   
   <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-home.jpg" width="500" height="300" alt="Home page">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe/wireframe-home.jpg" width="500" height="300" alt="Home page">
 </p>
 
 * **Marketplace page**
   
   <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-market.jpg" width="400" height="500" alt="Marketplace page">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe/wireframe-market.jpg" width="400" height="500" alt="Marketplace page">
 </p>
 
 * **View advert**
   
   <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-view.jpg" width="500" height="300" alt="View advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe/wireframe-view.jpg" width="500" height="300" alt="View advert">
 </p>
 
 * **Add/Edit advert page**
   
   <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe-add.jpg" width="400" height="500" alt="Marketplace page">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/wireframe/wireframe-add.jpg" width="400" height="500" alt="Add/Edit page">
 </p>
 
 ### Surface 
-Using light color scheme I'm creating an environment where user will stay as long as possible because there are not bright colors which will tired users eyes.
+Using light color scheme I'm creating an environment where user will stay as long as possible because there are no bright colors which will tired users eyes.
 By making all the elements stand out correctly and are simple to use, I'm creating environment where 
 user can see what it wants, look at adverts that interest it. Users experience of **Snoop** will be that it is simple and easy to use.
+
+
+ + Main colors used throughout the web-site : 
+    - Navigation bar - ![#FAFAFA](https://placehold.it/15/FAFAFA/000000?text=+) `#FAFAFA`
+    - Body of the website - ![#EDEDED](https://placehold.it/15/EDEDED/000000?text=+) `#EDEDED`
+    - Footer - ![#575757](https://placehold.it/15/575757/000000?text=+) `#575757`
+    - Place to rent out for advertisement - ![#99D9EA](https://placehold.it/15/99D9EA/000000?text=+) `#99D9EA`
 
 [Back to top](#summary)
 
@@ -178,24 +191,24 @@ user can see what it wants, look at adverts that interest it. Users experience o
 
 * Advert section
   - On each page, on medium screens and bigger sizes, there are parts where owner of the
-   page can promote his own adverts or rent that space to companies for advertisement and earn money that way. When user clicks on "Click here", a contact modal pops-up where user can contact me in relation with advertising space.
+   page can promote his own adverts or rent that space to companies for advertisement and earn money that way. They are coloured ![#99D9EA](https://placehold.it/15/99D9EA/000000?text=+) `#99D9EA` and when user clicks on it, a contact modal pops-up where user can contact me in relation with advertising space.
 
 * Breadcrumbs
   - On every page excluding Home page, there are breadcrumbs just beneath navigation bar where user can see his/hers location in relation to Home page. If user decides to click on it,
   it will open that page.
 
 * Filter buttons and search bar
-  - They are visible on all pages and are used to filter ads. User can filter by category or by searching names. In search bar user can search by whole word or by letter.
+  - They are visible on all pages and are used to filter ads. User can filter by category or by searching names. In search bar user can search by keyword or part of it.
 
-* More filter button
+* Open filter button
   - Users can specify their search by specifying category and by specifying a chosen county.
 
 * Top Ad section 
-  - Top Ad section is a carousel which is showing 4 most viewed adverts on site. Each image in carousel is clickable and if user clicks on it will open that advert in View_advert.html
+  - Top Ad section is a carousel which is showing 5 most viewed adverts on site (my portfolio web-site and 5 adverts with the most views). Each image in carousel is clickable and if user clicks on it will open that advert in View_advert.html.
 
 * Add advert 
-  - User can add advert by typing all the required information that are neccssary to present the advert.
-   All fields are required and have to filled by the requirements. By pressing submit button, advert will be saved to database and presented in Marketplace.
+  - User can add advert by typing all the required information that are neccessary.
+   All fields are required and have to filled by the requirements. By pressing submit button, advert will be saved to database and will populate in Marketplace.
 
 * Access key - security
   - On adding advert, user will be asked to put in "Access key" which will then be used for deleting or editing advert. It is made as a security measure from unauthorized deleting or editing on the site.
@@ -218,7 +231,8 @@ user can see what it wants, look at adverts that interest it. Users experience o
   - Instead of user scrolling back to the top of the page when he reaches the bottom, I have put a button that will return to top once pressed.
 
 * "No results" page
-  - I've implemented a 404page in case user types something that is not in database. Upon that, a picture will be shown that the search is not in database and instruc user to search again or filter through categories. The image itself is clickable and once clicked, it will open Home page.
+  - I've implemented a 404page in case user types something that is not in database. Upon that, a picture will be shown that the search is not in database and instruct user to search again or filter through categories. The image itself is clickable and once clicked, it will redirect to Home page.
+
 * View counter
   - View counter is implemented in footer section and is only visible on medium and bigger screen sizes. It increments the counter by +1 every time Home page is visited.
 
@@ -227,7 +241,7 @@ user can see what it wants, look at adverts that interest it. Users experience o
   `target="_blank"` attribute) and last one opens a contact modal from which user can contact me.
 
 * My projects icons
-  - In the footer are two project icons with links, one leading to my **Weather 360°** project and one for my **Memory game** project (both of them open in a new tab because of 
+  - In the footer are two project icons with links,one leading to my **Portfolio** web-site, second leading to my **Weather 360°** project and third for my **Animals** project (all of them open in a new tab because of 
   `target="_blank"` attribute). Only visible on medium and bigger screen sizes.
 
 * Contact modal
@@ -239,6 +253,8 @@ user can see what it wants, look at adverts that interest it. Users experience o
 
 ### Future Features
   - A login systems for users on the page would've provided another level of security to adverts on this page. This could be performed in the back end using conditional statements to check if the current user is logged in or not with the current user being gotten from the session. Only if these criteria were satisfied then the user would be allowed to edit, delete or add adverts etc.
+
+  - Instead of renting advertising space to users and companies, there is an option to rent it to Google AdSense and therefore not worry about renting it to multiple users but instead to only one. Worth considering as a meaningful source of income. More on [link](https://www.google.com/adsense/start/).
 
 [Back to top](#summary)
 
@@ -273,7 +289,7 @@ Adverts Collection
 | Location           | location     |  user chooses from a list of choices      | string    |
 | Upload Image       | imageURL     | image, image/*                            | string    |
 | Views              | views        | number                                    | integer   |
-| Key              | key        | text/number, minlength="4", maxlength="15"    | string   |
+| Key                | key          | text/number, minlength="4", maxlength="15"    | string   |
 
 
 [JSON file showing adverts collection structure](https://github.com/romangrubic/database-project/tree/master/data/database/adverts.json) 
@@ -371,6 +387,7 @@ Further help with cloning can be found on this GitHub Help [page](https://help.g
 
 ### Acknowledgement
 * Videos on [CodeInstitute](https://codeinstitute.net/).
+* Thanks to my mentor Aaron Sinnott for feedback and ideas.
 * Big thanks to [W3 Schools](https://www.w3schools.com/) for all the content and clarification of different methods.
 * Background photos used in this site were obtained from [Pexels](https://www.pexels.com/), a stock image library.
 * Other advertisement site like [DoneDeal](https://www.donedeal.ie/), [Advert](https://www.adverts.ie/), [Gumtree](https://www.gumtree.ie/) etc.
