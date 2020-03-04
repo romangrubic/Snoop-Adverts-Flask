@@ -199,9 +199,13 @@ def search():
 # --------- Single advert page ----------------------------------
 @app.route('/view_advert/<advert_id>')
 def view_advert(advert_id):
+    counties = mongo.db.county.find()
+    categories = mongo.db.categories.find()
     advert = mongo.db.advert.find_one({'_id': ObjectId(advert_id)})
     view_count(advert_id)
     return render_template('view_advert.html',
+                           counties=counties,
+                           categories=categories,
                            tittle="Advert info",
                            advert=advert)
 

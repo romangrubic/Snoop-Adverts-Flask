@@ -39,23 +39,27 @@ body{
     padding: 10px;
     height: 50px;
     color: rgba(0, 0, 0, 0.9);
-    font-size: 22px;
+    font-size: 23px;
     font-weight: 700;
     margin: 0 10px;
+    transition-duration: 0.25s;
 }
 .nav-link:hover{
     border-radius: 20px;
     font-weight: 700;
-    font-size: 23px;
+    font-size: 26px;
     color: black;
+    transition-duration: 0.25s;
 }
 .nav-image{
     width: 45px;
     height: 35px;
+    transition-duration: 0.25s;
 }
 .nav-image:hover{
-    width: 50px;
-    height: 40px
+    width: 52px;
+    height: 42px;
+    transition-duration: 0.25s;
 }
 /* -------- Breadcrumbs -----------------------*/
 .breadcrumb{
@@ -74,6 +78,7 @@ body{
     font-weight: 500;
     padding: 10px 0;
     margin: 10px 0 10px 0;
+    transition-duration: 0.25s;
 
 }
 .btn-outline-light:hover{
@@ -81,6 +86,7 @@ body{
     color: rgb(0, 0, 0);
     border-color: white;
     font-weight: 600;
+    transition-duration: 0.25s;
 }
 .btn-motors{
     border-radius: 10px 0 0 10px;
@@ -133,6 +139,8 @@ body{
 }
 .btn-search{
     margin-left: 5px;
+    width: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 /* --------------- Carousel -------------------*/
 #carousel{
@@ -154,7 +162,7 @@ body{
 }
 .top-ad-section{
     padding: 5px;
-    margin:auto;
+    margin: 5px auto 20px;
     max-width: 700px;
 }
 .my-ad{
@@ -163,7 +171,7 @@ body{
     background-color: rgba(0, 0, 0, 0.6);
 }
 .most-viewed-ad{
-    height: 350px;
+    height: 370px;
 }
 .border-top-ad{
     border: 3px solid rgba(0, 0, 0, 0.5);
@@ -175,7 +183,7 @@ body{
 .carousel-top-ad-img{
     width: 100%;
     height: 250px;
-    border-right: 1px solid black;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
 }
 .carousel-caption{
     margin: 0;
@@ -183,9 +191,26 @@ body{
     color: black;
     text-align: center;
 }
-.top-ad-text{
+.top-ad-name{
     font-weight: 600;
+}
+.top-ad-text{
+    padding: 3px;
+    font-weight: 500;
     font-size: 18px;
+}
+.top-ad-text-price{
+    padding: 7px 7px 15px;
+    font-size: 25px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+.top-ad-text-location{
+    margin-top: 20px;
+    padding: 15px 7px 7px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 600;
 }
 .bg-color{
     background-color: rgba(255, 255, 255, 0.75);
@@ -254,30 +279,34 @@ body{
     width: 150px;
     margin: 5px;
     font-weight: 600;
-    background-color: rgba(0, 173, 0, 0.8);
-    border-color: rgba(0, 173, 0);
+    background-color: rgba(0, 145, 0, 0.8);
+    border-color: rgba(0, 145, 0);
 }
 .btn-submit:hover{
-    background-color: rgba(0, 173, 0);
+    background-color: rgba(0, 145, 0);
 }
 .btn-cancel{
     color: white;
     width: 100px;
     margin: 5px 10px;
-    background-color:rgba(231, 197, 0, 0.8);
+    background-color:rgba(231, 139, 0, 0.8);
     font-weight: 600;
     text-decoration: none;
-    border-color:rgb(255, 230, 0);
+    border-color:rgb(231, 139, 0);
 }
 .btn-cancel:hover{
-    background-color:rgb(255, 230, 0); 
+    background-color:rgb(231, 139, 0); 
 }
 .btn-outline-secondary{
-    border-width: 2px;
-    font-weight: 600;
+    margin-top: 5px;
+    border-width: 1.5px;
+    font-weight: 400;
+    background-color: white;
 }
 .btn-outline-secondary:hover{
-    background-color: rgb(87, 87, 87)
+    background-color: rgb(87, 87, 87);
+    font-weight: 500;
+
 }
 /* -------------Marketplace -------------------*/
 .marketplace-form{
@@ -289,13 +318,13 @@ body{
 
 /* ------------ Add/Edit advert ---------------------*/
 .add-advert-form{
-    padding: 75px 0 20px;
-    margin: 40px auto;
+    padding: 55px 0 20px;
+    margin: 40px auto 70px;
     max-width: 700px;
     text-align: left;
-    background-color: rgba(255, 255, 255, 0.4);
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
 }
 .inputs{
     padding: 10px 0 5px;
@@ -318,7 +347,7 @@ body{
 .edit-header{
     color: rgba(0, 0, 0);
     font-size: 35px;
-    margin: 50px 0 25px;
+    margin: 25px 0 25px;
     font-weight: 700;
 }
 .red-star{
@@ -356,12 +385,12 @@ body{
 .advert-price{
     padding: 0px 0px 15px;
     text-align: center;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 35px
 }
 .advert-location,.advert-contact{
-    padding: 0 0 10px 20px;
-    font-weight: 500;
+    padding: 5px 0 10px 20px;
+    font-weight: 600;
     font-size: 18px;
     margin: 0;
 }

@@ -1,5 +1,6 @@
-$(".search-filter").hide();
 
+/* -------- Toggles the "Open filter" div -------*/
+$(".search-filter").hide();
 $("#more-filters").click(function(){
-    $(".search-filter").toggle();
+    $(".search-filter").slideToggle();
 })
