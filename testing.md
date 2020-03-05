@@ -59,7 +59,7 @@ CRUD functionality is working as expected, no errors.
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on `Edit` button | Displays `Access key` modal | As Expected | Pass |
-| Typing wrong `Access key` in modal | Closes `Access key` modal | As Expected | Pass |
+| Typing wrong `Access key` in modal | Open 403 Page | As Expected | Pass |
 | Typing correct `Access key` in modal | Opens Edit advert page | As Expected | Pass |
 | Clicking outside modal | Closes `Access key` modal | As Expected | Pass |
 | Clicking on `Save` button without filling all the forms | Displays Validation to tell the user to enter all the forms | As Expected | Pass |
@@ -73,7 +73,7 @@ CRUD functionality is working as expected, no errors.
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on `Delete` button | Display `Access key` modal | As Expected | Pass |
-| Typing wrong `Access key` in modal | Closes `Access key` modal | As Expected | Pass |
+| Typing wrong `Access key` in modal | Open 403 Page | As Expected | Pass |
 | Typing correct `Access key` in modal | Deletes advert and redirects to Home page | As Expected | Pass |
 | Clicking outside modal | Closes `Access key` modal | As Expected | Pass |
 
@@ -104,6 +104,8 @@ CRUD functionality is working as expected, no errors.
 | Clicking on filter button when choosing Motors | Displays all the adverts with category of "Motors" | As Expected | Pass |
 | Clicking on filter button when choosing Home | Displays all the adverts with category of "Home" | As Expected | Pass |
 | Clicking on filter button when choosing Electronics | Displays all the adverts with category of "Electronics" | As Expected | Pass |
+| Searching for a word or part of a word that is NOT in database| Shows 404 Page with the users search entry | As Expected | Pass |
+
 
 ### County filter
 
@@ -114,7 +116,7 @@ CRUD functionality is working as expected, no errors.
 | Clicking on `Choose category` | Shows list of categories | As Expected | Pass |
 | Clicking on `Choose county` | Shows list of counties | As Expected | Pass |
 | Clicking on `Search` button after selecting options | Results that have the selected options show up | As Expected | Pass |
-| If there is no results with selected options | No results image shows up | As Expected | Pass |
+| If there is no results with selected options | Shows 404 Page with the users selected options | As Expected | Pass |
 
 
 ### Top Advert section

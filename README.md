@@ -56,6 +56,13 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
   <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/search-bar.png" width="500" height="150" alt="Search by part of the word">
 </p>
 
+* **see for what I searched for if there's no results**
+  - user can see what they searched for and have option to go to Home page. 
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/no-search.png" width="500" height="150" alt="User can see what they searched for">
+</p>
+
 * **search by category**
   - user can search by specific category such as Motors, Home or Electronic by pressing button.
 
@@ -103,7 +110,7 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 * **know if access key is wrong**
   - if user enters access key which is incorrect, a page 403 will load and instruct the user that their key was wrong and give them option to go back to the advert.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/access-denied.png" width="500" height="300" alt="Page 403">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/access_denied.png" width="500" height="300" alt="Page 403">
 </p>
 
 #### As a company, I would like to:
@@ -243,8 +250,9 @@ user can see what it wants, look at adverts that interest it. Users experience o
 * "Go to top" button
   - Instead of user scrolling back to the top of the page when he reaches the bottom, I have put a button that will return to top once pressed.
 
-* "No results" page - page 404
-  - I've implemented a 404page in case user types something that is not in database. Upon that, a picture will be shown that the search is not in database and instruct user to search again or filter through categories. The image itself is clickable and once clicked, it will redirect to Home page.
+* No results - page 404
+  - If user search for an item that is not in database, they will see a message that searched item is not in database (they will see exactly what they typed in search bar or what filters they used) 
+  and instruct user to search again or filter through categories. There is a button bellow message and it will redirect them to Home page.
 
 * View counter
   - View counter is implemented in footer section and is only visible on medium and bigger screen sizes. It increments the counter by +1 every time Home page is visited.
@@ -302,7 +310,7 @@ Adverts Collection
 | Location           | location     |  user chooses from a list of choices      | string    |
 | Upload Image       | imageURL     | image, image/*                            | string    |
 | Views              | views        | number                                    | integer   |
-| Key                | key          | text/number, minlength="4", maxlength="15"    | string   |
+| Key                | key          | text/number/symbol, minlength="4", maxlength="15"    | string   |
 
 
 [JSON file showing adverts collection structure](https://github.com/romangrubic/database-project/tree/master/data/database/adverts.json) 

@@ -1,4 +1,4 @@
-/* ---------------------- Google fonts -------*/
+/* --------------------------------------- Google fonts --------------------------------------- */
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 *{
@@ -26,7 +26,7 @@ body{
     padding-left: 0px;
 }
 
-/* ---------------- Navbar --------------------*/
+/* --------------------------------------- Navbar --------------------------------------- */
 #nav, .nav{
     min-height: 85px;
     height: 4vw;
@@ -61,13 +61,13 @@ body{
     height: 42px;
     transition-duration: 0.2s;
 }
-/* -------- Breadcrumbs -----------------------*/
+/* --------------------------------------- Breadcrumbs --------------------------------------- */
 .breadcrumb{
     margin-bottom: 0px;
     background-color: #ededed;
 }
 
-/* -------------- Home page buttons -----------*/
+/* --------------------------------------- Home page buttons --------------------------------------- */
 .home-btn{
     margin-top: 200px;
     margin-bottom: 10px;
@@ -109,7 +109,7 @@ body{
     font-size: 16px;
     background-color: rgba(0, 0, 0, 0.3);
 }
-/* -------------- Search bar ------------------*/
+/* --------------------------------------- Search bar --------------------------------------- */
 .search-bar{
     margin: 0px;
 }
@@ -131,7 +131,7 @@ body{
     font-weight: 500;
     font-size: 17px;
 }
-/* -------------- More filters button -------------*/
+/* --------------------------------------- More filters button --------------------------------------- */
 #more-filters{
     margin-left: 5px;
 }
@@ -144,7 +144,7 @@ body{
     width: 100px;
     background-color: rgba(0, 0, 0, 0.6);
 }
-/* --------------- Carousel -------------------*/
+/* --------------------------------------- Carousel --------------------------------------- */
 #carousel{
     opacity: 0.9;
     border-bottom: 2px solid rgba(0, 0, 0, 0.5); 
@@ -155,7 +155,7 @@ body{
     z-index: -1;
 }
 
-/* -------------- Most viewed ad -------------*/
+/* --------------------------------------- Most viewed ad section --------------------------------------- */
 .top-ad-header{
     padding: 0px;
     font-size: 35px;
@@ -218,7 +218,7 @@ body{
     background-color: rgba(255, 255, 255, 0.75);
 }
 
-/* ----------------- Cards --------------------*/
+/* --------------------------------------- Cards --------------------------------------- */
 .col-8,.col-sm-6,.col-md-4,.col-lg-3{
     padding:0px;
 }
@@ -253,7 +253,7 @@ body{
     font-size: 15px
 }
 
-/* ------------ Delete, Edit, Submit, Cancel, Go to top buttons ------*/
+/* --------------------------------------- Delete, Edit, Submit, Cancel, Go to top buttons --------------------------------------- */
 .delete-btn{
     color: white;
     width: 150px;
@@ -310,7 +310,7 @@ body{
     font-weight: 500;
 
 }
-/* -------------Marketplace -------------------*/
+/* --------------------------------------- Marketplace --------------------------------------- */
 .marketplace-form{
     margin: 50px auto;
 }
@@ -318,7 +318,7 @@ body{
     padding: 5px 
 }
 
-/* ------------ Add/Edit advert ---------------------*/
+/* --------------------------------------- Add/Edit advert --------------------------------------- */
 .add-advert-form{
     padding: 55px 0 20px;
     margin: 40px auto 70px;
@@ -358,7 +358,7 @@ body{
 .submit-row{
     padding-top: 45px
 }
-/* --------------- View advert page -------------*/
+/* --------------------------------------- View advert page --------------------------------------- */
 .view-advert-form{
     margin: 50px auto;
     background-color: rgba(255, 255, 255, 0.85);
@@ -405,7 +405,7 @@ body{
 .advert-buttons{
     margin: auto;
 }
-/* ---------- No results - page 404 -------------*/
+/* --------------------------------------- No results - page 404 --------------------------------------- */
 .little-padding{
     padding: 0px 5%;
 }
@@ -440,7 +440,7 @@ body{
 .search-result{
     padding: 10px 0px;
 }
-/* --------- Access denied - page 403 -----------*/
+/* --------------------------------------- Access denied - page 403 --------------------------------------- */
 .jumbotron{
     margin: 50px auto 80px;
     padding: 40px 0px;
@@ -468,12 +468,12 @@ body{
     border: 2px solid rgba(0, 0, 0, 0.5);
 }
 
-/* ------------ Side adverts for rent ---------*/
+/* --------------------------------------- Side adverts for rent --------------------------------------- */
 .d-none{
     cursor: pointer;
 }
 
-/* ------------- Pagination --------------------*/
+/* --------------------------------------- Pagination --------------------------------------- */
 .page-item.active .page-link{
     background-color: rgb(87, 87, 87);
     border-color: rgb(255, 255, 255);
@@ -485,7 +485,7 @@ body{
     font-weight: 600;
 }
 
-/* -------------- Footer ------------------------*/
+/* --------------------------------------- Footer --------------------------------------- */
 #footer{
     min-height: 200px;
     height: 15vh;
@@ -514,7 +514,17 @@ body{
 }
 .footer-icon:hover{
     color: rgba(255, 252, 250, 0.9);
-    background-color: rgba(34, 34, 34, 0.9);
+    background-color: rgba(4, 134, 0);
+}
+.github:hover {
+    background-color: #24292e; 
+}
+.linkedin:hover{
+    background-color: #0077b5;
+}
+.e-mail:hover{
+    background-color: rgb(240, 165, 2); 
+    cursor: pointer;
 }
 .vertical-align{
     padding-top: 45px;
@@ -523,7 +533,7 @@ body{
     padding-top: 25px;
 }
 
-/* --- Modals --- */
+/* --------------------------------------- Modals --------------------------------------- */
 .modal-body {
     text-align: center;
 }
@@ -542,7 +552,7 @@ body{
     margin: 8px 0;
 }
 
-/* --------- Media queries ---------------*/
+/* --------------------------------------- Media queries --------------------------------------- */
 @media only screen and (max-width: 575px) {
     .nav-link{
         font-size: 16px;

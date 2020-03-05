@@ -189,7 +189,13 @@ def county_search():
     ads_on_page = mongo.db.advert.find({'category_name': category,
                                         'location': county}).sort(
         'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
-    county = "in %s " % (county)
+    if county == "Kerry":
+        county = "in the Kingdom of Kerry"
+    elif county == "Cork":
+        county = "in the Rebel county"
+    else:
+        county = "in %s county" % (county)
+    
     return render_template('search.html',
                            counties=counties,
                            categories=categories,
