@@ -427,7 +427,7 @@ body{
 .page-404 h3{
     font-weight: 700;
     font-size: 35px;
-    padding: 20px 0px 40px;
+    padding: 20px 50px 40px;
     color: black;
 }
 .page-404 a{
@@ -437,7 +437,9 @@ body{
     font-size: 20px;
     border: 2px solid rgba(0, 0, 0, 0.5);
 }
-
+.search-result{
+    padding: 10px 0px;
+}
 /* --------- Access denied - page 403 -----------*/
 .jumbotron{
     margin: 50px auto 80px;

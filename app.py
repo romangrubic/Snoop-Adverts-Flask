@@ -97,11 +97,11 @@ def home_garden_diy():
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
     ads_count = mongo.db.advert.find(
-        {'category_name': 'Home, garden, DIY'}).count()
+        {'category_name': 'Home, garden and DIY'}).count()
     page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
     page_numbers = range(1, page_count + 1)
     ads_on_page = mongo.db.advert.find(
-        {'category_name': 'Home, garden, DIY'}).sort('views', DESCENDING).skip(
+        {'category_name': 'Home, garden and DIY'}).sort('views', DESCENDING).skip(
             ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
                            counties=counties,
@@ -123,11 +123,11 @@ def electronics():
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
     ads_count = mongo.db.advert.find(
-        {'category_name': 'Electronics, mobile, PC'}).count()
+        {'category_name': 'Electronics, mobile and PC'}).count()
     page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
     page_numbers = range(1, page_count + 1)
     ads_on_page = mongo.db.advert.find(
-        {'category_name': 'Electronics, mobile, PC'}
+        {'category_name': 'Electronics, mobile and PC'}
     ).sort('views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
                            counties=counties,
@@ -189,9 +189,12 @@ def county_search():
     ads_on_page = mongo.db.advert.find({'category_name': category,
                                         'location': county}).sort(
         'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
+    county = "in %s " % (county)
     return render_template('search.html',
                            counties=counties,
                            categories=categories,
+                           county=county,
+                           category=category,
                            subtittle="Marketplace",
                            tittle=category,
                            results=ads_on_page,
