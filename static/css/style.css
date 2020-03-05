@@ -405,6 +405,33 @@ body{
 .advert-buttons{
     margin: auto;
 }
+/* ------------ Access denied -----------------*/
+.jumbotron{
+    margin: 50px auto 80px;
+    padding: 40px 0px;
+    border: 5px solid rgba(0, 0, 0, 0.85);
+    background: repeating-linear-gradient(25deg, #fafafa,  #ededed 70px,  #fa19192f 60px,  #fa19192f 140px);
+}
+.jumbotron h1{
+    color: red;
+    font-weight: 700;
+    font-size: 70px;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+.jumbotron h3{
+    font-weight: 700;
+    font-size: 35px;
+    padding: 20px 0px 40px;
+}
+.jumbotron a{
+    margin: 30px 0px 20px;
+    padding: 10px 40px;
+    font-weight: 500;
+    font-size: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+
+}
 /* ------------ Side adverts for rent ---------*/
 .d-none{
     cursor: pointer;

@@ -272,7 +272,13 @@ def edit_advert(advert_id):
                                categories=all_categories,
                                counties=mongo.db.county.find())
     else:
-        return redirect(url_for('view_advert', advert_id=advert_id))
+        counties = mongo.db.county.find()
+        categories = mongo.db.categories.find()
+        return render_template('access_denied.html',
+                               advert_id=advert_id,
+                               counties=counties,
+                               categories=categories,
+                               tittle="Access denied")
 
 
 # ------------ Update advert -----------------------------------
@@ -318,7 +324,12 @@ def delete_advert(advert_id):
         delete(advert_id)
         return redirect(url_for('home'))
     else:
-        return redirect(url_for('view_advert', advert_id=advert_id))
+        counties = mongo.db.county.find()
+        categories = mongo.db.categories.find()
+        return render_template('access_denied.html', advert_id=advert_id,
+                               counties=counties,
+                               categories=categories,
+                               tittle="Access denied")
 
 
 # ------------- Host/Port/Debug --------------------------------
