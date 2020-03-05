@@ -42,24 +42,24 @@ body{
     font-size: 23px;
     font-weight: 700;
     margin: 0 10px;
-    transition-duration: 0.25s;
+    transition-duration: 0.2s;
 }
 .nav-link:hover{
     border-radius: 20px;
     font-weight: 700;
     font-size: 26px;
     color: black;
-    transition-duration: 0.25s;
+    transition-duration: 0.2s;
 }
 .nav-image{
     width: 45px;
     height: 35px;
-    transition-duration: 0.25s;
+    transition-duration: 0.2s;
 }
 .nav-image:hover{
     width: 52px;
     height: 42px;
-    transition-duration: 0.25s;
+    transition-duration: 0.2s;
 }
 /* -------- Breadcrumbs -----------------------*/
 .breadcrumb{
@@ -160,7 +160,7 @@ body{
     padding: 0px;
     font-size: 35px;
     font-weight: 600;
-    color: rgba(0, 0, 0, 0.8);
+    color: rgba(0, 0, 0, 0.9);
 }
 .top-ad-section{
     padding: 5px;
@@ -405,7 +405,40 @@ body{
 .advert-buttons{
     margin: auto;
 }
-/* ------------ Access denied -----------------*/
+/* ---------- No results - page 404 -------------*/
+.little-padding{
+    padding: 0px 5%;
+}
+.page-404{
+    width: 100%;
+    margin: 0px auto 30px;
+    padding: 40px 0px;
+    border: 5px solid rgba(0, 0, 0, 0.85);
+    background: repeating-linear-gradient(25deg, #fafafa,  #ededed 70px,  #19a7fa2f 60px,  #19a7fa2f 140px);
+    border-radius: 5px;
+}
+.page-404 h1{
+    color: rgb(0, 119, 255);
+    font-weight: 700;
+    font-size: 70px;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+.page-404 h3{
+    font-weight: 700;
+    font-size: 35px;
+    padding: 20px 0px 40px;
+    color: black;
+}
+.page-404 a{
+    margin: 30px 0px 20px;
+    padding: 10px 40px;
+    font-weight: 500;
+    font-size: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+/* --------- Access denied - page 403 -----------*/
 .jumbotron{
     margin: 50px auto 80px;
     padding: 40px 0px;
@@ -423,6 +456,7 @@ body{
     font-weight: 700;
     font-size: 35px;
     padding: 20px 0px 40px;
+    color: black;
 }
 .jumbotron a{
     margin: 30px 0px 20px;
@@ -430,8 +464,8 @@ body{
     font-weight: 500;
     font-size: 20px;
     border: 2px solid rgba(0, 0, 0, 0.5);
-
 }
+
 /* ------------ Side adverts for rent ---------*/
 .d-none{
     cursor: pointer;

@@ -146,6 +146,8 @@ def search():
     counties = mongo.db.county.find()
     categories = mongo.db.categories.find()
     query = request.args.get('search').upper()
+    if query[0] == " ":
+        query = "empty space(s)"
     results = mongo.db.advert.find({'advert_name': {"$regex": query}})
     results_number = results.count()
 
@@ -159,6 +161,7 @@ def search():
         {'advert_name': {"$regex": query}}).skip(
         ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('search.html',
+                           query=query,
                            counties=counties,
                            categories=categories,
                            tittle="Search",

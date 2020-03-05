@@ -100,6 +100,12 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
   <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/delete-advert.png" width="500" height="300" alt="Delete advert">
 </p>
 
+* **know if access key is wrong**
+  - if user enters access key which is incorrect, a page 403 will load and instruct the user that their key was wrong and give them option to go back to the advert.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/access-denied.png" width="500" height="300" alt="Page 403">
+</p>
+
 #### As a company, I would like to:
 * **promote my product**
   - companies/users can promote their product or rent space to promote themselves by contacting me. Every page has dedicated places to rent coloured ![#99D9EA](https://placehold.it/15/99D9EA/000000?text=+) `#99D9EA`.
@@ -126,10 +132,14 @@ User can easily search with one click (by pressing Marketplace in navbar or by p
 When the user arrives on site, it will see buttons and search bar as a call to action. Navigation is centered and is always on top of the screen and has a logo which acts as a link to Home page,
 Marketplace button where he can see all the adverts sorted by number of views and Add advert where new advert can be added with ease. There is also "Top Ad" section where adverts with highest number of views are displayed on a carousel.
 
-When user goes to Marketplace page, adverts will show up ranked by number of views they have. Also, there are only 12 adverts visible per page and a `Go to top` button at the end of the page. Adverts are presented as cards with a decent size picture and below their name, number of views, location and price. 
+When user goes to Marketplace page, adverts will show up ranked by number of views they have. Also, there are only 12 adverts visible per page and a `Go to top` button at the end of the page. Adverts are presented as cards with a 
+decent size picture and below their name, number of views, location and price. 
 Adverts are clickable on all of their size so user can easily see the whole advert. If user clicks on advert, a new page will open where information will be presented in a bigger format and advert description will also be visible. 
-There are buttons on the end of the page where user can delete the advert or edit it if neccessary. If user presses `Delete` button, a modal will show up asking the user for `Access key`. If the `Access key` is same as the advert key, advert is deleted, otherwise modal will close itself. If they press `Edit` button, a modal will show up asking the user for `Access key`. If the `Access key` is same as the advert key, edit page will open
-containing all the data of the advert in database and user can change all or any part of it.
+
+There are buttons on the end of the page where user can delete the advert or edit it if neccessary. If user presses `Delete` button, a modal will show up asking the user for `Access key`. If the `Access key` is same as the advert key, 
+advert is deleted. If they press `Edit` button, a modal will show up asking the user for `Access key`. If the `Access key` is same as the advert key, edit page will open
+containing all the data of the advert in database and user can change all or any part of it. Otherwise, in both cases, if the access key is incorrect, they will be redirected to access_denied.html where 
+they will be explained that their key is invalid and instructed to go back to advert.
 
 User can click on filter buttons that are visible on all main pages, where he can fast search a specific category of adverts. If he wants to see `Motors`, all adverts in category of Motors will show. Same 
 for the rest of the categories. There is also a search bar where user can search for a keyword or part of the keyword. Also they can search by specific county if they wish on `Open filters` button.
@@ -213,6 +223,9 @@ user can see what it wants, look at adverts that interest it. Users experience o
 * Access key - security
   - On adding advert, user will be asked to put in "Access key" which will then be used for deleting or editing advert. It is made as a security measure from unauthorized deleting or editing on the site.
 
+* Access denied - page 403
+  - If user enters an incorrect access key when asked, they will get redirected to a page where they will see that their access is denied and a button to go back to advert.
+
 * Adverts cards
   - Once the user searches or visits Marketplace, adverts will be presented in cards. User can see image of the advert and bellow it
   are tittle, number of views, location and price. The cards themselves are clickable and once clicked they 
@@ -230,7 +243,7 @@ user can see what it wants, look at adverts that interest it. Users experience o
 * "Go to top" button
   - Instead of user scrolling back to the top of the page when he reaches the bottom, I have put a button that will return to top once pressed.
 
-* "No results" page
+* "No results" page - page 404
   - I've implemented a 404page in case user types something that is not in database. Upon that, a picture will be shown that the search is not in database and instruct user to search again or filter through categories. The image itself is clickable and once clicked, it will redirect to Home page.
 
 * View counter
