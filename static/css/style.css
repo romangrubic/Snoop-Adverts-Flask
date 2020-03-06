@@ -123,7 +123,7 @@ body{
 }
 #search{
     text-align: center;
-    width: 450px;
+    width: 400px;
     border-radius: 10px;
     padding: 5px;
     background-color: white;
@@ -391,7 +391,7 @@ body{
     font-size: 35px
 }
 .advert-location,.advert-contact{
-    padding: 5px 0 10px 20px;
+    padding: 5px 0 5px 20px;
     font-weight: 600;
     font-size: 18px;
     margin: 0;
@@ -586,11 +586,20 @@ body{
         padding-top: 20px
     }
     #search{
-        width: 300px;
+        width: 45vw;
     }
     .card-img-view{
         max-height: 200px;
-    }    
+    }
+    .delete-btn{
+        width: 100px;
+    }
+    .edit-btn{
+        width: 100px;
+    }
+    #more-filters{
+        width: 17vw;
+    }
 }
 
 @media only screen and (max-width: 992px) {
@@ -623,6 +632,24 @@ body{
     }
     .advert-price{
         padding: 10px;
+    }
+    #search{
+        width: 45vw;
+        max-width: 400px;
+    }
+    .page-404 h1{
+        font-size: 45px;
+    }
+    .page-404 h3{
+        font-size: 28px;
+        padding: 20px;
+    }
+    .jumbotron h1{
+        font-size: 45px;
+    }
+    .jumbotron h3{
+        font-size: 28px;
+        padding: 20px;
     }
 }
 

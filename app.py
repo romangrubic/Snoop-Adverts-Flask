@@ -1,5 +1,6 @@
 import os
 import math
+import datetime
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo, DESCENDING
 from bson.objectid import ObjectId
@@ -150,7 +151,6 @@ def search():
         query = "empty space(s)"
     results = mongo.db.advert.find({'advert_name': {"$regex": query}})
     results_number = results.count()
-
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
     ads_count = mongo.db.advert.find(
@@ -191,11 +191,9 @@ def county_search():
         'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     if county == "Kerry":
         county = "in the Kingdom of Kerry"
-    elif county == "Cork":
-        county = "in the Rebel county"
     else:
         county = "in %s county" % (county)
-    
+
     return render_template('search.html',
                            counties=counties,
                            categories=categories,
@@ -216,13 +214,15 @@ def county_search():
 def view_advert(advert_id):
     counties = mongo.db.county.find()
     categories = mongo.db.categories.find()
+    time = mongo.db.fs.files.find()
     advert = mongo.db.advert.find_one({'_id': ObjectId(advert_id)})
     view_count(advert_id)
     return render_template('view_advert.html',
                            counties=counties,
                            categories=categories,
                            tittle="Advert info",
-                           advert=advert)
+                           advert=advert,
+                           time=time)
 
 
 # ----------- Increments Adverts view counter by +1 -------------
@@ -249,6 +249,7 @@ def insert_advert():
     if "advert_image" in request.files:
         advert_image = request.files['advert_image']
         mongo.save_file(advert_image.filename, advert_image)
+    currentDT = datetime.datetime.now()
 
     new_advert = {
         'category_name': request.form.get('category_name'),
@@ -259,8 +260,8 @@ def insert_advert():
         'location': request.form.get('location'),
         'imageURL': advert_image.filename,
         'views': 0,
+        'time': currentDT.strftime("Entered: %A, %B %d, %Y at %H:%M"),
         'key': request.form.get('access_key')
-
     }
     advert.insert_one(new_advert)
     return redirect(url_for('home'))
@@ -277,6 +278,8 @@ def file(filename):
 def edit_advert(advert_id):
     the_advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
     all_categories = mongo.db.categories.find()
+
+    # -------------------- Logic for Access key
     if the_advert['key'] == request.form.get('access_key2'):
         return render_template('edit_advert.html',
                                tittle="Edit Advert",
@@ -305,6 +308,8 @@ def update_advert(advert_id):
         mongo.save_file(advert_image.filename, advert_image)
     else:
         image_filename = advert['imageURL']
+    
+    currentDT = datetime.datetime.now()
 
     mongo.db.advert.update({'_id': ObjectId(advert_id)},
                            {
@@ -316,6 +321,7 @@ def update_advert(advert_id):
         'location': request.form.get('location'),
         'imageURL': image_filename,
         'views': int(request.form.get('views')),
+        'time': currentDT.strftime("Renewed: %A, %B %d, %Y at %H:%M"),
         'key': request.form.get('access_key')
     })
     return redirect(url_for('view_advert', advert_id=advert_id))
@@ -327,7 +333,7 @@ def delete(advert_id):
     advert.remove({'_id': ObjectId(advert_id)})
     return redirect(url_for('home'))
 
-
+    # -------------------- Logic for Access key
 @app.route('/delete_advert/<advert_id>', methods=['POST'])
 def delete_advert(advert_id):
     advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
