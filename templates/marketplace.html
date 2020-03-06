@@ -3,7 +3,7 @@
 	<div class="row">
         <!-- Advertising space -->
 		<div class="d-none d-md-block col-md-1 no-padding">
-			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
+			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" class="side-advert-size" alt="side-advert" data-toggle="modal" data-target="#contactModal">
 		</div>
 		<div class="offset-1 col-10 offset-md-0 col-md-10">
             <!-- Breadcrumbs -->
@@ -40,13 +40,13 @@
                         <select class="input-field add-inputs search-filter-input" id="category" name="category_name" required>
                             <option value="" disabled selected>Choose category</option>
                             {% for cat in categories %}
-                            <option value="{{cat.category_name}}" required>{{cat.category_name}}</option>
+                            <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                             {% endfor %}
                         </select>                    
                         <select class="input-field add-inputs search-filter-input" id="county" name="county" required>
                             <option value="" disabled selected>Choose county</option>
                             {% for county in counties %}
-                            <option value="{{county.name}}" required>{{county.name}}</option>
+                            <option value="{{county.name}}">{{county.name}}</option>
                             {% endfor %}
                         </select>
                         <div>
@@ -62,7 +62,7 @@
 						<div class="col-11 col-sm-6 col-md-4 col-lg-3">
 							<div class="card" data-toggle="tooltip" title="Click to see full details.">
 								<a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn no-padding">
-									<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top" width="200px" height="200px" alt="{{advert.advert_name}}">
+									<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top card-image-marketplace" alt="{{advert.advert_name}}">
 									<div class="card-body">
 										<div class="row">
 											<div class="col-9 no-padding-right">
@@ -70,7 +70,7 @@
 											</div>
 											<div class="col-3 no-padding text-left">
 												<p class="margin-top">
-                                                    <img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views">  {{advert.views}}
+                                                    <img src="{{url_for('static', filename='images/logo/view.png')}}" class="views-icon" alt="Views">  {{advert.views}}
                                                 </p>
 											</div>
 										</div>
@@ -95,7 +95,7 @@
 			</div>
             <!-- Pagination -->
 			<div>
-				<div aria-label="" class="card-sm">
+				<div class="card-sm">
 					<ul class="pagination justify-content-center">
 						{% if page > 1 %}
 						<li class="page-item">
@@ -132,7 +132,7 @@
 		</div>
         <!-- Advertising space -->
 		<div class="d-none d-md-block col-md-1 no-padding">
-			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
+			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" class="side-advert-size" alt="side-advert" data-toggle="modal" data-target="#contactModal">
 		</div>
 	</div>
 </div>

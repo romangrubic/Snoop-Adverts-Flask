@@ -3,7 +3,7 @@
 	<div class="row">
         <!-- Advertising space -->
 		<div class="d-none d-md-block col-md-1 no-padding">
-			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
+			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" class="side-advert-size" alt="side-advert" data-toggle="modal" data-target="#contactModal">
 		</div>
 		<div class="offset-1 col-10 offset-md-0 col-md-10">
             <!-- Breadcrumbs -->
@@ -37,13 +37,13 @@
                             <select class="input-field add-inputs search-filter-input" id="category" name="category_name" required>
                                 <option value="" disabled selected>Choose category</option>
                                 {% for cat in categories %}
-                                <option value="{{cat.category_name}}" required>{{cat.category_name}}</option>
+                                <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                                 {% endfor %}
                             </select>                    
                             <select class="input-field add-inputs search-filter-input" id="county" name="county" required>
                                 <option value="" disabled selected>Choose county</option>
                                 {% for county in counties %}
-                                <option value="{{county.name}}" required>{{county.name}}</option>
+                                <option value="{{county.name}}">{{county.name}}</option>
                                 {% endfor %}
                             </select>
                             <div>
@@ -62,7 +62,7 @@
 		</div>
         <!-- Advertising space -->
 		<div class="d-none d-md-block col-md-1 no-padding">
-			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
+			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" class="side-advert-size" alt="side-advert" data-toggle="modal" data-target="#contactModal">
 		</div>
 	</div>
 </div>
