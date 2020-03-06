@@ -32,7 +32,7 @@ body{
     height: 4vw;
     background-color: #fafafa;
     border-bottom: 2px solid rgba(0, 0, 0, 0.5); 
-    padding:1.5vh;
+    padding:2vh;
 }
 
 .nav-link{
@@ -42,24 +42,28 @@ body{
     font-size: 23px;
     font-weight: 700;
     margin: 0 10px;
-    transition-duration: 0.2s;
+    transition-duration: 0.25s;
 }
 .nav-link:hover{
     border-radius: 20px;
     font-weight: 700;
-    font-size: 27px;
+    font-size: 28px;
     color: black;
-    transition-duration: 0.2s;
+    background-color: rgba(0, 0, 0, 0.05);
+    transition-duration: 0.25s;
+    padding: 5px 10px 0px;
 }
 .nav-image{
+    margin: 7px 20px 0px;
     width: 45px;
     height: 35px;
     transition-duration: 0.2s;
 }
 .nav-image:hover{
-    width: 52px;
-    height: 42px;
-    transition-duration: 0.2s;
+    width: 60px;
+    height: 45px;
+    transition-duration: 0.25s;
+    border-radius: 20px;
 }
 /* --------------------------------------- Breadcrumbs --------------------------------------- */
 .breadcrumb{
@@ -69,7 +73,7 @@ body{
 
 /* --------------------------------------- Home page buttons --------------------------------------- */
 .home-btn{
-    margin-top: 250px;
+    margin-top: 200px;
     margin-bottom: 10px;
 }
 .btn-outline-light{
@@ -151,7 +155,7 @@ body{
 }
 .carousel-home{
     width: 100%;
-    height: 550px;
+    height: 500px;
     z-index: -1;
 }
 
@@ -160,7 +164,8 @@ body{
     padding: 30px 0px 0px;
     font-size: 35px;
     font-weight: 600;
-    color: rgba(0, 0, 0, 0.9);
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: underline;
 }
 .top-ad-section{
     padding: 5px;
@@ -172,12 +177,9 @@ body{
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.6);
 }
-.most-viewed-ad{
-    height: 760px;
-}
+
 .border-top-ad{
-    border: 3px solid rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.5);
 }
 .carousel-top-ad{
     height: 250px;
@@ -185,7 +187,7 @@ body{
 .carousel-top-ad-img{
     width: 100%;
     height: 250px;
-    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
 }
 .carousel-caption{
     margin: 0;
@@ -217,13 +219,23 @@ body{
 .bg-color{
     background-color: rgba(255, 255, 255, 0.75);
 }
+.carousel-control-prev-icon{
+    padding: 25px 15px;
+  background-color: #99D9EA;
+    border-radius: 10px
+}
+.carousel-control-next-icon{
+    padding: 25px 15px;
+    background-color: #99D9EA;
+    border-radius: 10px
+}
 
 /* --------------------------------------- Cards --------------------------------------- */
 .col-8,.col-sm-6,.col-md-4,.col-lg-3{
     padding:0px;
 }
 .card{
-    margin:5px;
+    margin:10px;
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.33);
 }

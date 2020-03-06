@@ -52,92 +52,135 @@
 		</div>
 	</div>
 </div>
-
-<div class="row-fluid no-margin most-viewed-ad">
-   
-    <!-- Top 5 adverts section -->
-	<div class="col-12 no-margin col-sm-10 top-ad-section">
-		<p class="text-center top-ad-header">Most viewed adverts</p>
-			<div id="carousel-top-ad" class="carousel slide" data-ride="carousel" data-interval="3000">
-				<div class="border-top-ad carousel-inner">
-					<div class="carousel-item carousel-top-ad active">
-                        <a href="https://romangrubic.github.io/Roman-Grubic-portfolio/"	class="btn no-padding" target="_blank" data-toggle="tooltip" title="Click to see full details.">
-								<img src="{{url_for('static', filename='images/background/bg-image.jpg')}}" class="carousel-top-ad-img" alt="...">                            
-						    <div class="carousel-caption d-none d-md-block">
-							    <h4 class="my-ad no-margin">Looking for a Full-stack Developer?</h4>
-							    <p class="my-ad">Check out this portfolio!</p>
-						    </div>
-                        </a>
-					</div>
-                    <!-- For loop for Top 5 Adverts -->
-					{% for top_ad in top_ads %}
-						<div class="carousel-item carousel-top-ad">
-                            <a href="{{url_for('view_advert', advert_id=top_ad._id)}}" data-toggle="tooltip" title="Click to see full details.">
-							<div class="row no-padding no-margin bg-color">
-								<div class="col-6 no-padding">									
-									<img src="{{url_for('file', filename=top_ad['imageURL'])}}" class="carousel-top-ad-img" alt="{{top_ad.advert_name}}">
-                                </div>
-								<div class="col-6">
-									<div class="carousel-caption">
-										<h2 class="top-ad-name">{{top_ad.advert_name.capitalize()}}</h2>
-										<span class="top-ad-text top-ad-text-price">€ {{top_ad.price}}<br></span>
-										<span class="top-ad-text top-ad-text-location">{{top_ad.location}}<br></span>
-										<span class="top-ad-text">
-                                            <img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views"> {{top_ad.views}}
-                                        </span>
-									</div>									
-								</div>
-							</div>
-                            </a>
-						</div>
-					{% endfor %}
-				</div>
-			</div>
-	</div>
-
-
-                    <!-- Top 5 adverts section -->
-
-                    <div class="col-12 no-margin col-sm-10 top-ad-section">
-                        <p class="text-center top-ad-header">Most recent adverts</p>
-                            <div id="carousel-recent" class="carousel slide" data-ride="carousel" data-interval="3000">
-                                <div class="border-top-ad carousel-inner">
-                                    <div class="carousel-item carousel-top-ad active">
-                                        <a href="https://romangrubic.github.io/Roman-Grubic-portfolio/"	class="btn no-padding" target="_blank" data-toggle="tooltip" title="Click to see full details.">
-                                                <img src="{{url_for('static', filename='images/background/bg-image.jpg')}}" class="carousel-top-ad-img" alt="...">                            
-                                            <div class="carousel-caption d-none d-md-block">
-                                                <h4 class="my-ad no-margin">Looking for a Full-stack Developer?</h4>
-                                                <p class="my-ad">Check out this portfolio!</p>
-                                            </div>
-                                        </a>
+<div class="container-fluid no-padding no-margin most-viewed-ad">
+    <div class="row">
+        <!-- Advertising space -->
+		<div class="d-none d-md-block col-md-1 no-padding">
+			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
+		</div>
+        <!-- Both Top Ad section and recent adverts -->
+        <div class="col-12 col-md-10 no-padding no-margin">   
+            <!-- Top 5 adverts section -->
+            <div class="col-12 col-sm-10 top-ad-section no-margin">
+                <p class="text-center top-ad-header">Most viewed adverts</p>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div id="carousel-top-ad" class="carousel slide" data-ride="carousel" data-interval="5000">
+                        <div class="border-top-ad carousel-inner">
+                            <div class="carousel-item carousel-top-ad active">
+                                <a href="https://romangrubic.github.io/Roman-Grubic-portfolio/"	class="btn no-padding" target="_blank" data-toggle="tooltip" title="Click to see full details.">
+                                        <img src="{{url_for('static', filename='images/background/bg-image.jpg')}}" class="carousel-top-ad-img" alt="...">                            
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h4 class="my-ad no-margin">Looking for a Full-stack Developer?</h4>
+                                        <p class="my-ad">Check out this portfolio!</p>
                                     </div>
-                                        <!-- Most recent advert-->
-                                        {% for recent in recent_adverts %}
-                                            <div class="carousel-item carousel-top-ad">
-                                                <a href="{{url_for('view_advert', advert_id=recent._id)}}" data-toggle="tooltip" title="Click to see full details.">
-                                                <div class="row no-padding no-margin bg-color">
-                                                    <div class="col-6 no-padding">									
-                                                        <img src="{{url_for('file', filename=recent['imageURL'])}}" class="carousel-top-ad-img" alt="{{recent.advert_name}}">
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="carousel-caption">
-                                                            <h2 class="top-ad-name">{{recent.advert_name.capitalize()}}</h2>
-                                                            <span class="top-ad-text top-ad-text-price">€ {{recent.price}}<br></span>
-                                                            <span class="top-ad-text top-ad-text-location">{{recent.location}}<br></span>
-                                                            <span class="top-ad-text">
-                                                                <img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views"> {{recent.views}}
-                                                            </span>
-                                                        </div>									
-                                                    </div>
-                                                </div>
-                                                </a>
-                                            </div>
-                                        {% endfor %}
-                                </div>
+                                </a>
+                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
+                            <!-- For loop for Top 5 Adverts -->
+                            {% for top_ad in top_ads %}
+                                <div class="carousel-item carousel-top-ad">
+                                    <a href="{{url_for('view_advert', advert_id=top_ad._id)}}" data-toggle="tooltip" title="Click to see full details.">
+                                    <div class="row no-padding no-margin bg-color">
+                                        <div class="col-6 no-padding">									
+                                            <img src="{{url_for('file', filename=top_ad['imageURL'])}}" class="carousel-top-ad-img" alt="{{top_ad.advert_name}}">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="carousel-caption">
+                                                <h2 class="top-ad-name">{{top_ad.advert_name.capitalize()}}</h2>
+                                                <span class="top-ad-text top-ad-text-price">€ {{top_ad.price}}<br></span>
+                                                <span class="top-ad-text top-ad-text-location">{{top_ad.location}}<br></span>
+                                                <span class="top-ad-text">
+                                                    <img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views"> {{top_ad.views}}
+                                                </span>
+                                            </div>									
+                                        </div>
+                                    </div>
+                                    </a>
+                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Top 5 adverts section -->
+            <div class="col-12 col-sm-10 top-ad-section no-margin">
+                <p class="text-center top-ad-header">Most recent adverts</p>
+                <div id="carousel-controls-recent" class="carousel slide" data-ride="carousel">
+                    <div id="carousel-recent" class="carousel slide" data-ride="carousel" data-interval="5000">
+                        <div class="border-top-ad carousel-inner">
+                            <div class="carousel-item carousel-top-ad active">
+                                <a href="https://romangrubic.github.io/memory-game-js/"	class="btn no-padding" target="_blank" data-toggle="tooltip" title="Test your memory in this unique match pair game!">
+                                    <img src="{{url_for('static', filename='images/background/memory.jpeg')}}" class="carousel-top-ad-img" alt="...">                            
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h4 class="my-ad no-margin">Can you catch the Animals?</h4>
+                                            <p class="my-ad">- Test your hunting skills! -</p>
+                                    </div>
+                                </a>
+                                <a class="carousel-control-prev" href="#carousel-controls-recent" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-controls-recent" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            <!-- Most recent advert-->
+                            {% for recent in recent_adverts %}
+                            <div class="carousel-item carousel-top-ad">
+                                <a href="{{url_for('view_advert', advert_id=recent._id)}}" data-toggle="tooltip" title="Click to see full details.">
+                                    <div class="row no-padding no-margin bg-color">
+                                        <div class="col-6 no-padding">									
+                                            <img src="{{url_for('file', filename=recent['imageURL'])}}" class="carousel-top-ad-img" alt="{{recent.advert_name}}">
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="carousel-caption">
+                                                <h2 class="top-ad-name">{{recent.advert_name.capitalize()}}</h2>
+                                                <span class="top-ad-text top-ad-text-price">€ {{recent.price}}<br></span>
+                                                <span class="top-ad-text top-ad-text-location">{{recent.location}}<br></span>
+                                                <span class="top-ad-text">
+                                                <img src="{{url_for('static', filename='images/logo/view.png')}}" width="10px" height="10px" alt="Views"> {{recent.views}}
+                                                </span>
+                                            </div>									
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="carousel-control-prev" href="#carousel-controls-recent" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-controls-recent" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+	    </div>
+        <!-- Advertising space -->
+		<div class="d-none d-md-block col-md-1 no-padding">
+			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" width="100%" height="100%" alt="side-advert" data-toggle="modal" data-target="#contactModal" display>
+		</div>
+        </div>
+    </div>
 
-			
-  
-	</div>
 {% endblock %}
