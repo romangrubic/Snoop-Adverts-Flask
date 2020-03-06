@@ -62,10 +62,10 @@
                 <!-- The advert itself in a bigger format -->                
 				<div class="container view-advert-form">
 					<div class="row">
-						<div class="col-12 col-lg-6 no-padding">
+						<div class="col-12 no-padding">
 							<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top img-view-ad card-img-view" alt="{{advert.advert_name}}">
 		                </div>
-						<div class="col-12 col-lg-6 no-padding">
+						<div class="col-12 no-padding">
 							<p class="advert-name no-margin">{{advert.advert_name.capitalize()}}</p>
 							<p class="advert-price no-margin">€ {{advert.price}}</p>
 							<p class="advert-location">Location: {{advert.location}}</p>
@@ -75,14 +75,14 @@
                             <!-- Copies URL to clipboard. credits: https://www.w3schools.com/howto/howto_js_copy_clipboard.asp -->
                             <div class="d-flex justify-content-end">
                                 <input type="text" value="https://adverts-project.herokuapp.com/view_advert/{{advert._id}}" id="advert-url">
-                                <button id="copyURL" class="btn btn-outline-dark" onclick="copyURL()">Copy Advert URL</button>
+                                <button id="copyURL" class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="Adverts URL will be copied to your clipboard and share it with your friends!" onclick="copyURL()">Copy Advert URL</button>
                             </div>                            
 							<p class="advert-description">{{advert.advert_description}}</p>
 						</div>
 					</div>
 				</div>
                 <!-- Delete and Edit buttons -->
-				<div class="row advert-buttons">
+				<div class="row d-flex justify-content-center">
 					<button type="button" class="btn delete-btn" data-toggle="modal" data-target="#deletemodal">Delete</button>
 					<button type="button" class="btn edit-btn" data-toggle="modal" data-target="#editmodal">Edit</button>
 				</div>
