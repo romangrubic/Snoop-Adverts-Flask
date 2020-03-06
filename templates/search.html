@@ -24,7 +24,7 @@
 			<div class="search-bar d-flex justify-content-center">
 				<div class="row search-outline search-outline-home">
 					<form action="{{url_for('search')}}">
-						<input id="search" name="search" type="text" class="validate home-search" placeholder="Search by name and press enter key" required>
+						<input id="search" name="search" type="text" class="validate home-search" placeholder="Search by keyword and press enter key" data-toggle="tooltip" title="Search engine will look for your keyword in adverts description and then show it to you!" required>
                     </form>
                     <button id="more-filters" class="btn btn-outline-light open-filters text-center" data-toggle="tooltip" title="Filter by Categories and by County!">Open filters</button>
 				</div>
@@ -59,7 +59,7 @@
 						<div class="col-12 little-padding">
                             <div class="text-center page-404">
                                 <h1>We couldn't find it!</h1>
-                                <h3>We are sorry, but your search for <br> <span class="red-star search-result">{{ query }} {{ category }} {{county}}</span> <br> did not have any results. <br><br> Error 404- No results!</h3>
+                                <h3>We are sorry, but your search for <br> <span class="red-star search-result">{{ query }} {{ category }} {{county}}</span> <br> did not have any results. <br><br> Error 404 - No results!</h3>
                                 <a href="{{url_for('home')}}" class="btn btn-info">Go to Home page</a>
                             </div>
                         </div>								

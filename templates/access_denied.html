@@ -17,17 +17,17 @@
 			<div class="view-advert-page">
                 <!-- Filter by category -->
 				<div class="d-flex justify-content-center">
-				    <a class="btn btn-outline-light btn-motors"	href="{{url_for('motors_and_vehicles')}}" data-toggle="tooltip" title="Motors and vehicles">Motors</a>
-				    <a class="btn btn-outline-light btn-home" href="{{url_for('home_garden_diy')}}" data-toggle="tooltip" title="Home, garden and DIY">Home</a>
-				    <a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}" data-toggle="tooltip" title="Electronic, mobile and PC">Electronics</a>
+				    <a class="btn btn-outline-light btn-motors"	href="{{url_for('motors_and_vehicles')}}" data-toggle="tooltip" title="Filter by Motors and vehicles category!">Motors</a>
+				    <a class="btn btn-outline-light btn-home" href="{{url_for('home_garden_diy')}}" data-toggle="tooltip" title="Filter by Home, garden and DIY category!">Home</a>
+				    <a class="btn btn-outline-light btn-pc" href="{{url_for('electronics')}}" data-toggle="tooltip" title="Filter by Electronic, mobile and PC category!">Electronics</a>
 			    </div>
                 <!-- Search bar and Open filters button -->
                 <div class="search-bar d-flex justify-content-center">
                     <div class="row search-outline search-outline-home">
                         <form action="{{url_for('search')}}">
-                            <input id="search" name="search" type="text" class="validate home-search" placeholder="Search by name and press enter key" required>
+                            <input id="search" name="search" type="text" class="validate home-search" placeholder="Search by keyword and press enter key" data-toggle="tooltip" title="Search engine will look for your keyword in adverts description and then show it to you!" required>
                         </form>
-                        <button id="more-filters" class="btn btn-outline-light open-filters text-center">Open filters</button>
+                        <button id="more-filters" class="btn btn-outline-light open-filters text-center" data-toggle="tooltip" title="Filter by Categories and by County!">Open filters</button>
                     </div>
                 </div>
                 <!-- Div that opens by clicking on Open filters button -->

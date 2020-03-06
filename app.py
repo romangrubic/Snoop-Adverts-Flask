@@ -149,16 +149,17 @@ def search():
     query = request.args.get('search').upper()
     if query[0] == " ":
         query = "empty space(s)"
-    results = mongo.db.advert.find({'advert_name': {"$regex": query}})
+    results = mongo.db.advert.find({'advert_description': {"$regex": query,
+                                                           '$options': 'i'}})
     results_number = results.count()
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
     ads_count = mongo.db.advert.find(
-        {'advert_name': {"$regex": query}}).count()
+        {'advert_description': {"$regex": query, '$options': 'i'}}).count()
     page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
     page_numbers = range(1, page_count + 1)
     ads_on_page = mongo.db.advert.find(
-        {'advert_name': {"$regex": query}}).skip(
+        {'advert_description': {"$regex": query, '$options': 'i'}}).skip(
         ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('search.html',
                            query=query,
@@ -308,7 +309,7 @@ def update_advert(advert_id):
         mongo.save_file(advert_image.filename, advert_image)
     else:
         image_filename = advert['imageURL']
-    
+
     currentDT = datetime.datetime.now()
 
     mongo.db.advert.update({'_id': ObjectId(advert_id)},
@@ -334,6 +335,8 @@ def delete(advert_id):
     return redirect(url_for('home'))
 
     # -------------------- Logic for Access key
+
+
 @app.route('/delete_advert/<advert_id>', methods=['POST'])
 def delete_advert(advert_id):
     advert = mongo.db.advert.find_one({"_id": ObjectId(advert_id)})
