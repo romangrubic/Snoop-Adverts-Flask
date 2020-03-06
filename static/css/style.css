@@ -47,7 +47,7 @@ body{
 .nav-link:hover{
     border-radius: 20px;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 27px;
     color: black;
     transition-duration: 0.2s;
 }
@@ -69,7 +69,7 @@ body{
 
 /* --------------------------------------- Home page buttons --------------------------------------- */
 .home-btn{
-    margin-top: 200px;
+    margin-top: 250px;
     margin-bottom: 10px;
 }
 .btn-outline-light{
@@ -151,13 +151,13 @@ body{
 }
 .carousel-home{
     width: 100%;
-    height: 500px;
+    height: 550px;
     z-index: -1;
 }
 
 /* --------------------------------------- Most viewed ad section --------------------------------------- */
 .top-ad-header{
-    padding: 0px;
+    padding: 30px 0px 0px;
     font-size: 35px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.9);
@@ -173,7 +173,7 @@ body{
     background-color: rgba(0, 0, 0, 0.6);
 }
 .most-viewed-ad{
-    height: 370px;
+    height: 760px;
 }
 .border-top-ad{
     border: 3px solid rgba(0, 0, 0, 0.5);
@@ -382,8 +382,8 @@ body{
     padding: 0 4%;
 }
 .card-img-view{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 }
 .img-view-ad{
@@ -525,7 +525,7 @@ body{
 }
 .footer-icon:hover{
     color: rgba(255, 252, 250, 0.9);
-    background-color: rgba(4, 134, 0);
+    background-color: rgb(3, 78, 0);
 }
 .github:hover {
     background-color: #24292e; 
