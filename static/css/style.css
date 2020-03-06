@@ -308,7 +308,19 @@ body{
 .btn-outline-secondary:hover{
     background-color: rgb(87, 87, 87);
     font-weight: 500;
-
+}
+#copyURL{
+    margin: 5px;
+    border-color: rgb(87, 87, 87);
+    font-size: 700;
+}
+.btn-outline-dark:hover{
+    background-color: rgb(87, 87, 87);
+    border-color: rgb(87, 87, 87);
+}
+#advert-url{
+    opacity: 0.01;
+    cursor: default;
 }
 /* --------------------------------------- Marketplace --------------------------------------- */
 .marketplace-form{
@@ -376,7 +388,7 @@ body{
     padding: 0;
 }
 .img-view-ad{
-    height: 450px;
+    height: 500px;
 }
 .advert-name{
     font-weight: 600;
@@ -385,7 +397,7 @@ body{
     letter-spacing: 2px;
 }
 .advert-price{
-    padding: 0px 0px 15px;
+    padding: 0px;
     text-align: center;
     font-weight: 600;
     font-size: 35px
