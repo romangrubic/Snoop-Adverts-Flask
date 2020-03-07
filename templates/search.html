@@ -5,7 +5,7 @@
 		<div class="d-none d-md-block col-md-1 no-padding">
 			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" class="side-advert-size" alt="side-advert" data-toggle="modal" data-target="#contactModal">
 		</div>
-		<div class="offset-1 col-10 offset-md-0 col-md-10">
+		<div class="col-12 col-md-10">
             <!-- Breadcrumbs -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -75,7 +75,7 @@
 					{% else %}
                     <!-- If there is a result, this will present it to user similar as in marketplace.html -->
 					{% for result in results %}
-						<div class="col-8 col-sm-6 col-md-4 col-lg-3">
+						<div class="col-10 col-sm-6 col-md-4 col-lg-3">
 							<div class="card" data-toggle="tooltip" title="Click to see full details.">
 								<a href="{{url_for('view_advert', advert_id=result._id)}}" class="btn no-padding">
 									<img src="{{url_for('file', filename=result['imageURL'])}}" class="card-img-top card-image-marketplace" alt="{{result.advert_name}}">

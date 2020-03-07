@@ -126,7 +126,7 @@ body{
 }
 #search{
     text-align: center;
-    width: 400px;
+    width: 350px;
     border-radius: 10px;
     padding: 5px;
     background-color: white;
@@ -147,11 +147,10 @@ body{
 }
 .search-filter-input{
     color: rgba(0, 0, 0, 0.85);
-    margin: 0px 5px 5px;
+    margin: 0px 2px 5px;
 
 }
 .btn-search{
-    margin-left: 5px;
     width: 100px;
     background-color: rgba(0, 0, 0, 0.6);
 }
@@ -599,19 +598,25 @@ body{
 }
 
 /* --------------------------------------- Media queries --------------------------------------- */
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 860px) {
     .nav-link{
-        font-size: 16px;
-        margin: 5px;
-        padding: 10px 5px 5px 5px;
+        font-size: 20px;
+        margin: 1px;
     }
     .nav-link:hover{
-        font-size: 17px;
-        padding: 10px 5px 5px 5px;
+        font-size: 24px;
+        padding: 10px 1px 5px 1px;
     }
     .nav-image{
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
+    }
+    .nav-image:hover{
+        width: 45px;
+        height: 45px;
+    }
+    .home-btn{
+        margin-top: 110px;
     }
     .btn-outline-warning{
         width: 100px;
@@ -622,7 +627,7 @@ body{
     .top-ad-text{
         font-size: 15px;
     }
-   .col-8,.col-sm-6,.col-md-4,.col-lg-3{
+   .col-11,.col-sm-6,.col-md-4,.col-lg-3{
         margin:auto;
     }
     #footer {
@@ -632,10 +637,14 @@ body{
         padding-top: 20px
     }
     #search{
-        width: 45vw;
+        display: flex;
+        justify-content: center;
+        width: 305px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     .card-img-view{
-        max-height: 200px;
+        max-height: 300px;
     }
     .delete-btn{
         width: 100px;
@@ -644,7 +653,10 @@ body{
         width: 100px;
     }
     #more-filters{
-        width: 17vw;
+        width: 100px;
+    }
+    .open-filters{
+        margin-bottom: 10px;
     }
 }
 
@@ -667,9 +679,7 @@ body{
     .border-top-ad{
         margin-top: 30px;
     }
-    .view-advert-page{
-        padding: 10px;
-    }
+
     .card-img-view{
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -678,10 +688,6 @@ body{
     }
     .advert-price{
         padding: 10px;
-    }
-    #search{
-        width: 45vw;
-        max-width: 400px;
     }
     .page-404 h1{
         font-size: 45px;

@@ -5,7 +5,7 @@
 		<div class="d-none d-md-block col-md-1 no-padding">
 			<img src="{{url_for('static', filename='images/background/side_ad.png')}}" class="side-advert-size" alt="side-advert" data-toggle="modal" data-target="#contactModal">
 		</div>
-		<div class="offset-1 col-10 offset-md-0 col-md-10">
+		<div class="col-12 col-md-10">
             <!-- Breadcrumbs -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -26,10 +26,10 @@
 			</div>
             <!-- Search bar and Open filters button -->
 			<div class="search-bar d-flex justify-content-center">
-				<div class="search-outline search-outline-home">
+				<div class="row search-outline search-outline-home">
 					<form action="{{url_for('search')}}">
 						<input id="search" name="search" type="text" class="validate home-search" placeholder="Search by keyword" data-toggle="tooltip" title="Search engine will look for your keyword in adverts description and then show it to you!">
-                        <select class="btn btn-light search-filter-input" id="county" name="county">
+                        <select class="btn btn-light search-filter-input" id="county" name="county" data-toggle="tooltip" title="If you select only county then only adverts in that county will appear!">
                             <option value="" selected>Choose county</option>
                             {% for county in counties %}
                             <option value="{{county.name}}">{{county.name}}</option>
@@ -37,11 +37,11 @@
                         </select>
                         <button id="btn-search-key" class="btn-outline-light btn-search open-filters" type="submit" data-toggle="tooltip" title="It will search for any combination. If both are empty, all adverts will be shown!">Search</button>
                     </form>
-				</div>
+                </div>
 			</div>
             <div class="row d-flex justify-content-center">
-                <button id="more-filters" class="btn btn-outline-light open-filters text-center" data-toggle="tooltip" title="Filter by Categories and by County!">Additional</button>
-            </div>
+                    <button id="more-filters" class="btn btn-outline-light open-filters text-center" data-toggle="tooltip" title="Filter by Categories and by County!">Additional</button>
+                    </div>
             <!-- Div that opens by clicking on Open filters button -->
             <div class="row d-flex justify-content-center text-center">
                 <form action="{{url_for('county_search')}}" method="POST" enctype="multipart/form-data">                    
@@ -66,9 +66,9 @@
             </div>
             <!-- Method that takes ALL adverts from database and shows them to user -->
 			<div class="marketplace-form">
-				<div class="row">
+				<div class="row">				
 					{% for advert in adverts %}
-						<div class="col-11 col-sm-6 col-md-4 col-lg-3">
+						<div class="col-10 col-sm-6 col-md-4 col-lg-3 no-margin">
 							<div class="card" data-toggle="tooltip" title="Click to see full details.">
 								<a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn no-padding">
 									<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top card-image-marketplace" alt="{{advert.advert_name}}">
@@ -97,7 +97,7 @@
 						</div>
 					{% endfor %}
 				</div>
-			</div>
+			</div>			
             <!-- Go to top button -->
 			<div class="text-right">
 				<a class="btn btn-outline-light" href="#nav">Go to top</a>

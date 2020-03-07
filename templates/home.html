@@ -74,7 +74,7 @@
                 <div id="most-viewed-ads">
                 <div class="row no-margin no-padding">
 					{% for advert in top_ads %}
-						<div class="col-11 col-sm-6 col-md-6 col-lg-3">
+						<div class="col-10 col-sm-6 col-md-6 col-lg-3">
 							<div class="card" data-toggle="tooltip" title="Click to see full details.">
 								<a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn no-padding">
 									<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top card-image-marketplace" alt="{{advert.advert_name}}">
@@ -113,7 +113,7 @@
                 <div id="most-recent-ads">
                     <div class="row no-margin no-padding">
 					{% for advert in recent_adverts %}
-						<div class="col-11 col-sm-6 col-md-6 col-lg-3">
+						<div class="col-10 col-sm-6 col-md-6 col-lg-3">
 							<div class="card" data-toggle="tooltip" title="Click to see full details.">
 								<a href="{{url_for('view_advert', advert_id=advert._id)}}" class="btn no-padding">
 									<img src="{{url_for('file', filename=advert['imageURL'])}}" class="card-img-top card-image-marketplace" alt="{{advert.advert_name}}">
