@@ -16,12 +16,13 @@ function copyURL() {
 }
 
 /* ---------------------- Toggles Most viewed advert and most recent adverts -------------- */
-$("#carousel-recent").hide();
+$("#most-viewed-ads").hide();
+$("#most-recent-ads").hide();
 
 $("#most-viewed").click(function (){
-    $("#carousel-top-ad").slideToggle();
+    $("#most-viewed-ads").slideToggle();
 })
 
 $("#most-recent").click(function (){
-    $("#carousel-recent").slideToggle();
+    $("#most-recent-ads").slideToggle();
 })

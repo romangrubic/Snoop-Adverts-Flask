@@ -9,7 +9,7 @@
     * [Navigation](#navigation)
     * [Breadcrumbs](#breadcrumbs)
     * [Search and Filter](#search-and-filter)
-    * [Most viewed/recent section](#most-viewed/recent-section)
+    * [Most viewed/recent section](#section)
     * [Button "Go to top"](#button-"go-to-top")
     * [Pagination](#pagination)
     * [Footer](#footer)
@@ -114,12 +114,14 @@ CRUD functionality is working as expected, no errors.
 | If there is no results with selected options | Shows 404 Page with the users selected options | As Expected | Pass |
 
 
-### Most viewed/recent section
+### Section
 
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
+| Clicking on `Most viewed advert` | Toggles div with Most viewed advert | As Expected | Pass |
+| Clicking on `Most recent advert` | Toggles div with Most recent advert  | As Expected | Pass |
 | Clicking on an advert | Open that advert in view advert page | As Expected | Pass |
-| Clicking carousel buttons | Carousel moves to previous/next | As Expected | Pass |
+
 
 
 

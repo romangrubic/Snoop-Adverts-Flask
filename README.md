@@ -133,7 +133,7 @@ User can easily search with one click (by pressing Marketplace in navbar or by p
 ### Structure
 
 When the user arrives on site, it will see buttons and search bar as a call to action. Navigation is centered and is always on top of the screen and has a logo which acts as a link to Home page,
-Marketplace button where he can see all the adverts sorted by number of views and Add advert where new advert can be added with ease. There is also "Most viewed advert" and "Most recent advert" section with 5 of the most viewed or most recent adverts.
+Marketplace button where he can see all the adverts sorted by number of views and Add advert where new advert can be added with ease. There is also "Most viewed advert" and "Most recent advert" section with 4 of the most viewed or most recent adverts.
 
 When user goes to Marketplace page, adverts will show up ranked by number of views they have. Also, there are only 12 adverts visible per page and a `Go to top` button at the end of the page. Adverts are presented as cards with a 
 decent size picture and below their name, number of views, location and price. 
@@ -215,11 +215,11 @@ user can see what it wants, look at adverts that interest it. Users experience o
   - They are visible on all pages and are used to filter ads. User can filter adverts by any combination or keyword, county and category.
 
 * Most viewed and Most recent section 
-  - Carousel which is showing 5 most viewed or most recent adverts on site. Each image in carousel is clickable and if user clicks on it will open that advert in View_advert.html.
+  - Carousel which is showing 4 most viewed or most recent adverts on site. Each advert is clickable and if user clicks on it will open that advert in View_advert.html.
 
 * Time and Date
   - Each advert has the time when it was entered or renewed which helps the user.
-  
+
 * Add advert 
   - User can add advert by typing all the required information that are neccessary.
    All fields are required and have to filled by the requirements. By pressing submit button, advert will be saved to database and will populate in Marketplace.
