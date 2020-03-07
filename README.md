@@ -76,7 +76,7 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 * **share the URL of the advert easily with someone who might be interested**
   - user can share the URL of the advert by clicking on button which will copy the URL into users clipboard. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/share-ad.png" width="400" height="600" alt="View advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/share-ad.png" width="400" height="200" alt="Share URL">
 </p>
 
 * **view my location in relation to Home page**
@@ -133,7 +133,7 @@ User can easily search with one click (by pressing Marketplace in navbar or by p
 ### Structure
 
 When the user arrives on site, it will see buttons and search bar as a call to action. Navigation is centered and is always on top of the screen and has a logo which acts as a link to Home page,
-Marketplace button where he can see all the adverts sorted by number of views and Add advert where new advert can be added with ease. There is also "Top Ad" section where adverts with highest number of views are displayed on a carousel.
+Marketplace button where he can see all the adverts sorted by number of views and Add advert where new advert can be added with ease. There is also "Most viewed advert" and "Most recent advert" section with 5 of the most viewed or most recent adverts.
 
 When user goes to Marketplace page, adverts will show up ranked by number of views they have. Also, there are only 12 adverts visible per page and a `Go to top` button at the end of the page. Adverts are presented as cards with a 
 decent size picture and below their name, number of views, location and price. 
@@ -145,7 +145,8 @@ containing all the data of the advert in database and user can change all or any
 they will be explained that their key is invalid and instructed to go back to advert.
 
 User can click on filter buttons that are visible on all main pages, where he can fast search a specific category of adverts. If he wants to see `Motors`, all adverts in category of Motors will show. Same 
-for the rest of the categories. There is also a search bar where user can search for a keyword or part of the keyword. Also they can search by specific county if they wish on `Open filters` button.
+for the rest of the categories. Search bar where user can search for a keyword or part of the keyword. They can search by keyword and/or by county. If none is selected, then search will result in showing ALL adverts.
+There is also `Addiotional` button where user can search by category and county.
 
 There is also an `Add advert` link in the navigation where by clicking on it, new page will show up and user can put item for sale.
 
@@ -211,14 +212,14 @@ user can see what it wants, look at adverts that interest it. Users experience o
   it will open that page.
 
 * Filter buttons and search bar
-  - They are visible on all pages and are used to filter ads. User can filter by category or by searching names. In search bar user can search by keyword or part of it.
+  - They are visible on all pages and are used to filter ads. User can filter adverts by any combination or keyword, county and category.
 
-* Open filter button
-  - Users can specify their search by specifying category and by specifying a chosen county.
+* Most viewed and Most recent section 
+  - Carousel which is showing 5 most viewed or most recent adverts on site. Each image in carousel is clickable and if user clicks on it will open that advert in View_advert.html.
 
-* Top Ad section 
-  - Top Ad section is a carousel which is showing 5 most viewed adverts on site (my portfolio web-site and 5 adverts with the most views). Each image in carousel is clickable and if user clicks on it will open that advert in View_advert.html.
-
+* Time and Date
+  - Each advert has the time when it was entered or renewed which helps the user.
+  
 * Add advert 
   - User can add advert by typing all the required information that are neccessary.
    All fields are required and have to filled by the requirements. By pressing submit button, advert will be saved to database and will populate in Marketplace.

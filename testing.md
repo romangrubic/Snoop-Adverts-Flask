@@ -9,8 +9,7 @@
     * [Navigation](#navigation)
     * [Breadcrumbs](#breadcrumbs)
     * [Search and Filter](#search-and-filter)
-    * [County filter](#county-filter)
-    * [Top Advert section](#top-advert-section)
+    * [Most viewed/recent section](#most-viewed/recent-section)
     * [Button "Go to top"](#button-"go-to-top")
     * [Pagination](#pagination)
     * [Footer](#footer)
@@ -100,18 +99,14 @@ CRUD functionality is working as expected, no errors.
 
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
-| Searching for a word or part of a word | Shows all adverts with searched word in the name | As Expected | Pass |
 | Clicking on filter button when choosing Motors | Displays all the adverts with category of "Motors" | As Expected | Pass |
 | Clicking on filter button when choosing Home | Displays all the adverts with category of "Home" | As Expected | Pass |
 | Clicking on filter button when choosing Electronics | Displays all the adverts with category of "Electronics" | As Expected | Pass |
+| Searching for a word or part of a word | Shows all adverts with searched word in the name | As Expected | Pass |
 | Searching for a word or part of a word that is NOT in database| Shows 404 Page with the users search entry | As Expected | Pass |
-
-
-### County filter
-
-| Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
-| :-------------: |:----------------:| :--------------: | :---------: |
-| Clicking on `Open filters` | Toggles `div` with search options and button | As Expected | Pass |
+| Searching for a county | Shows all adverts in the searched county | As Expected | Pass |
+| Searching for keyword with county | Shows all adverts with keyword in the searched county | As Expected | Pass |
+| Clicking on `Additional` | Toggles `div` with search options and button | As Expected | Pass |
 | Clicking on `Search` button without selecting options | Tooltip with "Select item from list" shows | As Expected | Pass |
 | Clicking on `Choose category` | Shows list of categories | As Expected | Pass |
 | Clicking on `Choose county` | Shows list of counties | As Expected | Pass |
@@ -119,11 +114,12 @@ CRUD functionality is working as expected, no errors.
 | If there is no results with selected options | Shows 404 Page with the users selected options | As Expected | Pass |
 
 
-### Top Advert section
+### Most viewed/recent section
 
 | Functionality | Expected Outcome | Actual Outcome | Pass/Fail |
 | :-------------: |:----------------:| :--------------: | :---------: |
 | Clicking on an advert | Open that advert in view advert page | As Expected | Pass |
+| Clicking carousel buttons | Carousel moves to previous/next | As Expected | Pass |
 
 
 
