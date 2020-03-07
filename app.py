@@ -24,9 +24,11 @@ ADS_PER_PAGE = 12
 def home():
     total_view()
     counties = mongo.db.county.find()
+    counti_list = mongo.db.county.find()
     categories = mongo.db.categories.find()
     return render_template('home.html',
                            counties=counties,
+                           counti_list=counti_list,
                            categories=categories,
                            tittle="Home",
                            views=mongo.db.total_view.find(),
@@ -46,6 +48,7 @@ def total_view():
 @app.route('/marketplace')
 def marketplace():
     counties = mongo.db.county.find()
+    counti_list = mongo.db.county.find()
     categories = mongo.db.categories.find()
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
@@ -56,6 +59,7 @@ def marketplace():
         'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
                            counties=counties,
+                           counti_list=counti_list,
                            categories=categories,
                            tittle="Marketplace",
                            adverts=ads_on_page,
@@ -65,10 +69,16 @@ def marketplace():
                            total=page_count)
 
 
+"""
+
+-------- Below are filters by each category, search input and conty ---------
+
+"""
 # --------- Filter search: Motors and Vehicles ------------------------------
 @app.route('/motors_and_vehicles')
 def motors_and_vehicles():
     counties = mongo.db.county.find()
+    counti_list = mongo.db.county.find()
     categories = mongo.db.categories.find()
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
@@ -81,6 +91,7 @@ def motors_and_vehicles():
         'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
                            counties=counties,
+                           counti_list=counti_list,
                            categories=categories,
                            subtittle="Marketplace",
                            tittle="Motors and vehicles",
@@ -95,6 +106,7 @@ def motors_and_vehicles():
 @app.route('/home_garden_diy')
 def home_garden_diy():
     counties = mongo.db.county.find()
+    counti_list = mongo.db.county.find()
     categories = mongo.db.categories.find()
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
@@ -107,6 +119,7 @@ def home_garden_diy():
             ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
                            counties=counties,
+                           counti_list=counti_list,
                            categories=categories,
                            subtittle="Marketplace",
                            tittle="Home, garden and DIY",
@@ -121,6 +134,7 @@ def home_garden_diy():
 @app.route('/electronics')
 def electronics():
     counties = mongo.db.county.find()
+    counti_list = mongo.db.county.find()
     categories = mongo.db.categories.find()
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
@@ -133,6 +147,7 @@ def electronics():
     ).sort('views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
                            counties=counties,
+                           counti_list=counti_list,
                            categories=categories,
                            subtittle="Marketplace",
                            tittle="Electronics, mobile and PC",
@@ -142,30 +157,72 @@ def electronics():
                            total=page_count)
 
 
-# ----------- Filter search: Search query ------------------------------------
+# ----------- Filter search: Search by input, by county or by both! ------------------------------------
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     counties = mongo.db.county.find()
+    counti_list = mongo.db.county.find()
     categories = mongo.db.categories.find()
-    query = request.args.get('search').upper()
-    if query[0] == " ":
-        query = "empty space(s)"
-    results = mongo.db.advert.find({'advert_description': {"$regex": query,
-                                                           '$options': 'i'}})
-    results_number = results.count()
-    page_number = int(request.args.get('page', 1))
-    ads_to_skip = (page_number - 1) * ADS_PER_PAGE
-    ads_count = mongo.db.advert.find(
-        {'advert_description': {"$regex": query, '$options': 'i'}}).count()
-    page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
-    page_numbers = range(1, page_count + 1)
-    ads_on_page = mongo.db.advert.find(
-        {'advert_description': {"$regex": query, '$options': 'i'}}).skip(
-        ads_to_skip).limit(ADS_PER_PAGE)
+    query = request.args.get('search')
+    county = request.args.get('county')
+    if county == "":
+        results = mongo.db.advert.find({
+            'advert_description': {"$regex": query, '$options': 'i'}})
+        results_number = results.count()
+        page_number = int(request.args.get('page', 1))
+        ads_to_skip = (page_number - 1) * ADS_PER_PAGE
+        ads_count = mongo.db.advert.find(
+            {'advert_description': {"$regex": query, '$options': 'i'}}).count()
+        page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
+        page_numbers = range(1, page_count + 1)
+        ads_on_page = mongo.db.advert.find(
+            {'advert_description': {"$regex": query, '$options': 'i'}}).skip(
+            ads_to_skip).limit(ADS_PER_PAGE)
+    elif query == "":
+        if county == "Kerry":
+            county = "adverts in the Kingdom of Kerry"
+        else:
+            county = "adverts in %s county" % (county)
+        results = mongo.db.advert.find({
+            'location': county})
+        results_number = results.count()
+        page_number = int(request.args.get('page', 1))
+        ads_to_skip = (page_number - 1) * ADS_PER_PAGE
+        ads_count = mongo.db.advert.find({
+            'location': county}).count()
+        page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
+        page_numbers = range(1, page_count + 1)
+        ads_on_page = mongo.db.advert.find({
+            'location': county}).skip(
+            ads_to_skip).limit(ADS_PER_PAGE)
+    else:
+        if query[0] == " ":
+            query = "empty space(s)"
+        results = mongo.db.advert.find({
+            'advert_description': {"$regex": query, '$options': 'i'},
+            'location': county})
+        results_number = results.count()
+        page_number = int(request.args.get('page', 1))
+        ads_to_skip = (page_number - 1) * ADS_PER_PAGE
+        ads_count = mongo.db.advert.find(
+            {'advert_description': {"$regex": query, '$options': 'i'},
+             'location': county}).count()
+        page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
+        page_numbers = range(1, page_count + 1)
+        ads_on_page = mongo.db.advert.find(
+            {'advert_description': {"$regex": query, '$options': 'i'},
+             'location': county}).skip(
+            ads_to_skip).limit(ADS_PER_PAGE)
+        if county == "Kerry":
+            county = "in the Kingdom of Kerry"
+        else:
+            county = "in %s county" % (county)
     return render_template('search.html',
                            query=query,
                            counties=counties,
+                           counti_list=counti_list,
                            categories=categories,
+                           county=county,
                            tittle="Search",
                            results=ads_on_page,
                            ads=ads_on_page,
@@ -179,27 +236,29 @@ def search():
 @app.route('/county', methods=['GET', 'POST'])
 def county_search():
     counties = mongo.db.county.find()
+    counti_list = mongo.db.county.find()
     categories = mongo.db.categories.find()
-    county = request.form.get('county')
+    counti = request.form.get('counti_list')
     category = request.form.get('category_name')
     page_number = int(request.args.get('page', 1))
     ads_to_skip = (page_number - 1) * ADS_PER_PAGE
     ads_count = mongo.db.advert.find({'category_name': category,
-                                      'location': county}).count()
+                                      'location': counti}).count()
     page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
     page_numbers = range(1, page_count + 1)
     ads_on_page = mongo.db.advert.find({'category_name': category,
-                                        'location': county}).sort(
+                                        'location': counti}).sort(
         'views', DESCENDING).skip(ads_to_skip).limit(ADS_PER_PAGE)
-    if county == "Kerry":
-        county = "in the Kingdom of Kerry"
+    if counti == "Kerry":
+        counti = "in the Kingdom of Kerry"
     else:
-        county = "in %s county" % (county)
+        counti = "in %s county" % (counti)
 
     return render_template('search.html',
                            counties=counties,
+                           counti_list=counti_list,
                            categories=categories,
-                           county=county,
+                           county=counti,
                            category=category,
                            subtittle="Marketplace",
                            tittle=category,
@@ -215,12 +274,14 @@ def county_search():
 @app.route('/view_advert/<advert_id>')
 def view_advert(advert_id):
     counties = mongo.db.county.find()
+    counti_list = mongo.db.county.find()
     categories = mongo.db.categories.find()
     time = mongo.db.fs.files.find()
     advert = mongo.db.advert.find_one({'_id': ObjectId(advert_id)})
     view_count(advert_id)
     return render_template('view_advert.html',
                            counties=counties,
+                           counti_list=counti_list,
                            categories=categories,
                            tittle="Advert info",
                            advert=advert,
