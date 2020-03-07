@@ -14,3 +14,15 @@ function copyURL() {
   copyText.setSelectionRange(0, 99999)
   document.execCommand("copy");
 }
+
+/* ---------------------- Toggles Most viewed advert and most recent adverts -------------- */
+$("#carousel-top-ad").hide();
+$("#carousel-recent").hide();
+
+$("#most-viewed").click(function (){
+    $("#carousel-top-ad").slideToggle();
+})
+
+$("#most-recent").click(function (){
+    $("#carousel-recent").slideToggle();
+})

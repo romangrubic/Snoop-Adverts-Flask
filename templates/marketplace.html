@@ -26,13 +26,22 @@
 			</div>
             <!-- Search bar and Open filters button -->
 			<div class="search-bar d-flex justify-content-center">
-				<div class="row search-outline search-outline-home">
+				<div class="search-outline search-outline-home">
 					<form action="{{url_for('search')}}">
-						<input id="search" name="search" type="text" class="col-12 col-sm-block validate home-search" placeholder="Search by keyword and press enter key" data-toggle="tooltip" title="Search engine will look for your keyword in adverts description and then show it to you!" required>
+						<input id="search" name="search" type="text" class="validate home-search" placeholder="Search by keyword" data-toggle="tooltip" title="Search engine will look for your keyword in adverts description and then show it to you!">
+                        <select class="btn btn-light search-filter-input" id="county" name="county">
+                            <option value="" selected>Choose county</option>
+                            {% for county in counties %}
+                            <option value="{{county.name}}">{{county.name}}</option>
+                            {% endfor %}
+                        </select>
+                        <button id="btn-search-key" class="btn-outline-light btn-search open-filters" type="submit" data-toggle="tooltip" title="It will search for any combination. If both are empty, all adverts will be shown!">Search</button>
                     </form>
-                    <button id="more-filters" class="btn btn-outline-light open-filters text-center" data-toggle="tooltip" title="Filter by Categories and by County!">Open filters</button>
 				</div>
 			</div>
+            <div class="row d-flex justify-content-center">
+                <button id="more-filters" class="btn btn-outline-light open-filters text-center" data-toggle="tooltip" title="Filter by Categories and by County!">Additional</button>
+            </div>
             <!-- Div that opens by clicking on Open filters button -->
             <div class="row d-flex justify-content-center text-center">
                 <form action="{{url_for('county_search')}}" method="POST" enctype="multipart/form-data">                    
@@ -43,10 +52,10 @@
                             <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                             {% endfor %}
                         </select>                    
-                        <select class="input-field add-inputs search-filter-input" id="county" name="county" required>
+                        <select class="input-field add-inputs search-filter-input" id="counti-selector" name="counti_list" required>
                             <option value="" disabled selected>Choose county</option>
-                            {% for county in counties %}
-                            <option value="{{county.name}}">{{county.name}}</option>
+                            {% for counti in counti_list %}
+                            <option value="{{counti.name}}">{{counti.name}}</option>
                             {% endfor %}
                         </select>
                         <div>

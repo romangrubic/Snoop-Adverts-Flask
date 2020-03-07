@@ -73,7 +73,7 @@ body{
 
 /* --------------------------------------- Home page buttons --------------------------------------- */
 .home-btn{
-    margin-top: 200px;
+    margin-top: 155px;
     margin-bottom: 10px;
 }
 .btn-outline-light{
@@ -111,7 +111,7 @@ body{
     padding: 2px;
     margin: 3px 0px 0px 0px;
     font-size: 16px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 /* --------------------------------------- Search bar --------------------------------------- */
 .search-bar{
@@ -135,9 +135,16 @@ body{
     font-weight: 500;
     font-size: 17px;
 }
+#btn-search-key{
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.3)
+}
+#btn-search-key:hover{
+    background-color: white;
+}
 /* --------------------------------------- More filters button --------------------------------------- */
 #more-filters{
-    margin-left: 5px;
+    margin-bottom: 10px;
 }
 .search-filter-input{
     color: rgba(0, 0, 0, 0.85);
@@ -167,6 +174,7 @@ body{
     font-weight: 600;
     color: rgba(0, 0, 0, 0.8);
     text-decoration: underline;
+    cursor: pointer;
 }
 .top-ad-section{
     padding: 5px;
@@ -180,10 +188,12 @@ body{
 }
 
 .border-top-ad{
+    border-radius: 5px;
     border: 2px solid rgba(0, 0, 0, 0.5);
 }
 .carousel-top-ad{
-    height: 250px;
+    height: 300px;
+
 }
 .carousel-top-ad-img{
     width: 100%;
@@ -221,12 +231,12 @@ body{
     background-color: rgba(255, 255, 255, 0.75);
 }
 .carousel-control-prev-icon{
-    padding: 25px 15px;
+    padding: 25px 10px;
   background-color: #99D9EA;
     border-radius: 10px
 }
 .carousel-control-next-icon{
-    padding: 25px 15px;
+    padding: 25px 12px;
     background-color: #99D9EA;
     border-radius: 10px
 }
