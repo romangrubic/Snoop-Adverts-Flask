@@ -50,10 +50,14 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 </p>
 
 * **search for a specific advert**
-  - user can use the search bar for specific word or part of the word. 
+  - user can use one of multiple options to search:
+
+    - ![#FF8000](https://placehold.it/15/FF80000/000000?text=+) by category (it will show ALL adverts in selected category)
+    - ![#228B22](https://placehold.it/15/228B22/000000?text=+) by keyword and/or county (this option filter adverts and show selected. It can show by keyword, by county, by both or if none selected, it will show ALL adverts)
+    - ![#EE1C24](https://placehold.it/15/EE1C24/000000?text=+) by category and county (searches for BOTH category and county selected)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/search-bar.png" width="500" height="150" alt="Search by part of the word">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/search.png" width="600" height="300" alt="Search options">
 </p>
 
 * **see for what I searched for if there's no results**
@@ -63,24 +67,16 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
   <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/no-search.png" width="500" height="150" alt="User can see what they searched for">
 </p>
 
-* **search by category**
-  - user can search by specific category such as Motors, Home or Electronic by pressing button.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/filter-buttons.png" width="500" height="200" alt="Filter buttons">
-</p>
-
-* **search by county**
-  - user can search by specific category and specific county.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/county.png" width="500" height="300" alt="County filter">
-</p>
-
 * **view advert that I'm interested in**
   - user can view advert in full view by clicking anywhere on the advert. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/view-ad.png" width="500" height="300" alt="View advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/view-ad.png" width="400" height="600" alt="View advert">
+</p>
+
+* **share the URL of the advert easily with someone who might be interested**
+  - user can share the URL of the advert by clicking on button which will copy the URL into users clipboard. 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/share-ad.png" width="400" height="600" alt="View advert">
 </p>
 
 * **view my location in relation to Home page**
@@ -92,13 +88,13 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 * **place my own advert**
   - user can place their own advert just by going to Add advert in the navigation bar. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/add-advert.png" width="500" height="300" alt="Add advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/add-advert.png" width="300" height="400" alt="Add advert">
 </p>
 
 * **change my advert**
   - user can edit adverts if something changed by pressing `Edit` button and entering `Access key`.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/edit-advert.png" width="500" height="300" alt="Edit advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/edit-advert.png" width="300" height="400" alt="Edit advert">
 </p>
 
 * **delete my advert**

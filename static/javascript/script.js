@@ -16,7 +16,6 @@ function copyURL() {
 }
 
 /* ---------------------- Toggles Most viewed advert and most recent adverts -------------- */
-$("#carousel-top-ad").hide();
 $("#carousel-recent").hide();
 
 $("#most-viewed").click(function (){

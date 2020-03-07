@@ -179,10 +179,6 @@ def search():
             {'advert_description': {"$regex": query, '$options': 'i'}}).skip(
             ads_to_skip).limit(ADS_PER_PAGE)
     elif query == "":
-        if county == "Kerry":
-            county = "adverts in the Kingdom of Kerry"
-        else:
-            county = "adverts in %s county" % (county)
         results = mongo.db.advert.find({
             'location': county})
         results_number = results.count()
@@ -195,6 +191,10 @@ def search():
         ads_on_page = mongo.db.advert.find({
             'location': county}).skip(
             ads_to_skip).limit(ADS_PER_PAGE)
+        if county == "Kerry":
+            county = "adverts in the Kingdom of Kerry"
+        else:
+            county = "adverts in %s county" % (county)
     else:
         if query[0] == " ":
             query = "empty space(s)"
