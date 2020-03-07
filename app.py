@@ -75,6 +75,8 @@ def marketplace():
 -------- Below are filters by each category, search input and conty ---------
 
 """
+
+
 # --------- Filter search: Motors and Vehicles ------------------------------
 @app.route('/motors_and_vehicles')
 def motors_and_vehicles():
@@ -116,7 +118,8 @@ def home_garden_diy():
     page_count = int(math.ceil(ads_count / ADS_PER_PAGE))
     page_numbers = range(1, page_count + 1)
     ads_on_page = mongo.db.advert.find(
-        {'category_name': 'Home, garden and DIY'}).sort('views', DESCENDING).skip(
+        {'category_name': 'Home, garden and DIY'}).sort(
+            'views', DESCENDING).skip(
             ads_to_skip).limit(ADS_PER_PAGE)
     return render_template('marketplace.html',
                            counties=counties,
@@ -158,7 +161,7 @@ def electronics():
                            total=page_count)
 
 
-# ----------- Filter search: Search by input, by county or by both! ------------------------------------
+# ----------- Filter search: Search by input, by county or by both! ---------
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     counties = mongo.db.county.find()
@@ -424,4 +427,4 @@ def delete_advert(advert_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)

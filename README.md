@@ -88,13 +88,13 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 * **place my own advert**
   - user can place their own advert just by going to Add advert in the navigation bar. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/add-advert.png" width="300" height="400" alt="Add advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/add-advert.png" width="450" height="400" alt="Add advert">
 </p>
 
 * **change my advert**
   - user can edit adverts if something changed by pressing `Edit` button and entering `Access key`.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/edit-advert.png" width="300" height="400" alt="Edit advert">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/edit-advert.png" width="450" height="400" alt="Edit advert">
 </p>
 
 * **delete my advert**
