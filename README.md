@@ -64,7 +64,7 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
   - user can see what they searched for and have option to go to Home page. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/no-search.png" width="500" height="150" alt="User can see what they searched for">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/no-search.png" width="500" height="350" alt="User can see what they searched for">
 </p>
 
 * **view advert that I'm interested in**
@@ -82,7 +82,7 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 * **view my location in relation to Home page**
   - user can see location just beneath navigation bar. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/breadcrumbs.png" width="500" height="150" alt="Location of the user">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/breadcrumbs.png" width="600" height="200" alt="Location of the user">
 </p>
 
 * **place my own advert**
@@ -106,7 +106,7 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 * **know if access key is wrong**
   - if user enters access key which is incorrect, a page 403 will load and instruct the user that their key was wrong and give them option to go back to the advert.
 <p align="center">
-  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/access_denied.png" width="500" height="300" alt="Page 403">
+  <img src="https://raw.githubusercontent.com/romangrubic/database-project/master/static/images/readme/user_stories/access_denied.png" width="500" height="350" alt="Page 403">
 </p>
 
 #### As a company, I would like to:
@@ -120,8 +120,8 @@ I choose the name Snoop as in "to snoop around" and all similarities with Snoop 
 
 ### Strategy
 
-**Snoop** web-site purpose is to be a marketplace where users can put their things to sell and earn money and companies to promote their bussines by renting advertisement space. 
-Also, for the owner of the page to earn money by renting out designated advertisement space (side spaces coloured ![#99D9EA](https://placehold.it/15/99D9EA/000000?text=+) `#99D9EA` ).
+**Snoop** web-site purpose is to be a marketplace where users can put their things to sell and earn money and for companies to promote their bussines by renting advertisement space. 
+Also, for the owner of the page to earn money by renting out designated advertisement space (side spaces coloured ![#99D9EA](https://placehold.it/15/99D9EA/000000?text=+) `#99D9EA` ) to either companies/users or [Google ads](https://www.google.com/adsense/start/).
 
 ### Scope
 
