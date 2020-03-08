@@ -11,7 +11,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{url_for('home')}}">Home</a></li>
                     <li class="breadcrumb-item"><a href="{{url_for('marketplace')}}">Marketplace</a></li>
-                    {% if advert.category_name == "Home, garden, DIY" %}
+                    {% if advert.category_name == "Home, garden and DIY" %}
                     <li class="breadcrumb-item"><a href="{{url_for('home_garden_diy')}}">Home, garden and DIY</a></li>
                     {% elif advert.category_name == "Motors and vehicles" %}
                     <li class="breadcrumb-item"><a href="{{url_for('motors_and_vehicles')}}">Motors and vehicles</a></li>
